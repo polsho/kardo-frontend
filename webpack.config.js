@@ -20,6 +20,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(js|jsx|tsx|ts)$/,
+        use: 'babel-loader',
+        exclude: '/node_modules/'
+      },
+      {
         test: /\.[tj]sx?$/,
         use: [
           {
@@ -29,16 +34,10 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(js|jsx|tsx|ts)$/,
-        use: 'babel-loader',
-        exclude: '/node_modules/'
-      },
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'style-loader', 'css-loader'
-        ],
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, {
+        loader: 'css-loader'
+        }]
       },
       {
         test: /\.(png|jpg|gif|webp)$/,
