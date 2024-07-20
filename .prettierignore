@@ -1,0 +1,12 @@
+# Add files here to ignore them from prettier formatting
+/dist
+/node_modules
+/vendor/fonts
+package-lock.json
+package.json
+yarn.lock
+*.js
+*.json
+*.yml
+*.md
+*.d.ts
