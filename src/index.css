@@ -1,5 +1,12 @@
 @import url(./assets/fonts/fonts.css);
 
 :root {
-  --background-color: #000;
+  --background-color: #212121;
+  --accent-color: #ff4310;
+  --main-text-color: #fff;
+  --add-text-color: #090200;
+  --inactive-text-color: #808080;
+  --inactive-bg-color: #bfbfbf;
+
+  --header-font-family: 'GrtskTera Bold';
 }

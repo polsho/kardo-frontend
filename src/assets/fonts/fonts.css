@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'GrtskTera Bold';
+  src:
+    local('GrtskTera Bold'),
+    local('GrtskTera-Bold'),
+    url('./GrtskTera-Bold.woff2') format('woff2'),
+    url('./GrtskTera-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
