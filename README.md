@@ -14,4 +14,4 @@ git clone https://github.com/polsho/kardo-frontend.git
 
 4. Для запуска проекта выполните команду: `npm run start`
 
-5. Для сборки проекта выполните команду: `npm tun build`
+5. Для сборки проекта выполните команду: `npm run build`
