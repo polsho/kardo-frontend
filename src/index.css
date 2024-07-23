@@ -1,12 +1,63 @@
 @import url(./assets/fonts/fonts.css);
 
 :root {
-  --background-color: #212121;
+  --text-color-light: #fff;
+  --text-color-dark: #090200;
+  --background-color-dark: #212121;
+  --background-color-light: #fff;
+  --background-color-cards: #333;
   --accent-color: #ff4310;
-  --main-text-color: #fff;
-  --add-text-color: #090200;
-  --inactive-text-color: #808080;
-  --inactive-bg-color: #bfbfbf;
-
-  --header-font-family: 'GrtskTera Bold';
+  --secondary-color-light: #bfbfbf;
+  --secondary-color-dark: #808080;
+  --blur: #212121;
+  --button-color-main: #ff4310;
+  --button-color-hovered: #cf360c;
+  --button-color-pressed: #b22c08;
+  --button-color-disabled: #bfbfbf;
+  --service-color-error: #f20f01;
+  --service-color-success: #0fdb5a;
 }
+
+.text_type_main-default {
+  font-family: 'Rubik', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.text_type_main-small {
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.text_type_main-bold {
+  font-family: 'Rubik', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.text_type_main-bold-large {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.text_type_secondary_small {
+  font-family: 'Rubik', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.text_type_secondary_main {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/*Дописать остальные шрифты*/
