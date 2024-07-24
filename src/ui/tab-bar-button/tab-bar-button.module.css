@@ -6,8 +6,8 @@
   align-items: center;
   gap: 1px;
   border: none;
-  background-color: var(--background-color-cards);
-  font-family: 'Rubik'; /* заменить на переменную*/
+  background-color: var(--background-color-dark);
+  font-family:var(--font-family-main-text);
   font-weight: 400;
   color: var(--secondary-color-dark);
 }
