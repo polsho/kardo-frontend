@@ -4,6 +4,10 @@ import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router
 //   import { useDispatch } from '../../services/store';
 
 import { useEffect } from 'react'
+import { Screensaver } from '../pages/screensaver/screensaver'
+import { Main } from '../pages/main/main'
+import { WelcomeScreen } from '../pages/welcomeScreen/welcomeScreen'
+import { Login } from '../pages/login/login'
 
 function App() {
   const location = useLocation()
@@ -12,7 +16,13 @@ function App() {
   return (
     <div className={style.app}>
       {/* <AppHeader /> */}
-      <Routes location={background || location}>{/* <Route path='/' element={<Main />} /> */}</Routes>
+      <Routes location={background || location}>
+        <Route path="/" element={<Screensaver/>}/>
+        <Route path='/main' element={<Main />} />
+        <Route path="/welcomePage" element={<WelcomeScreen/>}/>
+        <Route path="/login" element={<Login/>}/>
+      </Routes>
+
     </div>
   )
 }
