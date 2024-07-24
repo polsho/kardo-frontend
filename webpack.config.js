@@ -35,10 +35,13 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, {
+        use: [
+          MiniCssExtractPlugin.loader, {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
+              modules: true,
+              importLoaders: 1,
+              esModule: false,
             }
           },
           'postcss-loader'
