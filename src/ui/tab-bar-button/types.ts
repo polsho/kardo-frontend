@@ -1,6 +1,5 @@
-
 export type TTabBarButtonProps = {
-    icon: string;
-    title: string;
-    onClick: () => void;
-  };
+  children: string
+  icon: string
+  goTo: string;
+}

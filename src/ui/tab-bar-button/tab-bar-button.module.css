@@ -1,11 +1,26 @@
-.tabBarButton {
+.button {
   width: 4.93rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 1px;
+  border: none;
+  background-color: var(--background-color-cards);
+  font-family: 'Rubik'; /* заменить на переменную*/
+  font-weight: 400;
+  color: var(--secondary-color-dark);
 }
 
-.tab-bar-button__icon {
+.button_active {
+  color: var(--accent-color);
+}
+
+.icon {
   width: 24px;
+  filter: brightness(0) saturate(100%) invert(54%) sepia(12%) saturate(14%) hue-rotate(335deg) brightness(90%) contrast(90%);
+}
+
+.button_active .icon {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(92%) saturate(3454%) hue-rotate(353deg) brightness(100%) contrast(102%);
 }

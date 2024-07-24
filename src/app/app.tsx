@@ -1,5 +1,5 @@
 import React from 'react'
-import './app.css'
+import style from './app.css'
 import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router-dom'
 //   import { useDispatch } from '../../services/store';
 
@@ -10,7 +10,7 @@ function App() {
   const background = location.state?.background
 
   return (
-    <div className="app">
+    <div className={style.app}>
       {/* <AppHeader /> */}
       <Routes location={background || location}>{/* <Route path='/' element={<Main />} /> */}</Routes>
     </div>

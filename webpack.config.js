@@ -35,15 +35,25 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, {
+        use: [
+          MiniCssExtractPlugin.loader, {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
+              modules: true,
+              importLoaders: 1,
+              esModule: false,
             }
           },
           'postcss-loader'
         ]
       },
+      {
+        test: /\.svg$/,
+        type: 'asset/resource',
+        generator: {
+        filename: path.join('icons', '[name].[contenthash][ext]'),
+          },
+        },
       {
         test: /\.(png|jpg|gif|webp)$/,
         type: "asset/resource",
