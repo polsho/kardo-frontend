@@ -4,8 +4,9 @@ import { TTabBarButtonProps } from './types'
 
 export function TabBarButton({ icon, title, onClick }: TTabBarButtonProps) {
   return (
-    <button className='' onClick={onClick}>
-      
+    <button className="tab-bar-button" onClick={onClick}>
+      <img src={icon} alt="иконка" className="tab-bar-button__icon" />
+      <div className="text_type_main-small">{title}</div>
     </button>
   )
 }

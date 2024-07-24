@@ -1,0 +1,11 @@
+.tab-bar-button {
+  width: 4.93rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+}
+
+.tab-bar-button__icon {
+  width: 24px;
+}
