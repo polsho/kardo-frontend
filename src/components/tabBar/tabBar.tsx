@@ -1,6 +1,6 @@
-import styles from './tab-bar.module.css'
+import styles from './tabBar.module.css'
 import { tabBarIcons } from '../../assets/icons/tab-bar-icons'
-import { TabBarButton } from '../../ui/tab-bar-button/tab-bar-button'
+import { TabBarButton } from '../tabBarButton/tabBarButton'
 
 export function TabBar() {
   const tabBarButtons: string[] = ['Главная', 'Лента', 'Эвенты', 'Конкурсы', 'Еще']
