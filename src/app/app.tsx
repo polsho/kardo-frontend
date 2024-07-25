@@ -22,7 +22,6 @@ function App() {
         <Route path="/welcomePage" element={<WelcomeScreen/>}/>
         <Route path="/login" element={<Login/>}/>
       </Routes>
-
     </div>
   )
 }

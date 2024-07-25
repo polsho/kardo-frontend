@@ -1,8 +1,12 @@
-import React from 'react'
-import styles from './tab-bar-button.module.css'
-import { TTabBarButtonProps } from './types'
+import styles from './tabBarButton.module.css'
 import clsx from 'clsx'
 import { useLocation, useNavigate } from 'react-router-dom'
+
+export type TTabBarButtonProps = {
+  children: string
+  icon: string
+  goTo: string;
+}
 
 export function TabBarButton({ children, icon, goTo }: TTabBarButtonProps) {
   const location = useLocation()
