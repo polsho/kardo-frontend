@@ -2,7 +2,7 @@
   width: 336px;
   height: 43px;
   border-style: none;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: var(--accent-color);
   color: var(--text-color-light);
   cursor: pointer;
