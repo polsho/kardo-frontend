@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './screensaver.module.css';
-import { LogoCircle } from '../../components/logoCircle/logoCircle'
-import clsx from 'clsx'
+import { LogoCircle } from '../../components/logoCircle/logoCircle';
+import clsx from 'clsx';
 
 export const Screensaver: React.FC = () => {
 
