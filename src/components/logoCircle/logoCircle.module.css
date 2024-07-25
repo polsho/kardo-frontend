@@ -1,0 +1,14 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logoAnimation {
+  animation: rotation linear infinite 20s;
+  max-width: 100%;
+  text-align: center;
+}
