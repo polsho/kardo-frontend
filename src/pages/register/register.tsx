@@ -17,7 +17,7 @@ export const Register: React.FC = () => {
   const [country, setCountry] = useState('')
   const [region, setRegion] = useState('')
   const [city, setCity] = useState('')
-  const [publickLink, setPublickLink] = useState('')
+  const [publicLink, setPublicLink] = useState('')
 
   return (
     <>
@@ -34,22 +34,22 @@ export const Register: React.FC = () => {
 
             <Input type="text" name="first-name" required htmlFor="Имя" value={firstName}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setEmail(event.target.value)
+                     setFirstName(event.target.value)
                    }} />
 
             <Input type="text" name="last-name" required htmlFor="Фамилия" value={lastName}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setPassword(event.target.value)
+                     setLastName(event.target.value)
                    }} />
 
             <Input type="text" name="patronymic-name" required htmlFor="Отчество" value={patronymicName}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setPassword(event.target.value)
+                     setPatronymicName(event.target.value)
                    }} />
 
             <Input type="email" name="email" required htmlFor="Email" value={email}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setPassword(event.target.value)
+                     setEmail(event.target.value)
                    }} />
 
             <Input type="password" name="password" required htmlFor="Пароль" value={password}
@@ -59,32 +59,32 @@ export const Register: React.FC = () => {
 
             <Input type="password" name="repeat-password" required htmlFor="Повторите пароль" value={repeatPassword}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setPassword(event.target.value)
+                     setRepeatPassword(event.target.value)
                    }} />
 
             <Input type="date" name="date-of-birth" required htmlFor="Дата рождения" value={dateOfBirth}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setPassword(event.target.value)
+                     setDateOfBirth(event.target.value)
                    }} />
 
             <Input type="text" name="country" required htmlFor="Страна" value={country}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setPassword(event.target.value)
+                     setCountry(event.target.value)
                    }} />
 
             <Input type="text" name="region" required htmlFor="Регион" value={region}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setPassword(event.target.value)
+                     setRegion(event.target.value)
                    }} />
 
             <Input type="text" name="city" required htmlFor="Город" value={city}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setPassword(event.target.value)
+                     setCity(event.target.value)
                    }} />
 
-            <Input type="text" name="publick-link" required htmlFor="Ссылка на соц. сети" value={publickLink}
+            <Input type="text" name="public-link" required htmlFor="Ссылка на соц. сети" value={publicLink}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setPassword(event.target.value)
+                     setPublicLink(event.target.value)
                    }} />
 
             <div className={styles.button_container}>
