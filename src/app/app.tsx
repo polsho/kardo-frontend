@@ -8,6 +8,7 @@ import { Screensaver } from '../pages/screensaver/screensaver'
 import { Main } from '../pages/main/main'
 import { WelcomeScreen } from '../pages/welcomeScreen/welcomeScreen'
 import { Login } from '../pages/login/login'
+import { Register } from '../pages/register/register'
 
 function App() {
   const location = useLocation()
