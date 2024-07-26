@@ -1,5 +1,4 @@
 .container_page {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -56,7 +55,7 @@
 
 .button_container {
   margin-top: 34px;
-  margin-bottom: 21px;
+  margin-bottom: 45px;
 }
 
 .link, a:-webkit-any-link{
@@ -73,4 +72,5 @@
 .info {
   color: var(--secondary-color-dark);
   text-align: center;
+  margin-bottom: 34px;
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './app.css'
+import styles from './app.css'
 import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router-dom'
 //   import { useDispatch } from '../../services/store';
 
@@ -8,19 +8,21 @@ import { Screensaver } from '../pages/screensaver/screensaver'
 import { Main } from '../pages/main/main'
 import { WelcomeScreen } from '../pages/welcomeScreen/welcomeScreen'
 import { Login } from '../pages/login/login'
+import { Register } from '../pages/register/register'
 
 function App() {
   const location = useLocation()
   const background = location.state?.background
 
   return (
-    <div className={style.app}>
+    <div className={styles.app}>
       {/* <AppHeader /> */}
       <Routes location={background || location}>
         <Route path="/" element={<Screensaver/>}/>
         <Route path='/main' element={<Main />} />
         <Route path="/welcomePage" element={<WelcomeScreen/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
       </Routes>
     </div>
   )

@@ -63,7 +63,7 @@
   font-weight: 600;
 }
 
-:global .text_type_secondary_main {
+:global .text_type_secondary_large {
   font-family: var(--font-family-main-text);
   font-size: 20px;
   line-height: 1.5;
