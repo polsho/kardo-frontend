@@ -5,8 +5,13 @@ import { Button } from '../../components/button/button'
 import { Input } from '../../components/input/input'
 import iconBack from '../../assets/icons/back-icon.svg'
 import { ButtonToggle } from '../../components/buttonToggle/buttonToggle'
+import { useNavigate } from 'react-router-dom'
 
 export const Register: React.FC = () => {
+
+  const navigate = useNavigate();
+
+
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [patronymicName, setPatronymicName] = useState('')
@@ -24,7 +29,7 @@ export const Register: React.FC = () => {
       <div className={styles.container_page}>
         <div>
           <div className={styles.heading_container}>
-            <a href="#"><img className={styles.icon} src={iconBack} alt="icon-back" /></a>
+            <a onClick={() => navigate(-1)}><img className={styles.icon} src={iconBack} alt="icon-back" /></a>
             <h1 className={clsx(styles.title, 'text_type_heading-small')}>Привет,&nbsp;Гость!</h1>
           </div>
 

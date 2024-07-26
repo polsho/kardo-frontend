@@ -18,11 +18,11 @@ function App() {
     <div className={styles.app}>
       {/* <AppHeader /> */}
       <Routes location={background || location}>
-        <Route path="/" element={<Screensaver/>}/>
-        <Route path='/main' element={<Main />} />
+        <Route path='/' element={<Main />} />
         <Route path="/welcomePage" element={<WelcomeScreen/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
+        <Route path="/screenSaver" element={<Screensaver/>}/>
       </Routes>
     </div>
   )

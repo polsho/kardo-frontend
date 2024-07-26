@@ -8,7 +8,7 @@ export const WelcomeScreen: React.FC = () => {
   return (
     <>
       <div className={styles.container}>
-        <div><LogoRectangle /></div>
+        <LogoRectangle />
 
         <div className={styles.button_container}>
           <Button type="submit">
