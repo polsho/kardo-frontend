@@ -15,7 +15,6 @@ export const Main: React.FC = () => {
 
   return (
     <>
-      <div className={styles.container}>
         <Header />
         <img src={kardoImage} alt="прыгающий мужчина и надпись free running" className={styles.image} />
         <div className={styles.mainSection}>
@@ -26,8 +25,8 @@ export const Main: React.FC = () => {
             </p>
             <Button onClick={handleClick}>Подать заявку</Button>
           </div>
-          <ul className="cards">
-            <li>
+          <ul className={clsx(styles.cards, 'text_type_main-default')}>
+            <li className={styles.card}>
               <h2 className={styles.cardTitle}>Наша миссия</h2>
               <p className={styles.cardText}>
                 Мир «КАРДО» полон возможностей для людей улиц. В нем удивительным образом переплетены сотни
@@ -45,7 +44,6 @@ export const Main: React.FC = () => {
           </ul>
         </div>
         <div className={styles.AboutUsSection}></div>
-      </div>
     </>
   )
 }

@@ -27,6 +27,14 @@
   color: var(--text-color-light);
 }
 
+.cards {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text-color-light);
+}
+
 .AboutUsSection {
 
 }
