@@ -6,16 +6,14 @@ export const ButtonToggle: React.FC = () => {
 
   return (
     <div className={styles.toggle_container}>
-      <form action="">
         <label className={styles.toggle}>
-          <input type="radio" name="radio" value="participant" checked  />
+          <input type="radio" name="radio" value="participant" checked />
           <span className={clsx(styles.title, "text_type_main-large")}>Участник</span>
         </label>
         <label className={styles.toggle}>
           <input type="radio" name="radio" value="expert" />
           <span className={clsx(styles.title, "text_type_main-large")}>Эксперт</span>
         </label>
-      </form>
     </div>
 )
 }
