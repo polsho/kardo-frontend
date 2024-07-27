@@ -122,7 +122,7 @@ export const Main: React.FC = () => {
           frameBorder="0"
           sandbox="allow-same-origin allow-forms allow-popups allow-scripts allow-presentation"
           src={`https://youtube.com/embed/${youtubeID}?autoplay=0`}></iframe>
-      </div>
+      </div> 
     </>
   )
 }
