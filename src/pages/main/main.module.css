@@ -1,4 +1,4 @@
 .heading {
   text-align: center;
-  color: black;
+  color: var(--text-color-light);
 }
