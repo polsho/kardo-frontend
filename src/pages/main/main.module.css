@@ -1,5 +1,3 @@
-.container {
-}
 .image {
   width: 100%;
 }
@@ -20,6 +18,7 @@
 .title {
   color: var(--accent-color);
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .text {
@@ -27,14 +26,66 @@
   color: var(--text-color-light);
 }
 
+.button {
+  align-self: center;
+}
+
 .cards {
   list-style: none;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 12px;
   color: var(--text-color-light);
 }
 
-.AboutUsSection {
+.cardTitle {
+  text-transform: uppercase;
+  padding-block-end: 8px;
+}
 
+.sliderImage{
+  border-radius: 4px;
+}
+
+.slider {
+  padding: 24px 0;
+}
+
+.AboutUsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 20px 24px;
+  color: var(--text-color-light);
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.AboutUsSectionTitle {
+  padding-block-end: 8px;
+}
+
+.statSection {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-template-rows: auto 1fr;
+  row-gap: 24px;
+  justify-content: space-between;
+}
+
+.statInfoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  padding-block-end: 40px;
 }
