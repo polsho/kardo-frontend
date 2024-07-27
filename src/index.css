@@ -31,55 +31,55 @@
 :global .text_type_main-small {
   font-family: var(--font-family-main-text);
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: 400;
 }
 
 :global .text_type_main-large {
   font-family: var(--font-family-main-text);
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: 400;
 }
 
 :global .text_type_main-default-bold {
   font-family: var(--font-family-main-text);
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: 500;
 }
 
 :global .text_type_secondary_small {
   font-family: var(--font-family-main-text);
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: 600;
 }
 
 :global .text_type_secondary_main {
   font-family: var(--font-family-main-text);
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: 600;
 }
 
 :global .text_type_secondary_large {
   font-family: var(--font-family-main-text);
   font-size: 20px;
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: 600;
 }
 
 :global .text_type_heading-main {
   font-family: var(--font-family-heading);
   font-size: 24px;
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: 700;
 }
 
 :global .text_type_heading-small {
   font-family: var(--font-family-heading);
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: 700;
 }
