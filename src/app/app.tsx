@@ -10,6 +10,7 @@ import { WelcomeScreen } from '../pages/welcomeScreen/welcomeScreen'
 import { Login } from '../pages/login/login'
 import { Register } from '../pages/register/register'
 import { Profile } from '../pages/profile/profile'
+import { ProfileSettings } from '../pages/profileSettings/profileSettings'
 
 function App() {
   const location = useLocation()
@@ -23,7 +24,7 @@ function App() {
         <Route path="/profile">
           <Route index element={<Profile />} />
           {/* <Route path="profileChanges" element={<ProfileChanges/>} /> */}
-          {/* <Route path="settings" element={<ProfileSettings />} /> */}
+          <Route path="settings" element={<ProfileSettings />} />
         </Route>
         <Route path="/welcomePage" element={<WelcomeScreen/>}/>
         <Route path="/login" element={<Login/>}/>
