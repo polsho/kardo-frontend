@@ -1,7 +1,5 @@
 import React from 'react'
 import styles from './profile.module.css'
-
-import clsx from 'clsx'
 import { useNavigate } from 'react-router-dom'
 import { SubMenu, TLinks } from '../../components/subMenu/subMenu'
 import { CompetitionCard } from '../../components/competitionCard/competitionCard'
