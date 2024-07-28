@@ -25,7 +25,6 @@ function App() {
           {/* <Route path="profileChanges" element={<ProfileChanges/>} /> */}
           {/* <Route path="settings" element={<ProfileSettings />} /> */}
         </Route>
-        <Route path='/profile' element={<Profile />} />
         <Route path="/welcomePage" element={<WelcomeScreen/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
