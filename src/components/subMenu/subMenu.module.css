@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 12px;
+    background-color: var(--background-color-cards);
+}
+
+.link {
+    display: flex;
+    justify-content: space-between;
+}
