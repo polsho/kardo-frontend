@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import leftArrow from '../../assets/icons/left-arrow.svg'
 import clsx from 'clsx'
 
-type TLinks = {
+export type TLinks = {
   name: string
   url: string
 }
