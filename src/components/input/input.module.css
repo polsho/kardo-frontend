@@ -1,5 +1,6 @@
 .input {
-  background: none;
+  /*background: none;*/
+  background-color: var(--text-color-light);
   color: var(--secondary-color-dark);
   cursor: text;
   caret-color: var(--secondary-color-dark);
@@ -17,30 +18,35 @@
 }
 
 .inputContainer {
-  position: relative;
-  background-color: var(--text-color-light);
-  border-radius: 4px;
+  /*position: relative;*/
+  /*background-color: var(--text-color-light);*/
+  /*border-radius: 4px;*/
   min-width: 336px;
   max-width: 336px;
 }
 
-input:-webkit-autofill{
-  box-shadow: inset 20px 20px 0 50px var(--text-color-light);
-}
-
-input:-webkit-autofill{
-  -webkit-text-fill-color: var(--secondary-color-dark) !important;
-}
-
 .label {
-  position: absolute;
-  top: 14px;
-  left: 0;
-  color: var(--text-color-dark);
-  line-height: 1.1;
-  transition: 0.2s ease;
-  padding: 0 18px;
+  color: var(--text-color-light);
+  margin: 0;
 }
+
+/*input:-webkit-autofill{*/
+/*  box-shadow: inset 20px 20px 0 50px var(--text-color-light);*/
+/*}*/
+
+/*input:-webkit-autofill{*/
+/*  -webkit-text-fill-color: var(--secondary-color-dark) !important;*/
+/*}*/
+
+/*.label {*/
+/*  position: absolute;*/
+/*  top: 14px;*/
+/*  left: 0;*/
+/*  color: var(--text-color-dark);*/
+/*  line-height: 1.1;*/
+/*  transition: 0.2s ease;*/
+/*  padding: 0 18px;*/
+/*}*/
 
 .iconEye {
   background-image: url("../../assets/icons/eye-password-show.svg");
@@ -60,12 +66,12 @@ input:-webkit-autofill{
   background-image: url("../../assets/icons/eye-password-hide.svg");
 }
 
-.input:focus, .filledInput {
-  ~ label {
-    transform: translate(-5%, -105%) scale(0.8);
-    cursor: pointer;
-  }
-}
+/*.input:focus, .filledInput {*/
+/*  ~ label {*/
+/*    transform: translate(-5%, -105%) scale(0.8);*/
+/*    cursor: pointer;*/
+/*  }*/
+/*}*/
 
 .input:focus, .filledInput {
   ~ .iconEye {
