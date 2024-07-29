@@ -1,5 +1,4 @@
 .input {
-  /*background: none;*/
   background-color: var(--text-color-light);
   color: var(--secondary-color-dark);
   cursor: text;
@@ -8,6 +7,7 @@
   height: 41px;
   box-sizing: border-box;
   padding: 0 18px;
+  margin-top: 4px;
   font-family: 'Inter', sans-serif;
   outline: none;
   border: 0;
@@ -18,35 +18,14 @@
 }
 
 .inputContainer {
-  /*position: relative;*/
-  /*background-color: var(--text-color-light);*/
-  /*border-radius: 4px;*/
+  position: relative;
   min-width: 336px;
   max-width: 336px;
 }
 
 .label {
   color: var(--text-color-light);
-  margin: 0;
 }
-
-/*input:-webkit-autofill{*/
-/*  box-shadow: inset 20px 20px 0 50px var(--text-color-light);*/
-/*}*/
-
-/*input:-webkit-autofill{*/
-/*  -webkit-text-fill-color: var(--secondary-color-dark) !important;*/
-/*}*/
-
-/*.label {*/
-/*  position: absolute;*/
-/*  top: 14px;*/
-/*  left: 0;*/
-/*  color: var(--text-color-dark);*/
-/*  line-height: 1.1;*/
-/*  transition: 0.2s ease;*/
-/*  padding: 0 18px;*/
-/*}*/
 
 .iconEye {
   background-image: url("../../assets/icons/eye-password-show.svg");
@@ -55,7 +34,7 @@
   width: 24px;
   height: 24px;
   position: absolute;
-  top: 20%;
+  top: 50%;
   right: 5%;
   display: none;
   cursor: pointer;
@@ -65,13 +44,6 @@
 .iconEyeHide {
   background-image: url("../../assets/icons/eye-password-hide.svg");
 }
-
-/*.input:focus, .filledInput {*/
-/*  ~ label {*/
-/*    transform: translate(-5%, -105%) scale(0.8);*/
-/*    cursor: pointer;*/
-/*  }*/
-/*}*/
 
 .input:focus, .filledInput {
   ~ .iconEye {

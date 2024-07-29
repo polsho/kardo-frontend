@@ -29,6 +29,7 @@ export const Input = ({onChange, type, name, htmlFor, value}: InputHTMLAttribute
         className={clsx(styles.input, "text_type_main-default", value !== "" ? styles.filledInput : "")}
         type={typeToggle} name={name} required
         onChange={onChange} />
+
       {type === 'password' ?
         <span className={styles.iconEye} onClick={(evt) => toggleShowPassword(evt.target)}></span>
         : ''
