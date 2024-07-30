@@ -7,8 +7,8 @@
 }
 
 .logo{
-    padding: 4px;
-    border: 1px solid var(--text-color-light);
+    width: 98px;
+    height: 18.8px;
 }
 
 .icon {

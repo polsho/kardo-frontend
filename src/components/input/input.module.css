@@ -1,5 +1,5 @@
 .input {
-  background: none;
+  background-color: var(--text-color-light);
   color: var(--secondary-color-dark);
   cursor: text;
   caret-color: var(--secondary-color-dark);
@@ -7,7 +7,7 @@
   height: 41px;
   box-sizing: border-box;
   padding: 0 18px;
-  font-family: 'Inter', sans-serif;
+  margin-top: 4px;
   outline: none;
   border: 0;
   border-radius: 4px;
@@ -18,28 +18,12 @@
 
 .inputContainer {
   position: relative;
-  background-color: var(--text-color-light);
-  border-radius: 4px;
   min-width: 336px;
   max-width: 336px;
 }
 
-input:-webkit-autofill{
-  box-shadow: inset 20px 20px 0 50px var(--text-color-light);
-}
-
-input:-webkit-autofill{
-  -webkit-text-fill-color: var(--secondary-color-dark) !important;
-}
-
 .label {
-  position: absolute;
-  top: 14px;
-  left: 0;
-  color: var(--text-color-dark);
-  line-height: 1.1;
-  transition: 0.2s ease;
-  padding: 0 18px;
+  color: var(--text-color-light);
 }
 
 .iconEye {
@@ -49,7 +33,7 @@ input:-webkit-autofill{
   width: 24px;
   height: 24px;
   position: absolute;
-  top: 20%;
+  top: 50%;
   right: 5%;
   display: none;
   cursor: pointer;
@@ -58,13 +42,6 @@ input:-webkit-autofill{
 
 .iconEyeHide {
   background-image: url("../../assets/icons/eye-password-hide.svg");
-}
-
-.input:focus, .filledInput {
-  ~ label {
-    transform: translate(-5%, -105%) scale(0.8);
-    cursor: pointer;
-  }
 }
 
 .input:focus, .filledInput {

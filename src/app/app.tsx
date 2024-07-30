@@ -12,6 +12,8 @@ import { Register } from '../pages/register/register'
 import { Profile } from '../pages/profile/profile'
 import { ProfileSettings } from '../pages/profileSettings/profileSettings'
 import { ProfileChanges } from '../pages/profileChanges/profileChanges'
+import { NewsFeed } from '../pages/newsFeed /newsFeed'
+import { NotFound } from '../pages/notFound/notFound'
 
 function App() {
   const location = useLocation()
@@ -31,6 +33,8 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/screenSaver" element={<Screensaver/>}/>
+        <Route path="/newsFeed" element={<NewsFeed/>}/>
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>
   )
