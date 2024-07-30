@@ -1,0 +1,32 @@
+.container {
+    flex-basis: 9.88rem;
+    min-height: 9.88rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--accent-color);
+    border-radius: 0.25rem;
+    background-color: var(--background-color-light);
+}
+
+.title {
+    color: var(--accent-color);
+    padding: 0.75rem 0.5rem;
+}
+
+.dates {
+    padding: 1.25rem 0.5rem;
+    color: var(--secondary-color-dark);
+}
+
+.dates > * {
+    display: block;
+}
+
+.level {
+    --block-padding: 0.75rem;
+    height: calc(3.5rem - (2 * var(--block-padding)));
+    padding: var(--block-padding) 0.5rem;
+    margin-top: auto;
+    background-color: var(--accent-color);
+    color: var(--text-color-light);
+}
