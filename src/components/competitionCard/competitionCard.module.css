@@ -1,20 +1,21 @@
 .container {
-    flex-basis: 9.88rem;
-    min-height: 9.88rem;
+    flex-basis: 158px;
+    min-height: 158px;
     display: flex;
     flex-direction: column;
     border: 1px solid var(--accent-color);
-    border-radius: 0.25rem;
+    border-radius: 4px;
     background-color: var(--background-color-light);
 }
 
 .title {
     color: var(--accent-color);
-    padding: 0.75rem 0.5rem;
+    padding: 12px 8px;
+    min-height: 33.6px;
 }
 
 .dates {
-    padding: 1.25rem 0.5rem;
+    padding: 20px 8px;
     color: var(--secondary-color-dark);
 }
 
@@ -23,9 +24,9 @@
 }
 
 .level {
-    --block-padding: 0.75rem;
-    height: calc(3.5rem - (2 * var(--block-padding)));
-    padding: var(--block-padding) 0.5rem;
+    --block-padding: 12px;
+    height: calc(56px - (2 * var(--block-padding)));
+    padding: var(--block-padding) 8px;
     margin-top: auto;
     background-color: var(--accent-color);
     color: var(--text-color-light);
