@@ -1,6 +1,7 @@
 import styles from './tabBarButton.module.css'
 import clsx from 'clsx'
 import { useLocation, useNavigate } from 'react-router-dom'
+import React from 'react'
 
 export type TTabBarButtonProps = {
   children: string
@@ -16,12 +17,15 @@ export function TabBarButton({ children, goTo }: TTabBarButtonProps) {
   }
 
   return (
-    <button
-      className={clsx(styles.button, {
-        [styles.button_active]: location.pathname.includes(goTo) ? true : false
-      })}
-      onClick={handleClick}>
-      {children}
-    </button>
+    <div className={styles.container}>
+      <button
+        className={clsx(styles.button, 'text_type_main-default', {
+          [styles.button_active]: location.pathname.includes(goTo) ? true : false
+        })}
+        onClick={handleClick}>
+        {children}
+        <div className={styles.border_line}></div>
+      </button>
+    </div>
   )
 }

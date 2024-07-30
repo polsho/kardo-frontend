@@ -14,6 +14,9 @@ import { ProfileSettings } from '../pages/profileSettings/profileSettings'
 import { ProfileChanges } from '../pages/profileChanges/profileChanges'
 import { NewsFeed } from '../pages/newsFeed /newsFeed'
 import { NotFound } from '../pages/notFound/notFound'
+import { News } from '../pages/news/news'
+import { Broadcasts } from '../pages/broadcasts/broadcasts'
+import { MyPosts } from '../pages/myPosts/myPosts'
 
 function App() {
   const location = useLocation()
@@ -23,7 +26,7 @@ function App() {
     <div className={styles.app}>
       {/* <AppHeader /> */}
       <Routes location={background || location}>
-        <Route path='/' element={<Main />} />
+        <Route path='/main' element={<Main />} />
         <Route path="/profile">
           <Route index element={<Profile />} />
           <Route path="profileChanges" element={<ProfileChanges/>} />
@@ -34,6 +37,13 @@ function App() {
         <Route path="/register" element={<Register/>}/>
         <Route path="/screenSaver" element={<Screensaver/>}/>
         <Route path="/newsFeed" element={<NewsFeed/>}/>
+
+        <Route path="/newsFeed" element={<News/>}>
+          <Route path="/newsFeed" element={<NewsFeed/>}/>
+          <Route path="/newsFeed/broadcasts" element={<Broadcasts/>} />
+          <Route path="/newsFeed/myPosts" element={<MyPosts/>} />
+        </Route>
+
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>

@@ -18,7 +18,7 @@ export function FooterButton({ children, icon, goTo }: TFooterButtonProps) {
 
   return (
     <button
-      className={clsx(styles.button, {
+      className={clsx(styles.button, "text_type_main-small", {
         [styles.button_active]: location.pathname.includes(goTo) ? true : false
       })}
       onClick={handleClick}>

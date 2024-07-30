@@ -5,6 +5,6 @@ import iconContest from './footer-icon-contest.svg';
 import iconMore from './footer-icon-more.svg';
 
 
-export const tabBarIcons: string[] = [
+export const footerIcons: string[] = [
     iconHome, iconNewsLine, iconEvents, iconContest, iconMore
 ]

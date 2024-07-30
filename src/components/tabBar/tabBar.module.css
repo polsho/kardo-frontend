@@ -1,11 +1,7 @@
-.container {
-  width: 100%;
-  min-width: 375px;
-  margin: 0 auto;
+.tabs {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 7px 0 36.9px;
-  background-color: var(--background-color-dark);
-  border-top: 1px solid var(--background-color-cards);
+  justify-content: center;
+  gap: 25px;
+  padding: 10px 20px 0 24px;
 }
