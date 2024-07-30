@@ -1,12 +1,14 @@
 import styles from './header.module.css'
-import logo from '../../assets/icons/logo.svg'
 import profileIcon from '../../assets/icons/profile-icon.svg'
 import { Link } from 'react-router-dom'
+import { LogoRectangle } from '../logoRectangle/logoRectangle'
 
 export const Header = (): JSX.Element => {
   return (
     <div className={styles.header}>
-      <img src={logo} alt="логотип Кардо" className={styles.logo} />
+      <div className={styles.logo}>
+        <LogoRectangle/>
+      </div>
       <Link to={'/profile'} className={styles.icon}>
         <img src={profileIcon} alt="иконка входа в личный кабинет" />
       </Link>

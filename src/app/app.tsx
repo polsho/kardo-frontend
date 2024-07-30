@@ -12,6 +12,7 @@ import { Register } from '../pages/register/register'
 import { Modal } from '../components/modal/modal'
 import { NotFound } from '../pages/notFound/notFound'
 import { RegisterDone } from '../pages/registerDone/registerDone'
+import { NewsFeed } from '../pages/newsFeed /newsFeed'
 
 function App() {
   const location = useLocation()
@@ -33,8 +34,9 @@ function App() {
         <Route path="/welcomePage" element={<WelcomeScreen/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
-        <Route path="/screenSaver" element={<Screensaver/>}/>
+        <Route path="/newsFeed" element={<NewsFeed/>}/>
         <Route path="/register/done" element={<RegisterDone/>}/>
+        <Route path="/screenSaver" element={<Screensaver/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
 

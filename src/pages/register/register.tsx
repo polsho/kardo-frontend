@@ -5,7 +5,7 @@ import { Button } from '../../components/button/button'
 import { Input } from '../../components/input/input'
 import iconBack from '../../assets/icons/back-icon.svg'
 import { ButtonToggle } from '../../components/buttonToggle/buttonToggle'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export const Register: React.FC = () => {
 
@@ -24,6 +24,12 @@ export const Register: React.FC = () => {
   const [city, setCity] = useState('')
   const [publicLink, setPublicLink] = useState('')
 
+
+  const submitForm = (event: React.FormEvent<HTMLFormElement>): any => {
+    event.preventDefault();
+    navigate('/register/done')
+  }
+
   return (
     <>
       <div className={styles.container_page}>
@@ -35,7 +41,7 @@ export const Register: React.FC = () => {
 
             <ButtonToggle/>
 
-          <form className={styles.form} id="login">
+          <form className={styles.form} id="login" onSubmit={submitForm}>
 
             <Input type="text" name="first-name" required htmlFor="Имя" value={firstName}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -92,11 +98,13 @@ export const Register: React.FC = () => {
                      setPublicLink(event.target.value)
                    }} />
 
-            <div className={styles.button_container}>
-              <Button form="login" type="submit">
-                Зарегистироваться
-              </Button>
-            </div>
+            <Link to='/login'>
+              <div className={styles.button_container}>
+                <Button form="login" type="submit">
+                  Зарегистироваться
+                </Button>
+              </div>
+            </Link>
 
           </form>
 
