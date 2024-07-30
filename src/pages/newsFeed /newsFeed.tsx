@@ -13,6 +13,7 @@ export const NewsFeed: React.FC = () => {
     <>
       <Header />
       {/*<SubMenu url={/welcomePage}>Лента</SubMenu>*/}
+
       <div className={styles.tabs}>
         <div className={styles.container} >
           <span className="text_type_main-default">Лента</span>
@@ -27,7 +28,7 @@ export const NewsFeed: React.FC = () => {
           <div className={styles.border_line}></div>
         </div>
       </div>
-      <p className={styles.heading}>Error 404</p>
+      <p className={styles.heading}>Лента новостей</p>
       <TabBar />
     </>
   )
