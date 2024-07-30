@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./newsFeed.module.css";
-import { TabBar } from '../../components/tabBar/tabBar'
+import { Footer } from '../../components/footer/footer'
 import { Header } from '../../components/header/header'
-import { SubMenu } from '../../components/subMenu/subMenu'
 import { useNavigate } from 'react-router-dom'
+import { SubHeader } from '../../components/subHeader/subHeader'
+import { TabBar } from '../../components/tabBar/tabBar'
 
 export const NewsFeed: React.FC = () => {
 
@@ -12,7 +13,8 @@ export const NewsFeed: React.FC = () => {
   return (
     <>
       <Header />
-      {/*<SubMenu url={/welcomePage}>Лента</SubMenu>*/}
+      <SubHeader title="Лента" />
+      <TabBar/>
 
       <div className={styles.tabs}>
         <div className={styles.container} >
@@ -29,7 +31,7 @@ export const NewsFeed: React.FC = () => {
         </div>
       </div>
       <p className={styles.heading}>Лента новостей</p>
-      <TabBar />
+      <Footer />
     </>
   )
 }

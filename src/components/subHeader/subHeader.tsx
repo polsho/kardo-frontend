@@ -1,5 +1,5 @@
 import styles from './subHeader.module.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import iconBack from '../../assets/icons/back-icon.svg'
 import clsx from 'clsx'
 

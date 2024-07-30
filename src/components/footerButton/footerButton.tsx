@@ -1,13 +1,14 @@
-import styles from './tabBarButton.module.css'
+import styles from './footerButton.module.css'
 import clsx from 'clsx'
 import { useLocation, useNavigate } from 'react-router-dom'
 
-export type TTabBarButtonProps = {
+export type TFooterButtonProps = {
   children: string
+  icon: string
   goTo: string;
 }
 
-export function TabBarButton({ children, goTo }: TTabBarButtonProps) {
+export function FooterButton({ children, icon, goTo }: TFooterButtonProps) {
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -21,6 +22,7 @@ export function TabBarButton({ children, goTo }: TTabBarButtonProps) {
         [styles.button_active]: location.pathname.includes(goTo) ? true : false
       })}
       onClick={handleClick}>
+      <img src={icon} alt="иконка" className={styles.icon} />
       {children}
     </button>
   )

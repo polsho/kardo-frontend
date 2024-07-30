@@ -13,7 +13,7 @@
 }
 
 .button_active {
-  color: var(--text-color-light);
+  color: var(--accent-color);
 }
 
 .icon {
