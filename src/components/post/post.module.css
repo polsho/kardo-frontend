@@ -1,0 +1,35 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  row-gap: 32px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.post {
+  background-color: var(--background-color-light);
+  border: 1px solid var(--accent-color);
+  border-radius: .25rem;
+  display: flex;
+  flex-basis: 9.88rem;
+  flex-direction: column;
+  min-width: 335px;
+  min-height: 343px;
+}
+
+.icon_profile {
+  width: 29px;
+  height: 29px;
+}
+
+.post_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.video {
+  width: 100%;
+  min-height: 200px;
+}
