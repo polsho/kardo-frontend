@@ -22,3 +22,8 @@
   animation: shadow .6s infinite linear;
   color: var(--text-color-light);
 }
+
+.button:disabled {
+  background-color: var(--secondary-color-light);
+  color: var(--secondary-color-dark);
+}

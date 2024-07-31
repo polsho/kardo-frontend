@@ -20,7 +20,7 @@ export const CompetitionCard = ({
   const navigate = useNavigate()
   function handleClick() {
     if (url.startsWith('http')) {
-      window.location.href = url
+      window.open(url, '_blank')
     } else {
       navigate(url)
     }

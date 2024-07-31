@@ -1,11 +1,20 @@
 .container {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .regStatus {
     color: var(--accent-color);
+    margin-bottom: 18px;
+    align-self: flex-start;
 }
 
-.stagesByRegions {
+.stages {
     margin-block-end: 73px;
+    color: var(--text-color-light);
+}
+
+.stagesList {
+    padding-left: 20px;
 }

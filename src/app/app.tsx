@@ -18,6 +18,7 @@ import { News } from '../pages/news/news'
 import { Broadcasts } from '../pages/broadcasts/broadcasts'
 import { MyPosts } from '../pages/myPosts/myPosts'
 import { Selections } from '../pages/selections/selections'
+import { RequestForReg } from '../pages/requestForReg/requestForReg'
 
 function App() {
   const location = useLocation()
@@ -34,6 +35,7 @@ function App() {
           <Route path="settings" element={<ProfileSettings />} />
         </Route>
         <Route path="/selections/:type" element={<Selections />} />
+        <Route path="/requestForReg/:type" element={<RequestForReg />} />
         <Route path="/welcomePage" element={<WelcomeScreen />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
