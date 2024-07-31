@@ -19,7 +19,11 @@ export const CompetitionCard = ({
 }: TCompetirionCardProps): JSX.Element => {
   const navigate = useNavigate()
   function handleClick() {
-    navigate(url)
+    if (url.startsWith('http')) {
+      window.location.href = url
+    } else {
+      navigate(url)
+    }
   }
   return (
     <div className={styles.container} onClick={handleClick}>
