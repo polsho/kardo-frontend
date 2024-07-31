@@ -26,24 +26,24 @@ function App() {
     <div className={styles.app}>
       {/* <AppHeader /> */}
       <Routes location={background || location}>
-        <Route path='/main' element={<Main />} />
+        <Route path="/main" element={<Main />} />
         <Route path="/profile">
           <Route index element={<Profile />} />
-          <Route path="profileChanges" element={<ProfileChanges/>} />
+          <Route path="profileChanges" element={<ProfileChanges />} />
           <Route path="settings" element={<ProfileSettings />} />
         </Route>
-        <Route path="/welcomePage" element={<WelcomeScreen/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
-        <Route path="/screenSaver" element={<Screensaver/>}/>
+        <Route path="/welcomePage" element={<WelcomeScreen />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/screenSaver" element={<Screensaver />} />
 
-        <Route path="/newsFeed" element={<News/>}>
-          <Route path="/newsFeed" element={<NewsFeed/>}/>
-          <Route path="/newsFeed/broadcasts" element={<Broadcasts/>} />
-          <Route path="/newsFeed/myPosts" element={<MyPosts/>} />
+        <Route path="/newsFeed" element={<News />}>
+          <Route path="/newsFeed" element={<NewsFeed />} />
+          <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
+          <Route path="/newsFeed/myPosts" element={<MyPosts />} />
         </Route>
-s
-        <Route path="*" element={<NotFound/>}/>
+        
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   )

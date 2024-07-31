@@ -1,9 +1,18 @@
 .container {
-margin: 0 20px 18px 20px;
+  margin-bottom: 18px;
 }
 
 .heading {
   text-align: center;
   color: var(--text-color-light);
-  margin: 20px 0;
+  margin: 60px;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  row-gap: 32px;
+  max-width: 500px;
+  margin: 0 auto;
 }
