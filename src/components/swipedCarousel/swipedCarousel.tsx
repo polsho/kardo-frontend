@@ -28,7 +28,6 @@ export const SwipedCarousel = ({ children }: TSwipedCarouselProps): JSX.Element 
   }
 
   const handleTouchStart: TouchEventHandler<HTMLDivElement> = (e: TouchEvent<HTMLDivElement>) => {
-    e.preventDefault()
     const touchDown = e.touches[0].clientX
     setTouchPosition(touchDown)
   }

@@ -19,6 +19,8 @@
 
   --font-family-heading: 'Grtsk Tera', Arial, sans-serif;
   --font-family-main-text: 'Rubik', Arial, sans-serif;
+
+  --page-sides-padding: 20px;
 }
 
 :global .text_type_main-default {
@@ -84,6 +86,11 @@
   font-weight: 700;
 }
 
+:global .element_beyond_padding {
+  position: relative;
+  width: calc(100% + (2 * var(--page-sides-padding)));
+  right: var(--page-sides-padding);
+}
 
 /*paddings system*/
 
