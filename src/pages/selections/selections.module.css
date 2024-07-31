@@ -1,0 +1,11 @@
+.container {
+    padding: 20px;
+}
+
+.regStatus {
+    color: var(--accent-color);
+}
+
+.stagesByRegions {
+    margin-block-end: 73px;
+}

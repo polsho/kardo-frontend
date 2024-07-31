@@ -23,20 +23,20 @@ export const Profile: React.FC = () => {
         <div className={styles.compCards}>
           <CompetitionCard name="Онлайн отбор на соревнования" url="#" level={0} />
           <CompetitionCard name="Видео-конкурс" url="#" level={0} />
-          <CompetitionCard name="Проекты: Конкурс Росмолодёжь. Гранты" url="#" />
+          <CompetitionCard name="Проекты: Конкурс Росмолодёжь. Гранты" url="https://grants.myrosmol.ru/auth/login" />
           <CompetitionCard
             name="Региональные  отборы"
-            url="#"
+            url="/selections/regional"
             startDate="27.04.2024"
             endDate="10.08.2024" />
           <CompetitionCard
             name="Национальные  отборы"
-            url="#"
+            url="/selections/national"
             startDate="01.01.2024"
             endDate="27.07.2024" />
           <CompetitionCard
             name="Гранд-финал"
-            url="#"
+            url="/selections/final"
             startDate="22.08.2024"
             endDate="25.08.2024" />
         </div>

@@ -17,6 +17,7 @@ import { NotFound } from '../pages/notFound/notFound'
 import { News } from '../pages/news/news'
 import { Broadcasts } from '../pages/broadcasts/broadcasts'
 import { MyPosts } from '../pages/myPosts/myPosts'
+import { Selections } from '../pages/selections/selections'
 
 function App() {
   const location = useLocation()
@@ -32,18 +33,18 @@ function App() {
           <Route path="profileChanges" element={<ProfileChanges />} />
           <Route path="settings" element={<ProfileSettings />} />
         </Route>
+        <Route path="/selections/:type" element={<Selections />} />
         <Route path="/welcomePage" element={<WelcomeScreen />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/screenSaver" element={<Screensaver />} />
-
         <Route path="/newsFeed" element={<News />}>
           <Route path="/newsFeed" element={<NewsFeed />} />
           <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
           <Route path="/newsFeed/myPosts" element={<MyPosts />} />
         </Route>
-        
-        <Route path="*" element={<NotFound />} />
+s
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>
   )
