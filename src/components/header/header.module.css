@@ -1,18 +1,17 @@
 .header {
-    height: 60px;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo{
-    width: 98px;
-    height: 18.8px;
+.logo {
+  width: 98px;
+  height: 18.8px;
 }
 
 .icon {
-    padding: 2px;
-    width: 24px;
-    height: 24px;
+  padding: 2px;
+  width: 24px;
+  height: 24px;
 }

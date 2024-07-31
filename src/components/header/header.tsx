@@ -7,7 +7,7 @@ export const Header = (): JSX.Element => {
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
-        <LogoRectangle/>
+        <LogoRectangle />
       </div>
       <Link to={'/profile'} className={styles.icon}>
         <img src={profileIcon} alt="иконка входа в личный кабинет" />

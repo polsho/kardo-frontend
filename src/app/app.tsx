@@ -43,8 +43,8 @@ function App() {
           <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
           <Route path="/newsFeed/myPosts" element={<MyPosts />} />
         </Route>
-        s
-        <Route path="*" element={<NotFound />} />
+s
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>
   )
