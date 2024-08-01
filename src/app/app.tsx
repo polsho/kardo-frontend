@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './app.css'
+import styles from './app.module.css'
 import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router-dom'
 //   import { useDispatch } from '../../services/store';
 
@@ -18,6 +18,7 @@ import { News } from '../pages/news/news'
 import { Broadcasts } from '../pages/broadcasts/broadcasts'
 import { MyPosts } from '../pages/myPosts/myPosts'
 import { Selections } from '../pages/selections/selections'
+import { Layout } from '../pages/layout/layout'
 
 function App() {
   const location = useLocation()
@@ -25,13 +26,12 @@ function App() {
 
   return (
     <div className={styles.app}>
-      {/* <AppHeader /> */}
       <Routes location={background || location}>
-        <Route path="/main" element={<Main />} />
+        <Route path="/main" element={<Layout><Main /></Layout>} />
         <Route path="/profile">
-          <Route index element={<Profile />} />
+          <Route index element={<Layout header={false}><Profile /></Layout>} />
           <Route path="profileChanges" element={<ProfileChanges />} />
-          <Route path="settings" element={<ProfileSettings />} />
+          <Route path="settings" element={<Layout header={false}><ProfileSettings /></Layout>} />
         </Route>
         <Route path="/selections/:type" element={<Selections />} />
         <Route path="/welcomePage" element={<WelcomeScreen />} />
@@ -43,7 +43,6 @@ function App() {
           <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
           <Route path="/newsFeed/myPosts" element={<MyPosts />} />
         </Route>
-s
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>
