@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './app.css'
+import styles from './app.module.css'
 import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router-dom'
 //   import { useDispatch } from '../../services/store';
 
@@ -19,6 +19,7 @@ import { Broadcasts } from '../pages/broadcasts/broadcasts'
 import { MyPosts } from '../pages/myPosts/myPosts'
 import { Selections } from '../pages/selections/selections'
 import { RequestForReg } from '../pages/requestForReg/requestForReg'
+import { Layout } from '../pages/layout/layout'
 
 function App() {
   const location = useLocation()
@@ -26,27 +27,28 @@ function App() {
 
   return (
     <div className={styles.app}>
-      {/* <AppHeader /> */}
       <Routes location={background || location}>
-        <Route path="/main" element={<Main />} />
+        <Route path="/" element={<Layout><Main /></Layout>} />
+        <Route path="/kardo-frontend" element={<Layout><Main /></Layout>} />
         <Route path="/profile">
-          <Route index element={<Profile />} />
+          <Route index element={<Layout header={false}><Profile /></Layout>} />
           <Route path="profileChanges" element={<ProfileChanges />} />
-          <Route path="settings" element={<ProfileSettings />} />
+          <Route path="settings" element={<Layout header={false}><ProfileSettings /></Layout>} />
         </Route>
         <Route path="/selections/:type" element={<Selections />} />
         <Route path="/requestForReg/:type" element={<RequestForReg />} />
         <Route path="/welcomePage" element={<WelcomeScreen />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Layout header={false} footer={false}><Login /></Layout>} />
+        <Route path="/register" element={<Layout header={false} footer={false}><Register /></Layout>} />
         <Route path="/screenSaver" element={<Screensaver />} />
-        <Route path="/newsFeed" element={<News />}>
-          <Route path="/newsFeed" element={<NewsFeed />} />
+
+        <Route path="/newsFeed" element={<Layout header={false} footer={false}><News /></Layout>}>
+          <Route index element={<NewsFeed />} />
           <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
           <Route path="/newsFeed/myPosts" element={<MyPosts />} />
         </Route>
-        s
-        <Route path="*" element={<NotFound />} />
+
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>
   )

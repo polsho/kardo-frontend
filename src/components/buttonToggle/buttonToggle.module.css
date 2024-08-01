@@ -1,10 +1,8 @@
 .toggle_container {
-  margin: 39px auto 43px;
-  width: 233px;
-  height: 40px;
+  margin: 38px auto 42px;
+  width: 335px;
   padding: 4px;
   display: flex;
-  flex-wrap: wrap;
   background-color: var(--secondary-color-light);
   box-sizing: border-box;
 }
@@ -28,7 +26,7 @@
   border: none;
   padding: 6px 0;
   color: var(--text-color-dark);
-  transition: all 0.8s;
+  transition: all 0.1s;
 }
 
 .toggle_container .toggle input:checked + .title {

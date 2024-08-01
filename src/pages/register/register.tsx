@@ -6,6 +6,7 @@ import { Input } from '../../components/input/input'
 import iconBack from '../../assets/icons/back-icon.svg'
 import { ButtonToggle } from '../../components/buttonToggle/buttonToggle'
 import { Link, useNavigate } from 'react-router-dom'
+import { SubHeader } from '../../components/subHeader/subHeader'
 
 export const Register: React.FC = () => {
 
@@ -34,10 +35,7 @@ export const Register: React.FC = () => {
     <>
       <div className={styles.container_page}>
         <div>
-          <div className={styles.heading_container}>
-            <a onClick={() => navigate(-1)}><img className={styles.icon} src={iconBack} alt="icon-back" /></a>
-            <h1 className={clsx(styles.title, 'text_type_heading-small')}>Привет,&nbsp;Гость!</h1>
-          </div>
+          <SubHeader title="Привет,&nbsp;Гость!" />
 
             <ButtonToggle/>
 

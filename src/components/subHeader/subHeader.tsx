@@ -16,7 +16,7 @@ export const SubHeader = ({ title }: TSubHeaderProps): JSX.Element => {
   return (
     <div className={styles.container}>
       <div onClick={handleClick}>
-        <img className={styles.icon} src={iconBack} alt="icon-back" />
+        <img className={styles.icon} src={iconBack} alt="стрелка вернуться назад" />
       </div>
       <h1 className={clsx(styles.title, 'text_type_heading-small')}>{title}</h1>
     </div>
