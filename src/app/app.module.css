@@ -4,7 +4,8 @@
 }
 
 .app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: var(--background-color-dark);
-  min-height: 100vh;
-  padding: 0 20px;
 }

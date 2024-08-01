@@ -8,6 +8,7 @@ import clsx from 'clsx'
 import { Link, useNavigate } from 'react-router-dom'
 import { Ticker } from '../../components/ticker/ticker'
 import { SwipedCarousel } from '../../components/swipedCarousel/swipedCarousel'
+import { v4 as uuidv4 } from 'uuid';
 
 type statInfo = {
   number: string
@@ -33,7 +34,7 @@ export const Main: React.FC = () => {
 
   return (
     <>
-      <img src={kardoImage} alt="надпись free running на фоне прыгающего мужчины" className={styles.image} />
+      <img className='element_beyond_padding' src={kardoImage} alt="надпись free running на фоне прыгающего мужчины" />
       <div className={styles.mainSection}>
         <div className={styles.header}>
           <h1 className={clsx(styles.title, 'text_type_heading-main')}>кардо [ 7 ]</h1>
@@ -62,11 +63,13 @@ export const Main: React.FC = () => {
           </li>
         </ul>
       </div>
+      <div className='element_beyond_padding'>
       <Ticker text="улица начинается здесь" />
-      <div className={styles.slider}>
+      </div>
+      <div className={clsx(styles.slider, 'element_beyond_padding')}>
         <SwipedCarousel>
           {sliderImages.map(image => {
-            return <img src={image} alt="" className={styles.sliderImage} />
+            return <img src={image} alt="" className={styles.sliderImage} key={uuidv4()} ></img>
           })}
         </SwipedCarousel>
       </div>
@@ -84,7 +87,7 @@ export const Main: React.FC = () => {
         <div className={styles.statSection}>
           {stats.map(stat => {
             return (
-              <div className={clsx(styles.statInfoCard, 'text_type_secondary_small')}>
+              <div className={clsx(styles.statInfoCard, 'text_type_secondary_small')} key={uuidv4()}>
                 <div className={clsx(styles.statNumber, 'text_type_heading-small')}>{stat.number}</div>
                 <div className={styles.statName}>{stat.name}</div>
               </div>

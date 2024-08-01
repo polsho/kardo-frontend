@@ -1,0 +1,16 @@
+.container {
+  height: 100%;
+  flex-grow: 1;
+  overflow: scroll;
+  scrollbar-width: none;
+  padding: 0 var(--page-sides-padding);
+}
+
+.container::-webkit-scrollbar,
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.footer {
+  flex-shrink: 0;
+}
