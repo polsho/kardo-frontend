@@ -38,12 +38,13 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/screenSaver" element={<Screensaver />} />
+
         <Route path="/newsFeed" element={<News />}>
           <Route path="/newsFeed" element={<NewsFeed />} />
           <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
           <Route path="/newsFeed/myPosts" element={<MyPosts />} />
         </Route>
-s
+
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>
