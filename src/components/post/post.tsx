@@ -21,14 +21,14 @@ export const Post = ({photo, video, text, name, date, category}: TPost): JSX.Ele
         <div className={styles.post}>
           <div className={clsx(styles.heading, "text_type_main-default")}>
             <div className={styles.info}>
-              <img className={styles.icon_profile} src={iconProfile} alt="photo User" />
+              <img className={styles.icon_profile} src={iconProfile} alt="фото пользователя" />
               <span>{name}</span>
             </div>
             <span>{date}</span>
           </div>
 
-          {photo ? <img className={styles.media} src={photo} alt="image post" /> :
-            <img className={styles.media} src={video} alt="video post" />}
+          {photo ? <img className={styles.media} src={photo} alt="картинка поста" /> :
+            <img className={styles.media} src={video} alt="видео поста" />}
 
           <span className={clsx(styles.description, 'text_type_main-large')}>{text}</span>
 

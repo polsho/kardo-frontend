@@ -6,7 +6,7 @@ export const LogoRectangle: React.FC = () => {
 
   return (
     <>
-      <img className={styles.logo} src={logoRectangle} alt="icon_Logo_Kardo"/>
+      <img className={styles.logo} src={logoRectangle} alt="лого Кардо"/>
     </>
   )
 }
