@@ -20,7 +20,7 @@ export function TabBarButton({ children, goTo }: TTabBarButtonProps) {
     <div className={styles.container}>
       <button
         className={clsx(styles.button, 'text_type_main-default', {
-          [styles.button_active]: location.pathname.includes(goTo) ? true : false
+          [styles.button_active]: location.pathname === goTo ? true : false
         })}
         onClick={handleClick}>
         {children}

@@ -40,7 +40,7 @@ function App() {
         <Route path="/screenSaver" element={<Screensaver />} />
 
         <Route path="/newsFeed" element={<News />}>
-          <Route path="/newsFeed" element={<NewsFeed />} />
+          <Route index element={<NewsFeed />} />
           <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
           <Route path="/newsFeed/myPosts" element={<MyPosts />} />
         </Route>

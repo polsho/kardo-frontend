@@ -15,10 +15,6 @@ export const Login: React.FC = () => {
     <>
       <div className={styles.container_page}>
         <div>
-          {/*<div className={styles.heading_container}>*/}
-          {/*  <a href="#"><img className={styles.icon} src={iconBack} alt="icon-back" /></a>*/}
-          {/*  <h1 className={clsx(styles.title, 'text_type_heading-small')}>Привет,&nbsp;Гость!</h1>*/}
-          {/*</div>*/}
           <SubHeader title="Привет,&nbsp;Гость!" />
 
           <form className={styles.form} id="login">
