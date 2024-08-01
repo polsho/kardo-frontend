@@ -1,7 +1,7 @@
 {
   "name": "hakaton-kardo-frontend",
   "version": "1.0.0",
-  "homepage": "https://polsho.github.io/polsho / kardo-frontend",
+  "homepage": "https://polsho.github.io/kardo-frontend",
   "description": "hakaton-kardo-frontend",
   "main": "index.js",
   "scripts": {

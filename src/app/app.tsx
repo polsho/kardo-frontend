@@ -27,7 +27,7 @@ function App() {
   return (
     <div className={styles.app}>
       <Routes location={background || location}>
-        <Route path="/main" element={<Layout><Main /></Layout>} />
+        <Route path="/" element={<Layout><Main /></Layout>} />
         <Route path="/profile">
           <Route index element={<Layout header={false}><Profile /></Layout>} />
           <Route path="profileChanges" element={<ProfileChanges />} />
@@ -40,7 +40,7 @@ function App() {
         <Route path="/screenSaver" element={<Screensaver />} />
 
         <Route path="/newsFeed" element={<News />}>
-          <Route path="/newsFeed" element={<NewsFeed />} />
+          <Route index element={<NewsFeed />} />
           <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
           <Route path="/newsFeed/myPosts" element={<MyPosts />} />
         </Route>
