@@ -35,14 +35,16 @@ function App() {
         </Route>
         <Route path="/selections/:type" element={<Selections />} />
         <Route path="/welcomePage" element={<WelcomeScreen />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Layout header={false} footer={false}><Login /></Layout>} />
         <Route path="/register" element={<Register />} />
         <Route path="/screenSaver" element={<Screensaver />} />
+
         <Route path="/newsFeed" element={<News />}>
           <Route path="/newsFeed" element={<NewsFeed />} />
           <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
           <Route path="/newsFeed/myPosts" element={<MyPosts />} />
         </Route>
+
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>

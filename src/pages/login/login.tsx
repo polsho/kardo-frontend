@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { Button } from '../../components/button/button'
 import { Input } from '../../components/input/input'
 import iconBack from '../../assets/icons/back-icon.svg'
+import { SubHeader } from '../../components/subHeader/subHeader'
 
 export const Login: React.FC = () => {
   const [email, setEmail] = useState('')
@@ -14,10 +15,11 @@ export const Login: React.FC = () => {
     <>
       <div className={styles.container_page}>
         <div>
-          <div className={styles.heading_container}>
-            <a href="#"><img className={styles.icon} src={iconBack} alt="icon-back" /></a>
-            <h1 className={clsx(styles.title, 'text_type_heading-small')}>Привет,&nbsp;Гость!</h1>
-          </div>
+          {/*<div className={styles.heading_container}>*/}
+          {/*  <a href="#"><img className={styles.icon} src={iconBack} alt="icon-back" /></a>*/}
+          {/*  <h1 className={clsx(styles.title, 'text_type_heading-small')}>Привет,&nbsp;Гость!</h1>*/}
+          {/*</div>*/}
+          <SubHeader title="Привет,&nbsp;Гость!" />
 
           <form className={styles.form} id="login">
 
