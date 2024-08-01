@@ -4,6 +4,7 @@ import { SubHeader } from '../../components/subHeader/subHeader'
 import { useNavigate, useParams } from 'react-router-dom'
 import clsx from 'clsx'
 import { Button } from '../../components/button/button'
+import { StageCard } from '../../components/stageCard/stageCard'
 
 type TSelectionsProps = {
   // compName: string;
@@ -29,23 +30,36 @@ export const Selections: FC<TSelectionsProps> = () => {
     <>
       <SubHeader title={selectionsTypes[selectionType]} />
       <div className={styles.container}>
-        <p className={clsx(styles.regStatus, 'text_type_secondary_main')}>
-          {`Регистрация ${isRegOpened ? 'открыта' : 'закрыта'}!`}
-        </p>
-        <div className={styles.stages}>
-          {selectionType === 'regional' && 
-            <>
-              <h2 className='text_type_secondary_small'>Региональные этапы (Российская Федерация)</h2>
-              <ul className={clsx(styles.stagesList, 'text_type_main-default')}>  
+        {(selectionType === 'regional' || selectionType === 'national') && (
+          <>
+            <p className={clsx(styles.regStatus, 'text_type_secondary_main')}>
+              {`Регистрация ${isRegOpened ? 'открыта' : 'закрыта'}!`}
+            </p>
+            <div className={styles.stages}>
+              <h2 className="text_type_secondary_small">Региональные этапы (Российская Федерация)</h2>
+              <ul className={clsx(styles.stagesList, 'text_type_main-default')}>
                 <li>Владимирская область, Владимир (25.05.24)</li>
                 <li>Московская область, Дмитров (14.07.24)</li>
               </ul>
-            </>
-          }
-        </div>
-        <Button isDisabled={!isRegOpened} onClick={() => {navigate(`/requestForReg/${selectionType}`)}}>
-            Подать Заявку
-        </Button>
+            </div>
+            <Button
+              isDisabled={!isRegOpened}
+              onClick={() => {
+                navigate(`/requestForReg/${selectionType}`)
+              }}>
+              Подать Заявку
+            </Button>
+          </>
+        )}
+        {(selectionType === 'online' || selectionType === 'video') && (
+          <>
+            <StageCard
+              status="Завершен"
+              name="Регистрация"
+              startDate="07.02.2024"
+              endDate="17.04.2024"></StageCard>
+          </>
+        )}
       </div>
     </>
   )
