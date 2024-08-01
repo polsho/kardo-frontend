@@ -4,20 +4,6 @@
   justify-content: space-between;
 }
 
-.heading_container {
-  margin: 72px auto 34px;
-  width: 335px;
-  position: relative;
-}
-
-.icon {
-  position: absolute;
-  top: -6px;
-  left: 6px;
-  width: 40px;
-  height: 40px;
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -27,11 +13,6 @@
 
 .passwordContainer {
   position: relative;
-}
-
-.title {
-  text-align: center;
-  color: var(--text-color-light);
 }
 
 .topLineInfo {
