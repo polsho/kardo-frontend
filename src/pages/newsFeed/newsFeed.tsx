@@ -7,21 +7,33 @@ import linkVideo from '../../assets/images/video-post.png'
 export const NewsFeed: React.FC = () => {
 
   // const iconProfile: string = iconProfile; Добавить переменную, когда апи будут готовы
-  const photo = linkPhoto;
-  const video = linkVideo;
-  const text = "Длинное название для поста, которое можно сделать в две строчки, но не больше";
-  const name = "Иван Иванов";
-  const date = "19.07.2024";
-  const category = "Kickscootering";
+
+  const posts = [
+    {
+      url: linkPhoto,
+      text: 'Длинное название для поста, которое можно сделать в две строчки, но не больше',
+      name: 'Иван Иванов1',
+      date: '19.07.2024',
+      category: 'Kickscootering'
+    },
+    {
+      url: linkVideo,
+      text: 'Длинное название для поста, которое можно сделать в две строчки, но не больше',
+      name: 'Иван Иванов2',
+      date: '19.07.2024',
+      category: 'Kickscootering'
+    }
+  ]
+
 
   return (
     <div className={styles.container}>
-      <p className={styles.heading}>Общая лента новостей</p>
 
       <div className={styles.posts}>
-        <Post video={video} text={text} name={name} date={date} category={category}/>
-        <Post photo={photo} text={text} name={name} date={date} category={category}/>
-        <Post photo={photo} text={text} name={name} date={date} category={category}/>
+        {
+          posts.map(post => <Post url={post.url} name={post.name} date={post.date} category={post.category} text={post.text} />)
+        }
+
       </div>
     </div>
   )

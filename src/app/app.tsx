@@ -28,6 +28,7 @@ function App() {
     <div className={styles.app}>
       <Routes location={background || location}>
         <Route path="/" element={<Layout><Main /></Layout>} />
+        <Route path="/kardo-frontend" element={<Layout><Main /></Layout>} />
         <Route path="/profile">
           <Route index element={<Layout header={false}><Profile /></Layout>} />
           <Route path="profileChanges" element={<ProfileChanges />} />
@@ -36,10 +37,10 @@ function App() {
         <Route path="/selections/:type" element={<Selections />} />
         <Route path="/welcomePage" element={<WelcomeScreen />} />
         <Route path="/login" element={<Layout header={false} footer={false}><Login /></Layout>} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Layout header={false} footer={false}><Register /></Layout>} />
         <Route path="/screenSaver" element={<Screensaver />} />
 
-        <Route path="/newsFeed" element={<News />}>
+        <Route path="/newsFeed" element={<Layout header={false} footer={false}><News /></Layout>}>
           <Route index element={<NewsFeed />} />
           <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
           <Route path="/newsFeed/myPosts" element={<MyPosts />} />

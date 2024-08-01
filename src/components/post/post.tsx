@@ -6,15 +6,14 @@ import like from '../../assets/icons/like.svg'
 import dislike from '../../assets/icons/dislike.svg'
 
 type TPost = {
-  photo?: string,
-  video?: string,
+  url?: string,
   text?: string,
   name?: string,
   date?: string,
   category?: string
 }
 
-export const Post = ({photo, video, text, name, date, category}: TPost): JSX.Element => {
+export const Post: React.FC<TPost> = ({url, text, name, date, category}: TPost) => {
 
   return (
     <>
@@ -27,8 +26,8 @@ export const Post = ({photo, video, text, name, date, category}: TPost): JSX.Ele
             <span>{date}</span>
           </div>
 
-          {photo ? <img className={styles.media} src={photo} alt="картинка поста" /> :
-            <img className={styles.media} src={video} alt="видео поста" />}
+          {url ? <img className={styles.media} src={url} alt="картинка поста" /> :
+            <img className={styles.media} src={url} alt="видео поста" />}
 
           <span className={clsx(styles.description, 'text_type_main-large')}>{text}</span>
 
