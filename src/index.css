@@ -87,6 +87,7 @@
 }
 
 :global .element_beyond_padding {
+  /* box-sizing: border-box; */
   position: relative;
   width: calc(100% + (2 * var(--page-sides-padding)));
   right: var(--page-sides-padding);
