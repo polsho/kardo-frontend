@@ -30,13 +30,12 @@ function App() {
   return (
     <div className={styles.app}>
       <Routes location={background || location}>
-        <Route path="/main" element={<Layout><Main /></Layout>} />
-        <Route path="/kardo-frontend" element={<Layout><Main /></Layout>} />
+        <Route path="/" element={<Layout><Main /></Layout>} />
 
         <Route path="/profile">
           <Route index element={<Layout header={false}><Profile /></Layout>} />
-          <Route path="profileChanges" element={<Layout header={false}><ProfileChanges /></Layout>} />
-          <Route path="settings" element={<Layout header={false}><ProfileSettings /></Layout>} />
+          <Route path="/profileChanges" element={<Layout header={false}><ProfileChanges /></Layout>} />
+          <Route path="/settings" element={<Layout header={false}><ProfileSettings /></Layout>} />
         </Route>
 
         <Route path="/requestForReg/:type" element={<RequestForReg />} />
