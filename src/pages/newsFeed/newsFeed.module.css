@@ -16,3 +16,20 @@
   max-width: 500px;
   margin: 0 auto;
 }
+
+.category_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px;
+  margin: 34px 0 32px;
+}
+
+.category {
+  padding: 8px;
+  max-width: max-content;
+  border: 1px solid var(--secondary-color-dark);
+  color: var(--secondary-color-dark);
+  border-radius: 4px;
+}

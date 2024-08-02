@@ -96,13 +96,13 @@ export const Register: React.FC = () => {
                      setPublicLink(event.target.value)
                    }} />
 
-            <Link to='/login'>
+            {/*<Link to='/login'>*/}
               <div className={styles.button_container}>
-                <Button form="login" type="submit">
+                <Button form="login" type="submit" onClick={() => submitForm}>
                   Зарегистироваться
                 </Button>
               </div>
-            </Link>
+            {/*</Link>*/}
 
           </form>
 
