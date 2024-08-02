@@ -3,16 +3,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 var(--page-sides-padding);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: calc(100% - var(--page-sides-padding) * 2);
 }
 
 .logo {
   width: 98px;
-  height: 18.8px;
+  /*height: 18.8px;*/
 }
 
 .icon {
-  padding: 2px;
-  width: 24px;
+  /*padding: 2px;*/
+  /*width: 24px;*/
   height: 24px;
 }

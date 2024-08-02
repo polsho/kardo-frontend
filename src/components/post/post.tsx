@@ -5,7 +5,7 @@ import clsx from 'clsx'
 import like from '../../assets/icons/like.svg'
 import dislike from '../../assets/icons/dislike.svg'
 
-type TPost = {
+export type TPost = {
   url?: string,
   text?: string,
   name?: string,

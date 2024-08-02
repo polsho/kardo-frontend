@@ -20,6 +20,8 @@ import { MyPosts } from '../pages/myPosts/myPosts'
 import { Selections } from '../pages/selections/selections'
 import { RequestForReg } from '../pages/requestForReg/requestForReg'
 import { Layout } from '../pages/layout/layout'
+import { CreatePost } from '../pages/createPost/createPost'
+import { RegisterDone } from '../pages/registerDone/registerDone'
 
 function App() {
   const location = useLocation()
@@ -28,24 +30,30 @@ function App() {
   return (
     <div className={styles.app}>
       <Routes location={background || location}>
-        <Route path="/" element={<Layout><Main /></Layout>} />
+        <Route path="/main" element={<Layout><Main /></Layout>} />
         <Route path="/kardo-frontend" element={<Layout><Main /></Layout>} />
+
         <Route path="/profile">
           <Route index element={<Layout header={false}><Profile /></Layout>} />
           <Route path="profileChanges" element={<Layout header={false}><ProfileChanges /></Layout>} />
           <Route path="settings" element={<Layout header={false}><ProfileSettings /></Layout>} />
         </Route>
+
         <Route path="/requestForReg/:type" element={<RequestForReg />} />
         <Route path="/selections/:type" element={<Layout><Selections /></Layout>} />
         <Route path="/welcomePage" element={<WelcomeScreen />} />
         <Route path="/login" element={<Layout header={false} footer={false}><Login /></Layout>} />
         <Route path="/register" element={<Layout header={false} footer={false}><Register /></Layout>} />
+        <Route path="/register/done" element={<Layout header={false} footer={false}><RegisterDone /></Layout>} />
         <Route path="/screenSaver" element={<Screensaver />} />
+
         <Route path="/newsFeed" element={<Layout><News /></Layout>}>
           <Route index element={<NewsFeed />} />
           <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
           <Route path="/newsFeed/myPosts" element={<MyPosts />} />
+          <Route path="/newsFeed/myPosts/createPost" element={<CreatePost />} />
         </Route>
+
 
         <Route path="*" element={<NotFound/>}/>
       </Routes>
