@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .app {
@@ -8,5 +9,4 @@
   display: flex;
   flex-direction: column;
   background-color: var(--background-color-dark);
-  padding: 60px var(--page-sides-padding);
 }
