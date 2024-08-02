@@ -31,16 +31,15 @@ function App() {
         <Route path="/kardo-frontend" element={<Layout><Main /></Layout>} />
         <Route path="/profile">
           <Route index element={<Layout header={false}><Profile /></Layout>} />
-          <Route path="profileChanges" element={<ProfileChanges />} />
+          <Route path="profileChanges" element={<Layout header={false}><ProfileChanges /></Layout>} />
           <Route path="settings" element={<Layout header={false}><ProfileSettings /></Layout>} />
         </Route>
-        <Route path="/selections/:type" element={<Selections />} />
+        <Route path="/selections/:type" element={<Layout><Selections /></Layout>} />
         <Route path="/welcomePage" element={<WelcomeScreen />} />
         <Route path="/login" element={<Layout header={false} footer={false}><Login /></Layout>} />
         <Route path="/register" element={<Layout header={false} footer={false}><Register /></Layout>} />
         <Route path="/screenSaver" element={<Screensaver />} />
-
-        <Route path="/newsFeed" element={<Layout header={false} footer={false}><News /></Layout>}>
+        <Route path="/newsFeed" element={<Layout><News /></Layout>}>
           <Route index element={<NewsFeed />} />
           <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
           <Route path="/newsFeed/myPosts" element={<MyPosts />} />
