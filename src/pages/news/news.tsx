@@ -11,14 +11,12 @@ export const News: React.FC = () => {
 
   return (
     <>
-      <Header />
       <SubHeader title="Лента" />
       <TabBar />
 
       <div>
         <Outlet />
       </div>
-      <Footer />
     </>
   )
 }
