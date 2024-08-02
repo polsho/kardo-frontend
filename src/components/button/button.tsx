@@ -4,11 +4,12 @@ import clsx from 'clsx'
 
 type TButton = {
   children: ReactNode;
+  isDisabled?: boolean;  
 }
 
-export const Button = ({children, type}: ButtonHTMLAttributes<HTMLButtonElement> & TButton): JSX.Element => {
+export const Button = ({children, isDisabled, onClick, type}: ButtonHTMLAttributes<HTMLButtonElement> & TButton): JSX.Element => {
 
   return (
-    <button className={clsx(styles.button, "text_type_main-large")} type={type}>{children}</button>
+    <button className={clsx(styles.button, "text_type_main-large")} type={type} disabled={isDisabled} onClick={onClick}>{children}</button>
   );
 }

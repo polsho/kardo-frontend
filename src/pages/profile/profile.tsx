@@ -21,8 +21,8 @@ export const Profile: React.FC = () => {
       <div className={styles.container}>
         <SubMenu links={navLinks} />
         <div className={styles.compCards}>
-          <CompetitionCard name="Онлайн отбор на соревнования" url="#" level={0} />
-          <CompetitionCard name="Видео-конкурс" url="#" level={0} />
+          <CompetitionCard name="Онлайн отбор на соревнования" url="/selections/online" level={0} />
+          <CompetitionCard name="Видео-конкурс" url="/selections/video" level={0} />
           <CompetitionCard name="Проекты: Конкурс Росмолодёжь. Гранты" url="https://grants.myrosmol.ru/auth/login" />
           <CompetitionCard
             name="Региональные  отборы"

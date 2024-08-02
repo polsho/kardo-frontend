@@ -18,6 +18,7 @@ import { News } from '../pages/news/news'
 import { Broadcasts } from '../pages/broadcasts/broadcasts'
 import { MyPosts } from '../pages/myPosts/myPosts'
 import { Selections } from '../pages/selections/selections'
+import { RequestForReg } from '../pages/requestForReg/requestForReg'
 import { Layout } from '../pages/layout/layout'
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="profileChanges" element={<Layout header={false}><ProfileChanges /></Layout>} />
           <Route path="settings" element={<Layout header={false}><ProfileSettings /></Layout>} />
         </Route>
+        <Route path="/requestForReg/:type" element={<RequestForReg />} />
         <Route path="/selections/:type" element={<Layout><Selections /></Layout>} />
         <Route path="/welcomePage" element={<WelcomeScreen />} />
         <Route path="/login" element={<Layout header={false} footer={false}><Login /></Layout>} />

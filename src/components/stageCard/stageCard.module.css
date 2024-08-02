@@ -1,0 +1,35 @@
+.container {
+  width: 266px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: start;
+  background-color: var(--background-color-light);
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  padding: 12px 14px;
+}
+
+.status {
+  color: var(--service-color-success);
+}
+
+.title {
+  color: var(--text-color-dark);
+}
+
+.dates {
+  color: var(--secondary-color-dark);
+}
+
+.dates > * {
+  display: block;
+}
+
+.linkToTask:link {
+  align-self: flex-end;
+  color: var(--accent-color);
+  line-height: 1.4;
+  font-size: medium;
+}
