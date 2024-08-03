@@ -3,6 +3,7 @@
     min-height: 158px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border: 1px solid var(--accent-color);
     border-radius: 4px;
     background-color: var(--background-color-light);
@@ -15,7 +16,7 @@
 }
 
 .dates {
-    padding: 20px 8px;
+    padding: 0 8px 57px;
     color: var(--secondary-color-dark);
 }
 
@@ -24,9 +25,7 @@
 }
 
 .level {
-    --block-padding: 12px;
-    height: calc(56px - (2 * var(--block-padding)));
-    padding: var(--block-padding) 8px;
+    padding: 12px 20px 27px 8px;
     margin-top: auto;
     background-color: var(--accent-color);
     color: var(--text-color-light);
