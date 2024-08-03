@@ -6,9 +6,9 @@ import { LogoRectangle } from '../logoRectangle/logoRectangle'
 export const Header = (): JSX.Element => {
   return (
     <div className={styles.header}>
-      <div className={styles.logo}>
+      <Link to={'/'} className={styles.logo}>
         <LogoRectangle />
-      </div>
+      </Link>
       <Link to={'/profile'} className={styles.icon}>
         <img src={profileIcon} alt="иконка входа в личный кабинет" />
       </Link>
