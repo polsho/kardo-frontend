@@ -16,10 +16,17 @@ export function FooterButton({ children, icon, goTo }: TFooterButtonProps) {
     navigate(goTo)
   }
 
+  let isButtonActive: boolean = false;
+  if (goTo === '/') {
+    isButtonActive = location.pathname.endsWith(goTo)
+  } else {
+    isButtonActive = location.pathname.includes(goTo)
+  }
+
   return (
     <button
       className={clsx(styles.button, "text_type_main-small", {
-        [styles.button_active]: location.pathname.includes(goTo) ? true : false
+        [styles.button_active]: isButtonActive
       })}
       onClick={handleClick}>
       <img src={icon} alt="иконка" className={styles.icon} />
