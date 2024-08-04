@@ -14,7 +14,7 @@ export const News: React.FC = () => {
       <SubHeader title="Лента" />
       <TabBar />
 
-      <div>
+      <div className={styles.container}>
         <Outlet />
       </div>
     </>
