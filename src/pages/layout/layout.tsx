@@ -4,6 +4,7 @@ import styles from './layout.module.css'
 import { Button } from '../../components/button/button'
 import { Header } from '../../components/header/header'
 import { Footer } from '../../components/footer/footer'
+import clsx from 'clsx'
 
 type TLayoutProps = {
   children: ReactNode
@@ -19,7 +20,7 @@ export const Layout: FC<TLayoutProps> = ({ children, header = true, footer = tru
           <Header />
         </div>
       )}
-      <main className={styles.container}>{children}</main>
+      <main className={clsx(styles.container, {[styles.noHeader]: !header})}>{children}</main>
       {footer && (
         <div className={styles.footer}>
           <Footer />

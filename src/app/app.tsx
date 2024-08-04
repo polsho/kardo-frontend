@@ -22,6 +22,7 @@ import { RequestForReg } from '../pages/requestForReg/requestForReg'
 import { Layout } from '../pages/layout/layout'
 import { CreatePost } from '../pages/createPost/createPost'
 import { RegisterDone } from '../pages/registerDone/registerDone'
+import { Tasks } from '../pages/tasks/tasks'
 
 function App() {
   const location = useLocation()
@@ -40,6 +41,7 @@ function App() {
 
         <Route path="/requestForReg/:type" element={<RequestForReg />} />
         <Route path="/selections/:type" element={<Layout><Selections /></Layout>} />
+        <Route path="/tasks/:id" element={<Layout><Tasks /></Layout>} />
         <Route path="/welcomePage" element={<WelcomeScreen />} />
         <Route path="/login" element={<Layout header={false} footer={false}><Login /></Layout>} />
         <Route path="/register" element={<Layout header={false} footer={false}><Register /></Layout>} />

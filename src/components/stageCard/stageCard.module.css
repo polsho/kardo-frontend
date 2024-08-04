@@ -1,5 +1,5 @@
 .container {
-  width: 266px;
+  width: clamp(16.625rem, 0.4718rem + 68.9202vw, 62.5rem);
   height: 150px;
   display: flex;
   flex-direction: column;
@@ -27,8 +27,11 @@
   display: block;
 }
 
-.linkToTask:link {
+.link {
   align-self: flex-end;
+}
+
+.linkToTask {
   color: var(--accent-color);
   line-height: 1.4;
   font-size: medium;
