@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export function Footer() {
   const footerButtons: string[] = ['Главная', 'Лента', 'Эвенты', 'Конкурсы', 'Еще']
-  const paths: string[] = ['/main', '/newsFeed', '/events', '/contest', '/more']
+  const paths: string[] = ['/', '/newsFeed', '/events', '/contest', '/more']
 
   return (
     <div className={styles.container}>

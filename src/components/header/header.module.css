@@ -1,21 +1,19 @@
 .header {
+  width: 100vw;
   height: 60px;
+  padding: 0 var(--page-sides-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  z-index: 100;
-  width: calc(100% - var(--page-sides-padding) * 2);
+  background-color: var(--background-color-dark);
 }
 
 .logo {
   width: 98px;
-  /*height: 18.8px;*/
 }
 
 .icon {
-  /*padding: 2px;*/
-  /*width: 24px;*/
+  padding: 2px;
+  width: 24px;
   height: 24px;
 }

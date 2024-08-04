@@ -14,7 +14,11 @@ type TLayoutProps = {
 export const Layout: FC<TLayoutProps> = ({ children, header = true, footer = true }) => {
   return (
     <>
-      {header && <Header />}
+      {header && (
+        <div className={styles.header}>
+          <Header />
+        </div>
+      )}
       <main className={styles.container}>{children}</main>
       {footer && (
         <div className={styles.footer}>
