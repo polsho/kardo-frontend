@@ -8,17 +8,17 @@ type TDirectionCheckProps = {
 }
 
 
-  export const DirectionCheck = ({onChange, id, name, value, option}: InputHTMLAttributes<HTMLInputElement> & TDirectionCheckProps): JSX.Element => {
+  export const DirectionCheck = ({onChange, id, value, option}: InputHTMLAttributes<HTMLInputElement> & TDirectionCheckProps): JSX.Element => {
   
     return (
        <div className={styles.container}>
+        <label className={clsx(styles.label, "text_type_secondary_main")} htmlFor={option}>{option}</label>
         <input
           className={clsx(styles.input, "text_type_main-default")}
           id={id}
-          type="checkbox" name={name}
+          type="checkbox" name={option}
+          value={value}
           onChange={onChange} />
- 
-        <label className={clsx(styles.label, "text_type_secondary_main")} htmlFor={option}>{option}</label>
       </div>
     );
   }

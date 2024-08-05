@@ -29,7 +29,7 @@ export const RequestForReg: FC = () => {
   const [cityStage, setCityStage] = useState(options[0])
   const [isHidden, setIsHidden] = useState(false)
 
-  const [directions, setDirections] =useState([''])
+  const [directions, setDirections] =useState<string[]>(['breaking', 'parkour'])
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [patronymicName, setPatronymicName] = useState('')
@@ -42,6 +42,32 @@ export const RequestForReg: FC = () => {
 
   function handleCItyStageChange(event: React.ChangeEvent<HTMLSelectElement>) {
     setCityStage(event.target.value)
+  }
+
+  function handleChecked(event: React.ChangeEvent<HTMLInputElement>) {
+    if (!event.target.checked) {
+
+      setDirections(cur => cur.filter((d) => d !== event.target.name))
+    }
+    console.log(directions)
+    
+
+
+    
+    // if (event.target.checked) {
+    //   if (directions.length < 2) {
+    //     directions.push(event.target.name)
+    //     setDirections(directions)
+    //     console.log(directions)
+    //   } else {
+    //     event.target.checked = false;
+    //     alert('Больше двух направлений выбрать нельзя')
+    //   }
+    // } else {
+    //   console.log(directions.indexOf(event.target.name))
+    //   setDirections(directions.splice(directions.indexOf(event.target.name), 1))
+    //   console.log(directions)
+    // }
   }
 
   function handleNextButton() {
@@ -76,9 +102,9 @@ export const RequestForReg: FC = () => {
         <div className={clsx(styles.directionChoice, {[styles.hidden]: isHidden})}>
           <h3 className={clsx(styles.directionChoiceTitle, 'text_type_secondary_main')}>Направления</h3>
           <form className={styles.checkboxes} id='direction'>
-            {Object.keys(Directions).map((d) => {
+            {Object.values(Directions).map((d) => {
               return (
-                <DirectionCheck option={d.toString()} key={uuidv4()}></DirectionCheck>
+                <DirectionCheck option={d.toString()} key={uuidv4()} onChange={handleChecked}></DirectionCheck>
               )
             })}
           </form>
