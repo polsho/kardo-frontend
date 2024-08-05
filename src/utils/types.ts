@@ -19,3 +19,16 @@ export type TCompetition = {
     stages: TStage[]
     description?: string
   }
+
+export enum Directions {
+  breaking = 'breaking',
+  parkour = 'parkour',
+  workout = 'workout',
+  kickscootering = 'kickscootering',
+  tricking = 'tricking',
+  skateboarding = 'skateboarding',
+  bmx = 'bmx',
+  hipHop = 'hip-hop',
+  djIng = 'dj-ing',
+  graffiti = 'graffiti'
+}

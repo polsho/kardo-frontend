@@ -1,0 +1,16 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.input {
+}
+
+.label {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: var(--background-color-cards);
+    border-radius: 4px;
+
+}

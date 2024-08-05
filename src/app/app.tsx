@@ -39,7 +39,7 @@ function App() {
           <Route path="settings" element={<Layout header={false}><ProfileSettings /></Layout>} />
         </Route>
 
-        <Route path="/requestForReg/:type" element={<RequestForReg />} />
+        <Route path="/requestForReg/:type" element={<Layout><RequestForReg /></Layout>} />
         <Route path="/selections/:type" element={<Layout><Selections /></Layout>} />
         <Route path="/tasks/:id" element={<Layout><Tasks /></Layout>} />
         <Route path="/welcomePage" element={<WelcomeScreen />} />
