@@ -11,7 +11,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   scrollbar-width: none;
-  padding: 60px var(--page-sides-padding);
+  padding: 60px var(--page-sides-padding) 85.4px;
 }
 
 .noHeader {
