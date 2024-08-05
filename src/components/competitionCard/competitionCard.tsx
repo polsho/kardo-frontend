@@ -1,28 +1,34 @@
 import styles from './competitionCard.module.css'
 import { Link, useNavigate } from 'react-router-dom'
 import clsx from 'clsx'
+import { TCompetition } from '../../utils/types'
 
-type TCompetirionCardProps = {
-  name: string
-  url: string
-  startDate?: string
-  endDate?: string
-  level?: number
+type TCompetitionCardProps = {
+  competitionData: Omit<TCompetition, "stages">
+  // name: string
+  // url: string
+  // startDate?: string
+  // endDate?: string
+  // level?: number
 }
 
 export const CompetitionCard = ({
-  name,
-  url,
-  startDate,
-  endDate,
-  level
-}: TCompetirionCardProps): JSX.Element => {
+  // name,
+  // url,
+  // startDate,
+  // endDate,
+  // level
+  competitionData
+}: TCompetitionCardProps): JSX.Element => {
   const navigate = useNavigate()
+
+  const {type, name, url, startDate, endDate, level } = competitionData
+
   function handleClick() {
-    if (url.startsWith('http')) {
+    if (url?.startsWith('http')) {
       window.open(url, '_blank')
     } else {
-      navigate(url)
+      navigate(`/selections/${type}`)
     }
   }
   return (

@@ -1,5 +1,6 @@
 .header {
   width: 100vw;
+  max-width: 1440px;
   height: 60px;
   padding: 0 var(--page-sides-padding);
   display: flex;

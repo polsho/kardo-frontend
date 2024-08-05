@@ -1,18 +1,15 @@
 import styles from './stageCard.module.css'
 import { Link, useNavigate } from 'react-router-dom'
 import clsx from 'clsx'
-
-type TStageStatus = 'Завершен' | 'В ожидании'
+import { TStageStatus, TStage } from '../../utils/types'
 
 type TStageCardProps = {
-  status: TStageStatus
-  name: string
-  startDate?: string
-  endDate?: string
-  tasksId?: string
+  stageData: TStage
 }
 
-export const StageCard = ({ status, name, startDate, endDate, tasksId }: TStageCardProps): JSX.Element => {
+export const StageCard = ({ stageData }: TStageCardProps): JSX.Element => {
+
+  const {status, name, startDate, endDate, tasksId} = stageData
   const navigate = useNavigate()
 
   return (
@@ -24,7 +21,13 @@ export const StageCard = ({ status, name, startDate, endDate, tasksId }: TStageC
         <span>Начало: {startDate}</span>
         <span>Конец: {endDate}</span>
       </div>
-      <Link className={clsx(styles.linkToTask, 'text_type_main-default')} to={`tasks/${tasksId}`}>Посмотреть задание</Link>
+      <div className={clsx(styles.link)}>
+      <Link to={`/tasks/${tasksId}`}>
+        <span className={clsx(styles.linkToTask, 'text_type_main-default')}>
+          {`Посмотреть задание ⟶`}
+        </span>
+      </Link>
+      </div>
     </div>
   )
 }
