@@ -1,13 +1,46 @@
+.deleteButton {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  color: var(--service-color-error);
+  background-color: var(--background-color-cards);
+  border: none;
+  border-radius: 4px;
+  width: 212px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: 0.3s ease-out;
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 .post {
   display: flex;
   flex-direction: column;
   min-width: 335px;
   gap: 12px;
+  position: relative;
 }
 
 .icon_profile {
   width: 29px;
   height: 29px;
+}
+
+.date {
+  color: var(--secondary-color-dark);
 }
 
 .heading {
@@ -50,6 +83,7 @@
 .category {
   padding: 8px;
   background-color: var(--background-color-cards);
+  border-radius: 4px;
 }
 
 .reactions {
@@ -58,21 +92,20 @@
   gap: 8px;
 }
 
-.like_container {
-  background-color: var(--background-color-cards);
+.actions_container {
   display: flex;
   flex-direction: row;
   gap: 8px;
   align-items: center;
-  padding: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.like_container {
+  background-color: var(--background-color-cards);
 }
 
 .dislike_container {
   background-color: var(--background-color-cards);
   color: var(--text-color-light);
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: center;
-  padding: 8px;
 }

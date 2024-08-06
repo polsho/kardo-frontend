@@ -109,7 +109,7 @@ export const MyPosts: React.FC = () => {
   }
 
   return (
-    <>
+    <div className={styles.page_container}>
       <div className={clsx(styles.category_container, 'text_type_main-default')}>
         <div className={styles.category}>Все</div>
 
@@ -117,22 +117,20 @@ export const MyPosts: React.FC = () => {
                                         key={post.id}>{post.category}</div>)}
       </div>
 
-      <div className={styles.container}>
         <div className={styles.posts}>
           {
             Allposts.map(post => <Post url={post.url} name={post.name} date={post.date} category={post.category}
                                        text={post.text} key={post.id} />)
           }
         </div>
-      </div>
 
       <div className={styles.button_container}>
-        <Button onClick={() => {
-          navigate(`/newsFeed/myPosts/createPost}`)
+        <Button className={styles.button} onClick={() => {
+          navigate(`/newsFeed/myPosts/createPost`)
         }}>
           Создать публикацию
         </Button>
       </div>
-    </>
+    </div>
   )
 }

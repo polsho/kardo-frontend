@@ -55,7 +55,6 @@ function App() {
           <Route path="/newsFeed/myPosts/createPost" element={<CreatePost />} />
         </Route>
 
-
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>
