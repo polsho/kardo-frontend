@@ -1,4 +1,4 @@
-.button{
+.deleteButton {
   position: absolute;
   top: 35px;
   right: 0;
@@ -12,21 +12,26 @@
   align-items: center;
   gap: 8px;
   padding: 4px 8px;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: 0.3s ease-out;
 }
 
 .active {
-  color: #0fdb5a;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.inactive {
-  color: #bfbfbf;
-}
 
 .post {
   display: flex;
   flex-direction: column;
   min-width: 335px;
   gap: 12px;
+  position: relative;
 }
 
 .icon_profile {

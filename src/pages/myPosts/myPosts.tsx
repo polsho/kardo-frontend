@@ -126,7 +126,7 @@ export const MyPosts: React.FC = () => {
 
       <div className={styles.button_container}>
         <Button className={styles.button} onClick={() => {
-          navigate(`/newsFeed/myPosts/createPost}`)
+          navigate(`/newsFeed/myPosts/createPost`)
         }}>
           Создать публикацию
         </Button>
