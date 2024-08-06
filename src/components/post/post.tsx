@@ -19,7 +19,7 @@ export type TPost = {
 
 export const Post: React.FC<TPost> = ({url, text, name, date, category}: TPost) => {
 
-  const [isActive, setIsActive] = useState(false);
+  const [isActiveDeleteButton, setIsActiveDeleteButton] = useState(false);
   // const dispatch = useDispatch();
 
 
@@ -30,7 +30,7 @@ export const Post: React.FC<TPost> = ({url, text, name, date, category}: TPost) 
   return (
     <>
       <div className={styles.post}>
-        <button className={clsx(styles.deleteButton, isActive && styles.active)}
+        <button className={clsx(styles.deleteButton, isActiveDeleteButton && styles.active)}
                 onClick={() => deletePost()}>
           <img src={bin} alt="иконка корзина" />
           <span className='text_type_main-large'>Удалить публикацию</span>
@@ -44,7 +44,7 @@ export const Post: React.FC<TPost> = ({url, text, name, date, category}: TPost) 
 
           <div className={styles.info}>
             <span className={styles.date}>{date}</span>
-            <div onClick={() => setIsActive(!isActive)}>
+            <div onClick={() => setIsActiveDeleteButton(!isActiveDeleteButton)}>
               <img src={settings} alt="настройки" />
             </div>
           </div>
