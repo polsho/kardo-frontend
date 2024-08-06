@@ -12,10 +12,12 @@ export const CreatePost: React.FC = () => {
 
   const [description, setDescription] = useState('');
 
+  // const [file, setFile] = useState();
+
   const navigate = useNavigate();
 
   const categories = ['Kickscootering', 'Breaking', 'Parkour', 'Freerunning',
-    'Workout', 'Hip-hop', 'Graffiti', 'Djing', 'Tricking', 'Skateboarding', 'BMX']
+    'Workout', 'Hip-hop', 'Graffiti', 'Djing', 'Tricking', 'Skateboarding', 'BMX'];
 
   return (
     <div className={styles.page_container}>
@@ -39,19 +41,19 @@ export const CreatePost: React.FC = () => {
         </div>
       </div>
 
-      {/*<div className={styles.loading_area}>*/}
-      {/*  <img src={upload} alt="иконка загрузить файл" />*/}
-      {/*  <p>Загрузить фото или видео</p>*/}
-      {/*</div>*/}
-
         <form className={styles.loading_area} id="upload-container" encType="multipart/form-data" method="POST">
-          <img src={upload} alt="иконка загрузить файл" />
 
-          <div>
-            {/*<p className="text_type_secondary_main">Загрузить фото или видео</p>*/}
-            <input id="file-input" type="file" name="file" multiple />
-            <label htmlFor="file-input">Загрузить фото или видео</label>
-          </div>
+          <input id="file-input" type="file" accept="image/*,video/*" name="file" multiple
+                 // onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                 //   setFile(event.target.value);
+                 //   console.log(file);
+                  //функция получения значения загруженного файла
+                 // }}
+          />
+          <label className={styles.label} htmlFor="file-input">
+            <img src={upload} alt="иконка загрузить файл" />
+            Загрузить фото или видео
+          </label>
 
 
           <div className={styles.button_container}>
