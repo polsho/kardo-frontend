@@ -25,6 +25,10 @@ import { RegisterDone } from '../pages/registerDone/registerDone'
 import { Tasks } from '../pages/tasks/tasks'
 import { Modal } from '../components/modal/modal'
 import { PopUp } from '../components/popUp/popUp'
+import { Comments } from '../pages/comments/comments'
+import { Events } from '../pages/events/events'
+import { Contest } from '../pages/contest/contest'
+import { More } from '../pages/more/more'
 
 function App() {
   const location = useLocation()
@@ -55,12 +59,19 @@ function App() {
           <Route index element={<NewsFeed />} />
           <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
           <Route path="/newsFeed/myPosts" element={<MyPosts />} />
-          <Route path="/newsFeed/myPosts/createPost" element={<CreatePost />} />
         </Route>
+        
+        <Route path="/createPost" element={<Layout header={false} footer={false}><CreatePost /></Layout>} />
+        <Route path="/newsFeed/comments" element={<Layout header={false}><Comments /></Layout>} />
 
-        <Route path="/alert" element={<Modal closeModal={() => {
-                  navigate(-1);
-                }}><PopUp text={'Можно выбрать не более 2 номинаций для участия'} /></Modal>} />
+
+        <Route path="/events" element={<Layout header={true} footer={true}><Events /></Layout>}/>
+        <Route path="/contest" element={<Layout header={true} footer={true}><Contest /></Layout>}/>
+        <Route path="/more" element={<Layout header={true} footer={true}><More /></Layout>}/>
+        
+        <Route path="/alert" element={<Modal closeModal={() => {navigate(-1);}}>
+              <PopUp text={'Можно выбрать не более 2 номинаций для участия'} />
+            </Modal>} />
 
         <Route path="*" element={<NotFound/>}/>
       </Routes>

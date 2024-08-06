@@ -19,6 +19,10 @@
   transition: 0.3s ease-out;
 }
 
+.button_text {
+  min-width: max-content;
+}
+
 .active {
   visibility: visible;
   opacity: 1;
@@ -26,7 +30,7 @@
 }
 
 
-.post {
+.comment {
   display: flex;
   flex-direction: column;
   min-width: 335px;
@@ -68,7 +72,7 @@
 .description {
   color: var(--text-color-light);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -77,13 +81,8 @@
   color: var(--accent-color);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-}
-.category {
-  padding: 8px;
-  background-color: var(--background-color-cards);
-  border-radius: 4px;
 }
 
 .reactions {
