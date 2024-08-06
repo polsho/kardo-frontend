@@ -45,8 +45,6 @@ export const CreatePost: React.FC = () => {
 
           <input id="file-input" type="file" accept="image/*,video/*" name="file" multiple
                  // onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                 //   setFile(event.target.value);
-                 //   console.log(file);
                   //функция получения значения загруженного файла
                  // }}
           />

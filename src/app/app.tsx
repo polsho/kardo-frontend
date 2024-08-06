@@ -23,6 +23,7 @@ import { Layout } from '../pages/layout/layout'
 import { CreatePost } from '../pages/createPost/createPost'
 import { RegisterDone } from '../pages/registerDone/registerDone'
 import { Tasks } from '../pages/tasks/tasks'
+import { Comments } from '../pages/comments/comments'
 
 function App() {
   const location = useLocation()
@@ -55,6 +56,7 @@ function App() {
         </Route>
 
         <Route path="/createPost" element={<Layout header={false} footer={false}><CreatePost /></Layout>} />
+        <Route path="/newsFeed/comments" element={<Layout header={false}><Comments /></Layout>} />
 
         <Route path="*" element={<NotFound/>}/>
       </Routes>

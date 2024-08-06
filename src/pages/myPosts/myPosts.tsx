@@ -22,7 +22,7 @@ export const MyPosts: React.FC = () => {
 
   // const iconProfile: string = iconProfile; Добавить переменную, когда апи будут готовы
 
-  const Allposts = [
+  const allPosts = [
     {
       url: linkPhoto,
       text: 'Длинное название для поста, которое можно сделать в две строчки, но не больше',
@@ -94,7 +94,7 @@ export const MyPosts: React.FC = () => {
 
   function filterCategory () {
 
-    Allposts.filter((item) => {
+    allPosts.filter((item) => {
       if (!filteredPosts.some((element) => element.category === item.category)) {
         filteredPosts.push(item);
         return filteredPosts;
@@ -119,7 +119,7 @@ export const MyPosts: React.FC = () => {
 
         <div className={styles.posts}>
           {
-            Allposts.map(post => <Post url={post.url} name={post.name} date={post.date} category={post.category}
+            allPosts.map(post => <Post url={post.url} name={post.name} date={post.date} category={post.category}
                                        text={post.text} key={post.id} />)
           }
         </div>
