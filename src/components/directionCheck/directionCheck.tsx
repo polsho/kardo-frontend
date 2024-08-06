@@ -8,7 +8,7 @@ type TDirectionCheckProps = {
 }
 
 
-  export const DirectionCheck = ({onChange, id, value, option}: InputHTMLAttributes<HTMLInputElement> & TDirectionCheckProps): JSX.Element => {
+  export const DirectionCheck = ({onChange, id, value, checked, option}: InputHTMLAttributes<HTMLInputElement> & TDirectionCheckProps): JSX.Element => {
   
     return (
        <div className={styles.container}>
@@ -18,7 +18,8 @@ type TDirectionCheckProps = {
           id={id}
           type="checkbox" name={option}
           value={value}
-          onChange={onChange} />
+          onChange={onChange} 
+          checked={checked}/>
       </div>
     );
   }

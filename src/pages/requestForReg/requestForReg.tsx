@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import styles from './requestForReg.module.css'
 import { SubHeader } from '../../components/subHeader/subHeader'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import clsx from 'clsx'
 import { v4 as uuidv4 } from 'uuid'
 import { Button } from '../../components/button/button'
@@ -14,6 +14,7 @@ import { Input } from '../../components/input/input'
 
 export const RequestForReg: FC = () => {
   const params = useParams()
+  const navigate = useNavigate()
 
   let selectionType: string = ''
   if (params.type) {
@@ -29,7 +30,7 @@ export const RequestForReg: FC = () => {
   const [cityStage, setCityStage] = useState(options[0])
   const [isHidden, setIsHidden] = useState(false)
 
-  const [directions, setDirections] =useState<string[]>(['breaking', 'parkour'])
+  const [directions, setDirections] = useState<string[]>([])
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [patronymicName, setPatronymicName] = useState('')
@@ -45,29 +46,16 @@ export const RequestForReg: FC = () => {
   }
 
   function handleChecked(event: React.ChangeEvent<HTMLInputElement>) {
-    if (!event.target.checked) {
-
-      setDirections(cur => cur.filter((d) => d !== event.target.name))
+    if (event.target.checked) {
+      if (directions.length < 2) {
+        setDirections([...directions, event.target.name])
+      } else {
+        event.target.checked = false;
+        navigate('/alert')
+      }
+    } else {
+      setDirections(directions.filter((d) => d !== event.target.name))
     }
-    console.log(directions)
-    
-
-
-    
-    // if (event.target.checked) {
-    //   if (directions.length < 2) {
-    //     directions.push(event.target.name)
-    //     setDirections(directions)
-    //     console.log(directions)
-    //   } else {
-    //     event.target.checked = false;
-    //     alert('Больше двух направлений выбрать нельзя')
-    //   }
-    // } else {
-    //   console.log(directions.indexOf(event.target.name))
-    //   setDirections(directions.splice(directions.indexOf(event.target.name), 1))
-    //   console.log(directions)
-    // }
   }
 
   function handleNextButton() {
@@ -84,7 +72,6 @@ export const RequestForReg: FC = () => {
       <SubHeader title="Заявка на регистрацию" />
       <div className={styles.container}>
         <form className={styles.select} action="" id="city">  
-          {/* Сделать ограничение по количеству нажатых checkboxes */}
           <Select
             value={cityStage}
             onChange={handleCItyStageChange}
@@ -104,7 +91,7 @@ export const RequestForReg: FC = () => {
           <form className={styles.checkboxes} id='direction'>
             {Object.values(Directions).map((d) => {
               return (
-                <DirectionCheck option={d.toString()} key={uuidv4()} onChange={handleChecked}></DirectionCheck>
+                <DirectionCheck option={d.toString()} key={uuidv4()} onChange={handleChecked} checked={directions.indexOf(d.toString()) !== -1}></DirectionCheck>
               )
             })}
           </form>
@@ -119,6 +106,7 @@ export const RequestForReg: FC = () => {
             value={firstName}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               setFirstName(event.target.value)
+              
             }}
           />
           <Input

@@ -23,10 +23,13 @@ import { Layout } from '../pages/layout/layout'
 import { CreatePost } from '../pages/createPost/createPost'
 import { RegisterDone } from '../pages/registerDone/registerDone'
 import { Tasks } from '../pages/tasks/tasks'
+import { Modal } from '../components/modal/modal'
+import { PopUp } from '../components/popUp/popUp'
 
 function App() {
   const location = useLocation()
   const background = location.state?.background
+  const navigate = useNavigate()
 
   return (
     <div className={styles.app}>
@@ -55,6 +58,9 @@ function App() {
           <Route path="/newsFeed/myPosts/createPost" element={<CreatePost />} />
         </Route>
 
+        <Route path="/alert" element={<Modal closeModal={() => {
+                  navigate(-1);
+                }}><PopUp text={'Можно выбрать не более 2 номинаций для участия'} /></Modal>} />
 
         <Route path="*" element={<NotFound/>}/>
       </Routes>
