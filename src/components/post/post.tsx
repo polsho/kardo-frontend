@@ -30,7 +30,7 @@ export const Post: React.FC<TPost> = ({url, text, name, date, category}: TPost) 
   return (
     <>
       <div className={styles.post}>
-        <button className={clsx(styles.deleteButton, isActiveDeleteButton && styles.active)}
+        <button className={clsx(styles.delete_button, isActiveDeleteButton && styles.active)}
                 onClick={() => deletePost()}>
           <img src={bin} alt="иконка корзина" />
           <span className='text_type_main-large'>Удалить публикацию</span>

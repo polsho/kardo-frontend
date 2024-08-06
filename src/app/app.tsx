@@ -52,8 +52,9 @@ function App() {
           <Route index element={<NewsFeed />} />
           <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
           <Route path="/newsFeed/myPosts" element={<MyPosts />} />
-          <Route path="/newsFeed/myPosts/createPost" element={<CreatePost />} />
         </Route>
+
+        <Route path="/createPost" element={<Layout header={false} footer={false}><CreatePost /></Layout>} />
 
         <Route path="*" element={<NotFound/>}/>
       </Routes>

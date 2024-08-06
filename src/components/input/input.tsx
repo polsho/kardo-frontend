@@ -7,7 +7,7 @@ type TEmailInput = {
   htmlFor: string;
 }
 
-export const Input = ({onChange, type, name, htmlFor, value}: InputHTMLAttributes<HTMLInputElement> & TEmailInput): JSX.Element => {
+export const Input = ({onChange, type, name, htmlFor, value, placeholder}: InputHTMLAttributes<HTMLInputElement> & TEmailInput): JSX.Element => {
 
   const [typeToggle, setTypeToggle] = useState(type);
 
@@ -27,7 +27,7 @@ export const Input = ({onChange, type, name, htmlFor, value}: InputHTMLAttribute
 
       <input
         className={clsx(styles.input, "text_type_main-default", value !== "" ? styles.filledInput : "")}
-        type={typeToggle} name={name} required
+        type={typeToggle} name={name} placeholder={placeholder} required
         onChange={onChange} />
 
       {type === 'password' ?
