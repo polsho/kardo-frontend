@@ -5,7 +5,6 @@ import send from '../../assets/icons/icon-send.svg'
 import { Comment } from '../../components/comment/comment'
 
 export type TComment = {
-  url?: string,
   text?: string,
   name?: string,
   date?: string,
