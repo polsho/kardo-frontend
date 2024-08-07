@@ -70,7 +70,18 @@ module.exports = {
           filename: "static/fonts/[hash][ext][query]",
         },
       },
-
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]',
+              outputPath: 'media/'
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
