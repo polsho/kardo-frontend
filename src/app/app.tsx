@@ -23,22 +23,17 @@ import { Layout } from '../pages/layout/layout'
 import { CreatePost } from '../pages/createPost/createPost'
 import { RegisterDone } from '../pages/registerDone/registerDone'
 import { Tasks } from '../pages/tasks/tasks'
+import { Modal } from '../components/modal/modal'
+import { PopUp } from '../components/popUp/popUp'
 import { Comments } from '../pages/comments/comments'
 import { Events } from '../pages/events/events'
 import { Contest } from '../pages/contest/contest'
 import { More } from '../pages/more/more'
-import { Modal } from '../components/modal/modal'
 
 function App() {
   const location = useLocation()
   const background = location.state?.background
-  const navigate = useNavigate();
-
-  const closeModal = (): void => {
-    return (
-      navigate(-1)
-    )
-  }
+  const navigate = useNavigate()
 
   return (
     <div className={styles.app}>
@@ -74,14 +69,12 @@ function App() {
         <Route path="/contest" element={<Layout header={true} footer={true}><Contest /></Layout>}/>
         <Route path="/more" element={<Layout header={true} footer={true}><More /></Layout>}/>
 
+        <Route path="/alert" element={<Modal closeModal={() => {navigate(-1);}}>
+              <PopUp text={'Можно выбрать не более 2 номинаций для участия'} />
+            </Modal>} />
+
         <Route path="*" element={<NotFound/>}/>
       </Routes>
-
-      {background && (
-        <Routes>
-          <Route path="/register/done" element={<Modal closeModal={closeModal}><RegisterDone/></Modal>}/>
-        </Routes>
-        )};
     </div>
   )
 }
