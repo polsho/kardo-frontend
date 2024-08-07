@@ -27,10 +27,18 @@ import { Comments } from '../pages/comments/comments'
 import { Events } from '../pages/events/events'
 import { Contest } from '../pages/contest/contest'
 import { More } from '../pages/more/more'
+import { Modal } from '../components/modal/modal'
 
 function App() {
   const location = useLocation()
   const background = location.state?.background
+  const navigate = useNavigate();
+
+  const closeModal = (): void => {
+    return (
+      navigate(-1)
+    )
+  }
 
   return (
     <div className={styles.app}>
@@ -68,6 +76,12 @@ function App() {
 
         <Route path="*" element={<NotFound/>}/>
       </Routes>
+
+      {background && (
+        <Routes>
+          <Route path="/register/done" element={<Modal closeModal={closeModal}><RegisterDone/></Modal>}/>
+        </Routes>
+        )};
     </div>
   )
 }
