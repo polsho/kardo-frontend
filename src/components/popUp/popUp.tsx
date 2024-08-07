@@ -1,19 +1,17 @@
 import styles from './popUp.module.css'
-import { Link } from 'react-router-dom'
-import leftArrow from '../../assets/icons/left-arrow.svg'
 import clsx from 'clsx'
-import { v4 as uuidv4 } from 'uuid'
-
 
 
 type TpopUpProps = {
+  title: string,
   text: string
 }
 
-export const PopUp = ({ text }: TpopUpProps): JSX.Element => {
+export const PopUp = ({ title,text }: TpopUpProps): JSX.Element => {
   return (
-    <div className={styles.container}>
-      <p>{text}</p>
-    </div>
+    <>
+      <h1 className="text_type_secondary_main">{title}</h1>
+      <p className={clsx(styles.text, "text_type_main-default")}>{text}</p>
+    </>
   )
 }

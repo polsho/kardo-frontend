@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
-import styles from './register.module.css'
+import styles from './registerStep1.module.css'
 import clsx from 'clsx'
 import { Button } from '../../components/button/button'
 import { Input } from '../../components/input/input'
-import iconBack from '../../assets/icons/back-icon.svg'
 import { ButtonToggle } from '../../components/buttonToggle/buttonToggle'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { SubHeader } from '../../components/subHeader/subHeader'
 
-export const Register: React.FC = () => {
+export const RegisterStep1: React.FC = () => {
 
   const navigate = useNavigate();
-
 
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -26,9 +24,9 @@ export const Register: React.FC = () => {
   const [publicLink, setPublicLink] = useState('')
 
 
-  const submitForm = (event: React.FormEvent<HTMLFormElement>): any => {
+  const continueForm = (event: React.FormEvent<HTMLFormElement>): any => {
     event.preventDefault();
-    navigate('/register/done')
+    navigate('/register/step2')
   }
 
   return (
@@ -39,7 +37,7 @@ export const Register: React.FC = () => {
 
             <ButtonToggle/>
 
-          <form className={styles.form} id="login" onSubmit={submitForm}>
+          <form className={styles.form} id="register1" onSubmit={continueForm}>
 
             <Input type="text" name="first-name" required htmlFor="Имя" value={firstName}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -71,35 +69,10 @@ export const Register: React.FC = () => {
                      setRepeatPassword(event.target.value)
                    }} />
 
-            <Input type="date" name="date-of-birth" required htmlFor="Дата рождения" value={dateOfBirth}
-                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setDateOfBirth(event.target.value)
-                   }} />
-
-            <Input type="text" name="country" required htmlFor="Страна" value={country}
-                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setCountry(event.target.value)
-                   }} />
-
-            <Input type="text" name="region" required htmlFor="Регион" value={region}
-                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setRegion(event.target.value)
-                   }} />
-
-            <Input type="text" name="city" required htmlFor="Город" value={city}
-                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setCity(event.target.value)
-                   }} />
-
-            <Input type="text" name="public-link" required htmlFor="Ссылка на соц. сети" value={publicLink}
-                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setPublicLink(event.target.value)
-                   }} />
-
             {/*<Link to='/login'>*/}
               <div className={styles.button_container}>
-                <Button form="login" type="submit" onClick={() => submitForm}>
-                  Зарегистироваться
+                <Button form="register1" type="submit" onClick={() => continueForm}>
+                  Далее
                 </Button>
               </div>
             {/*</Link>*/}

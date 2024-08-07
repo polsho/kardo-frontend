@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from './login.module.css'
 import clsx from 'clsx'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Button } from '../../components/button/button'
 import { Input } from '../../components/input/input'
 import iconBack from '../../assets/icons/back-icon.svg'
@@ -11,6 +11,8 @@ export const Login: React.FC = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  const navigate = useNavigate();
+
   return (
     <>
       <div className={styles.container_page}>
@@ -19,20 +21,22 @@ export const Login: React.FC = () => {
 
           <form className={styles.form} id="login">
 
-            <Input type="email" name="email" required htmlFor="Логин" value={email}
+            <Input type="email" name="email" required htmlFor="Имя пользователя" placeholder="Логин" value={email}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                      setEmail(event.target.value)
                    }} />
 
             <div className={styles.passwordContainer}>
-              <Input type="password" name="password" required htmlFor="Пароль" value={password}
+              <Input type="password" name="password" required htmlFor="Пароль" placeholder="Пароль" value={password}
                      onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                        setPassword(event.target.value)
                      }} />
             </div>
 
             <div className={styles.button_container}>
-              <Button form="login" type="submit">
+              <Button form="login" type="submit"
+                      onClick={() => {navigate('/')}}
+              >
                 Войти
               </Button>
             </div>
