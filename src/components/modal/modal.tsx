@@ -1,9 +1,8 @@
 import React, {FC, useEffect} from "react";
 import styles from "../modal/modal.module.css";
-import clsx from "clsx";
 import {createPortal} from "react-dom";
 import { ModalOverlay } from '../modalOverlay/modalOverlay'
-import CloseIcon from '../../assets/icons/close-icon.svg'
+import clsx from 'clsx'
 
 type TModalProps = {
   closeModal: () => void;
@@ -28,10 +27,12 @@ export const Modal: FC<TModalProps> = ({children, closeModal}) => {
   return createPortal(
     (
       <>
-        <div className={clsx(styles.modal, 'pt-10 pr-10 pl-10 pb-15')}>
+        <div className={styles.modal}>
           <div className={styles.children_container}>{children}</div>
-          <div className={styles.closeIcon} data-cy="close-modal" onClick={closeModal}>
-            <img src={CloseIcon} alt="крестик для закрытия"/>
+          <div className={styles.button_container}>
+            <button className={clsx(styles.button_close, "text_type_secondary_main")} form="login" type="submit" onClick={closeModal}>
+              Закрыть
+            </button>
           </div>
         </div>
         <ModalOverlay/>

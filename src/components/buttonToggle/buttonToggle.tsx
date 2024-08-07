@@ -10,7 +10,7 @@ export const ButtonToggle: React.FC = () => {
           <input id="on" type="radio" name="radio" value="participant" checked
                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                    // toggleButton(event.target)
-                   //Написать функцию для переключения состояния(значение должно отправляться вместе с формой register как отдельное поле)
+                   //Написать функцию для переключения состояния(значение должно отправляться вместе с формой registerStep1 как отдельное поле)
                  }}/>
           <span className={clsx(styles.title, "text_type_main-large")}>Участник</span>
         </label>

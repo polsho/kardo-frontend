@@ -6,9 +6,8 @@ import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router
 import { useEffect } from 'react'
 import { Screensaver } from '../pages/screensaver/screensaver'
 import { Main } from '../pages/main/main'
-import { WelcomeScreen } from '../pages/welcomeScreen/welcomeScreen'
 import { Login } from '../pages/login/login'
-import { Register } from '../pages/register/register'
+import { RegisterStep1 } from '../pages/registerStep1/registerStep1'
 import { Profile } from '../pages/profile/profile'
 import { ProfileSettings } from '../pages/profileSettings/profileSettings'
 import { ProfileChanges } from '../pages/profileChanges/profileChanges'
@@ -21,7 +20,6 @@ import { Selections } from '../pages/selections/selections'
 import { RequestForReg } from '../pages/requestForReg/requestForReg'
 import { Layout } from '../pages/layout/layout'
 import { CreatePost } from '../pages/createPost/createPost'
-import { RegisterDone } from '../pages/registerDone/registerDone'
 import { Tasks } from '../pages/tasks/tasks'
 import { Modal } from '../components/modal/modal'
 import { PopUp } from '../components/popUp/popUp'
@@ -29,6 +27,8 @@ import { Comments } from '../pages/comments/comments'
 import { Events } from '../pages/events/events'
 import { Contest } from '../pages/contest/contest'
 import { More } from '../pages/more/more'
+import { ForgotPassword } from '../pages/forgotPassword/forgotPassword'
+import { RegisterStep2 } from '../pages/registerStep2/registerStep2'
 
 function App() {
   const location = useLocation()
@@ -49,11 +49,12 @@ function App() {
         <Route path="/requestForReg/:type" element={<Layout><RequestForReg /></Layout>} />
         <Route path="/selections/:type" element={<Layout><Selections /></Layout>} />
         <Route path="/tasks/:id" element={<Layout><Tasks /></Layout>} />
-        <Route path="/welcomePage" element={<WelcomeScreen />} />
-        <Route path="/login" element={<Layout header={false} footer={false}><Login /></Layout>} />
-        <Route path="/register" element={<Layout header={false} footer={false}><Register /></Layout>} />
-        <Route path="/register/done" element={<Layout header={false} footer={false}><RegisterDone /></Layout>} />
+        {/*<Route path="/welcomePage" element={<WelcomeScreen />} />*/}
         <Route path="/screenSaver" element={<Screensaver />} />
+        <Route path="/login" element={<Layout header={false} footer={false}><Login /></Layout>} />
+        <Route path="/register/step1" element={<Layout header={false} footer={false}><RegisterStep1 /></Layout>} />
+        <Route path="/register/step2" element={<Layout header={false} footer={false}><RegisterStep2 /></Layout>} />
+        <Route path="/forgotPassword" element={<Layout header={false} footer={false}><ForgotPassword /></Layout>} />
 
         <Route path="/newsFeed" element={<Layout><News /></Layout>}>
           <Route index element={<NewsFeed />} />
@@ -69,9 +70,17 @@ function App() {
         <Route path="/contest" element={<Layout header={true} footer={true}><Contest /></Layout>}/>
         <Route path="/more" element={<Layout header={true} footer={true}><More /></Layout>}/>
 
-        <Route path="/alert" element={<Modal closeModal={() => {navigate(-1);}}>
-              <PopUp text={'Можно выбрать не более 2 номинаций для участия'} />
-            </Modal>} />
+        <Route path="/alert" element={
+          <Modal closeModal={() => {navigate(-1)}}>
+            <PopUp title={''} text={'Можно выбрать не более 2 номинаций для участия'} />
+          </Modal>}
+        />
+
+        <Route path="/register/done" element={
+          <Modal closeModal={() => {navigate(-2)}}>
+            <PopUp title={'Регистрация прошла успешно!'} text={'Вам на указанную почту направлено письмо с данными для входа'} />
+          </Modal>}
+        />
 
         <Route path="*" element={<NotFound/>}/>
       </Routes>
