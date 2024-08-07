@@ -28,7 +28,7 @@ export const CompetitionCard = ({
     if (url?.startsWith('http')) {
       window.open(url, '_blank')
     } else {
-      navigate(`/selections/${type}`)
+      navigate(`/events/selections/${type}`)
     }
   }
   return (
