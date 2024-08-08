@@ -25,7 +25,7 @@ export const ForgotPassword: React.FC = () => {
         <div className={styles.button_container}>
           <Button form="forgotPassword" type="submit"
                   onClick={() => {
-                    navigate('-1')
+                    navigate('/')
                   }}
           >
             Сменить пароль

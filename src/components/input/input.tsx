@@ -3,11 +3,12 @@ import styles from "./input.module.css"
 import clsx from 'clsx'
 
 type TEmailInput = {
-  onChange(e: React.ChangeEvent<HTMLInputElement>): void;
-  htmlFor: string;
+  onChange(e: React.ChangeEvent<HTMLInputElement>): void,
+  htmlFor: string,
+  maxlength?: number | undefined
 }
 
-export const Input = ({onChange, type, name, htmlFor, value, placeholder}: InputHTMLAttributes<HTMLInputElement> & TEmailInput): JSX.Element => {
+export const Input = ({onChange, type, name, htmlFor, value, placeholder, maxlength}: InputHTMLAttributes<HTMLInputElement> & TEmailInput): JSX.Element => {
 
   const [typeToggle, setTypeToggle] = useState(type);
 
@@ -27,7 +28,7 @@ export const Input = ({onChange, type, name, htmlFor, value, placeholder}: Input
 
       <input
         className={clsx(styles.input, "text_type_main-default", value !== "" ? styles.filledInput : "")}
-        type={typeToggle} name={name} placeholder={placeholder} required
+        type={typeToggle} name={name} placeholder={placeholder} maxLength={maxlength} required
         onChange={onChange} />
 
       {type === 'password' ?

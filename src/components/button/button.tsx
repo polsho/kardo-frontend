@@ -10,6 +10,6 @@ type TButton = {
 export const Button = ({children, isDisabled, onClick, type}: ButtonHTMLAttributes<HTMLButtonElement> & TButton): JSX.Element => {
 
   return (
-    <button className={clsx(styles.button, "text_type_main-large")} type={type} disabled={isDisabled} onClick={onClick}>{children}</button>
+    <button className={clsx(styles.button, "text_type_secondary_main")} type={type} disabled={isDisabled} onClick={onClick}>{children}</button>
   );
 }

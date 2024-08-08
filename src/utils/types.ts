@@ -1,7 +1,9 @@
+import { AppDispatch, RootState } from '../services/store'
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
 export type TStageStatus = 'Завершен' | 'В ожидании'
 
-export  type TStage = {
+export type TStage = {
     status?: TStageStatus
     name: string
     startDate?: string
@@ -32,3 +34,30 @@ export enum Directions {
   djIng = 'dj-ing',
   graffiti = 'graffiti'
 }
+
+export type UserDto = {
+  email: string;
+  name: string;
+}
+
+export type ServerResponse<T> = {
+  success: boolean;
+} & T;
+
+export type UserResponse = ServerResponse<{
+  user: UserDto;
+  message: string | null;
+}>
+
+export type UserResponseId = ServerResponse<{
+  user: UserDto;
+  userId: string;
+}>;
+
+export type TMessageErrorResponse = ServerResponse<{
+  error: string | null | undefined;
+}>
+
+type DispatchFunc = () => AppDispatch;
+export const useAppDispatch: DispatchFunc = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

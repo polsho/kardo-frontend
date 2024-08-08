@@ -6,7 +6,6 @@ import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router
 import { useEffect } from 'react'
 import { Screensaver } from '../pages/screensaver/screensaver'
 import { Main } from '../pages/main/main'
-import { Login } from '../pages/login/login'
 import { RegisterStep1 } from '../pages/registerStep1/registerStep1'
 import { Profile } from '../pages/profile/profile'
 import { ProfileSettings } from '../pages/profileSettings/profileSettings'
@@ -29,6 +28,7 @@ import { Contest } from '../pages/contest/contest'
 import { More } from '../pages/more/more'
 import { ForgotPassword } from '../pages/forgotPassword/forgotPassword'
 import { RegisterStep2 } from '../pages/registerStep2/registerStep2'
+import { Login } from '../pages/login/login'
 
 function App() {
   const location = useLocation()
