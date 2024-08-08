@@ -16,10 +16,9 @@ export const Login: React.FC = () => {
   const [isPasswordValid, setIsPasswordValid] = useState(true);
   const [error, setError] = useState ('');
 
-
   const dispatch = useAppDispatch();
 
-  function loginSlice(event: React.FormEvent<HTMLFormElement>) {
+  function login(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     let validationError = validation()
@@ -28,7 +27,6 @@ export const Login: React.FC = () => {
     } else {
       dispatch(fetchLoginResult({email: email, password: password}));
     }
-
   }
 
   const validation = (): string | null => {
@@ -53,7 +51,7 @@ export const Login: React.FC = () => {
         <div>
           <SubHeader title="Привет,&nbsp;Гость!" />
 
-          <form className={styles.form} id="loginSlice" onSubmit={loginSlice}>
+          <form className={styles.form} id="loginSlice" onSubmit={login}>
 
             <Input type="email" name="email" isValid={isEmailValid} required htmlFor="Имя пользователя" placeholder="Логин" value={email}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {

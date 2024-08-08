@@ -5,7 +5,7 @@ export const validateEmail = (email: string): string |null => {
 }
 
 export const validatePassword = (password: string): string|null => {
-  let regexp = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm);
+  let regexp = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[a-z]).{6,}$/gm);
 
   return regexp.test(password) ? null : "Неверный тип пароля"
 }

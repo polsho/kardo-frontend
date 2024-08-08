@@ -46,7 +46,7 @@ export type ServerResponse<T> = {
 
 export type UserResponse = ServerResponse<{
   user: UserDto;
-  message: string | null;
+  error: string | null;
 }>
 
 export type UserResponseId = ServerResponse<{
