@@ -6,7 +6,7 @@ type TLoginRequest = {
   password: string;
 }
 
-export const postLoginRequest = ({email, password}: TLoginRequest): Promise<any> => {
+export const getLoginRequest = ({email, password}: TLoginRequest): Promise<any> => {
   return request<UserResponse>(`/login`, {
     method: "GET",
     body: JSON.stringify({email, password}),

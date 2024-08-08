@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction, SerializedError } from '@reduxjs/toolkit'
-import { postLoginRequest } from '../../utils/auth'
+import { getLoginRequest} from '../../utils/auth'
 import { TMessageErrorResponse, UserResponseId } from '../../utils/types'
 
 type TInitialState = {
@@ -20,7 +20,7 @@ export const initialState: TInitialState = {
 
 export const fetchLoginResult = createAsyncThunk(
   `login/fetchUserIdResult`,
-  postLoginRequest
+  getLoginRequest
 );
 
 
@@ -35,7 +35,7 @@ const loginSlice = createSlice({
   },
   extraReducers: builder => {
     builder
-      .addCase(fetchLoginResult.pending.type, (state) => {
+      .addCase(fetchLoginResult.pending.type, (state: TInitialState) => {
         state.isLoading = true;
         state.error = null;
       })
@@ -44,7 +44,7 @@ const loginSlice = createSlice({
         state.isLoading = false;
         localStorage.setItem('userId', action.payload.userId);
     })
-      .addCase(fetchLoginResult.rejected.type, (state, action: PayloadAction<TMessageErrorResponse>) => {
+      .addCase(fetchLoginResult.rejected.type, (state: TInitialState, action: PayloadAction<TMessageErrorResponse>) => {
         state.error = action.payload.error ? Error(action.payload.error) : null;
         state.isLoading = false;
       })
