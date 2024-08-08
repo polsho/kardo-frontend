@@ -11,6 +11,7 @@ import { Select } from '../../components/select/select'
 import { DirectionCheck } from '../../components/directionCheck/directionCheck'
 import { Directions } from '../../utils/types'
 import { Input } from '../../components/input/input'
+import { PopUp } from '../../components/popUp/popUp'
 
 export const RequestForReg: FC = () => {
   const params = useParams()
@@ -41,25 +42,29 @@ export const RequestForReg: FC = () => {
   const [citizenship, setСitizenship] = useState('')
   const [publicLink, setPublicLink] = useState('')
 
+  const [alert, setAlert] = useState(false)
+
   function handleCItyStageChange(event: React.ChangeEvent<HTMLSelectElement>) {
     setCityStage(event.target.value)
   }
 
   function handleChecked(event: React.ChangeEvent<HTMLInputElement>) {
+    console.log(directions)
     if (event.target.checked) {
       if (directions.length < 2) {
         setDirections([...directions, event.target.name])
       } else {
-        event.target.checked = false;
-        navigate('/alert')
+        event.target.checked = false
+        setAlert(true)
+        // navigate('/alert')
       }
     } else {
-      setDirections(directions.filter((d) => d !== event.target.name))
+      setDirections(directions.filter(d => d !== event.target.name))
     }
   }
 
   function handleNextButton() {
-    setIsHidden(!isHidden);
+    setIsHidden(!isHidden)
     console.log(isHidden)
   }
 
@@ -71,7 +76,7 @@ export const RequestForReg: FC = () => {
     <>
       <SubHeader title="Заявка на регистрацию" />
       <div className={styles.container}>
-        <form className={styles.select} action="" id="city">  
+        <form className={styles.select} action="" id="city">
           <Select
             value={cityStage}
             onChange={handleCItyStageChange}
@@ -86,19 +91,30 @@ export const RequestForReg: FC = () => {
             <span>Конец: {currentStage?.startDate}</span>
           </div>
         </div>
-        <div className={clsx(styles.directionChoice, {[styles.hidden]: isHidden})}>
+        <div className={clsx(styles.directionChoice, { [styles.hidden]: isHidden })}>
           <h3 className={clsx(styles.directionChoiceTitle, 'text_type_secondary_main')}>Направления</h3>
-          <form className={styles.checkboxes} id='direction'>
-            {Object.values(Directions).map((d) => {
+          <form className={clsx(styles.checkboxes, { [styles.alert]: alert })} id="direction">
+            {Object.values(Directions).map(d => {
               return (
-                <DirectionCheck option={d.toString()} key={uuidv4()} onChange={handleChecked} checked={directions.indexOf(d.toString()) !== -1}></DirectionCheck>
+                <>
+                  <DirectionCheck
+                    option={d.toString()}
+                    key={uuidv4()}
+                    onChange={handleChecked}
+                    checked={directions.indexOf(d.toString()) !== -1}></DirectionCheck>
+                  {/* {alert && (
+                    <div className={styles.alert}>{'Можно выбрать не более 2 номинаций для участия'}</div>
+                  )} */}
+                </>
               )
             })}
           </form>
         </div>
-        <Button type='button' onClick={handleNextButton}>{isHidden ? 'Назад' : 'Далее'}</Button>
-        <form className={clsx(styles.dataForm, {[styles.isNotHidden]: isHidden})} id='regForComp'>
-        <Input
+        <Button type="button" onClick={handleNextButton}>
+          {isHidden ? 'Назад' : 'Далее'}
+        </Button>
+        <form className={clsx(styles.dataForm, { [styles.isNotHidden]: isHidden })} id="regForComp">
+          <Input
             type="text"
             name="first-name"
             required
@@ -106,7 +122,6 @@ export const RequestForReg: FC = () => {
             value={firstName}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               setFirstName(event.target.value)
-              
             }}
           />
           <Input
@@ -190,7 +205,7 @@ export const RequestForReg: FC = () => {
             }}
           />
           <div className={styles.submitButton}>
-          <Button type='submit'>Подать заявку</Button>
+            <Button type="submit">Подать заявку</Button>
           </div>
         </form>
       </div>

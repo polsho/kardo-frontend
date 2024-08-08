@@ -1,0 +1,21 @@
+.container {
+    width: 335px;
+  }
+
+  .text {
+    width: 100%;
+    background-color: var(--text-color-light);
+    color: var(--secondary-color-dark);
+    cursor: text;
+    outline: none;
+    caret-color: var(--secondary-color-dark);
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+
+  
+  .label {
+    color: var(--text-color-light);
+  }
+  

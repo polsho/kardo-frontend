@@ -23,14 +23,14 @@ export const selectionsData: TCompetition[] = [
         name: 'ТОП 23 (12)',
         startDate: '07.05.2024',
         endDate: '08.06.2024',
-        tasksId: '001'
+        tasksId: '002'
       },
       {
         status: 'Завершен',
         name: 'ТОП 4 (3)',
         startDate: '14.06.2024',
         endDate: '16.06.2024',
-        tasksId: '001'
+        tasksId: '003'
       }
     ],
     description: `Покажи свой скилл по каждому направлению соревнований и попади на гранд-финал в легендарные батлы и самое масштабное событие улиц!

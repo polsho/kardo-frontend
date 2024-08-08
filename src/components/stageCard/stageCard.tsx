@@ -22,7 +22,7 @@ export const StageCard = ({ stageData }: TStageCardProps): JSX.Element => {
         <span>Конец: {endDate}</span>
       </div>
       <div className={clsx(styles.link)}>
-      <Link to={`/tasks/${tasksId}`}>
+      <Link to={`/events/tasks/${tasksId}`}>
         <span className={clsx(styles.linkToTask, 'text_type_main-default')}>
           {`Посмотреть задание ⟶`}
         </span>

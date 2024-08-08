@@ -46,9 +46,13 @@ function App() {
           <Route path="settings" element={<Layout header={false}><ProfileSettings /></Layout>} />
         </Route>
 
-        <Route path="/requestForReg/:type" element={<Layout><RequestForReg /></Layout>} />
-        <Route path="/selections/:type" element={<Layout><Selections /></Layout>} />
-        <Route path="/tasks/:id" element={<Layout><Tasks /></Layout>} />
+        <Route path="/events">
+          <Route index element={<Layout header={true} footer={true}><Events /></Layout>} />
+          <Route path="/events/requestForReg/:type" element={<Layout><RequestForReg /></Layout>} />
+          <Route path="/events/selections/:type" element={<Layout><Selections /></Layout>} />
+          <Route path="/events/tasks/:id" element={<Layout><Tasks /></Layout>} />
+        </Route>
+
         {/*<Route path="/welcomePage" element={<WelcomeScreen />} />*/}
         <Route path="/screenSaver" element={<Screensaver />} />
         <Route path="/login" element={<Layout header={false} footer={false}><Login /></Layout>} />
@@ -65,8 +69,6 @@ function App() {
         <Route path="/createPost" element={<Layout header={false} footer={false}><CreatePost /></Layout>} />
         <Route path="/newsFeed/comments" element={<Layout header={false}><Comments /></Layout>} />
 
-
-        <Route path="/events" element={<Layout header={true} footer={true}><Events /></Layout>}/>
         <Route path="/contest" element={<Layout header={true} footer={true}><Contest /></Layout>}/>
         <Route path="/more" element={<Layout header={true} footer={true}><More /></Layout>}/>
 

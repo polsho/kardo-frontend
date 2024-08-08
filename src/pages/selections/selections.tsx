@@ -55,11 +55,25 @@ export const Selections: FC = () => {
           <Button
             isDisabled={!isRegOpened}
             onClick={() => {
-              navigate(`/requestForReg/${selectionType}`)
+              navigate(`/events/requestForReg/${selectionType}`)
             }}>
             Подать Заявку
           </Button>
         </div>
+      )}
+      {(selectionType === 'final') && (
+        <div className={styles.container}>
+        <p className={clsx(styles.regStatus, 'text_type_secondary_main')}>
+          {`Регистрация открыта!`}
+        </p>
+        
+        <Button
+          onClick={() => {
+            navigate(`/events/requestForReg/${selectionType}`)
+          }}>
+          Подать Заявку
+        </Button>
+      </div>
       )}
       {(selectionType === 'online' || selectionType === 'video') && (
         <div className={styles.competition}>

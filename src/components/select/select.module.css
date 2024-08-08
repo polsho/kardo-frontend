@@ -4,6 +4,7 @@
 
 .selectWrapper {
   position: relative;
+  margin-top: 4px;
 }
 
 .selectWrapper::before {
