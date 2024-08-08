@@ -9,11 +9,15 @@
   padding: 0 18px;
   margin-top: 4px;
   outline: none;
-  border: 0;
+  border: 1px solid var(--secondary-color-light);
   border-radius: 4px;
   transition: focus .5s;
   position: relative;
   z-index: 1;
+}
+
+.invalidInput {
+  border-color: var(--service-color-error);
 }
 
 .inputContainer {

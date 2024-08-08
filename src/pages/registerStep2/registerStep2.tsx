@@ -6,15 +6,16 @@ import { Input } from '../../components/input/input'
 import { ButtonToggle } from '../../components/buttonToggle/buttonToggle'
 import { Link, useNavigate } from 'react-router-dom'
 import { SubHeader } from '../../components/subHeader/subHeader'
+import { Select } from '../../components/select/select'
 
 export const RegisterStep2: React.FC = () => {
 
   const navigate = useNavigate();
-  const [dateOfBirth, setDateOfBirth] = useState('')
-  const [country, setCountry] = useState('')
-  const [region, setRegion] = useState('')
-  const [city, setCity] = useState('')
-  const [publicLink, setPublicLink] = useState('')
+  const [dateOfBirth, setDateOfBirth] = useState('');
+  const [country, setCountry] = useState('');
+  const [region, setRegion] = useState('');
+  const [city, setCity] = useState('');
+  const [publicLink, setPublicLink] = useState('');
 
 
   const submitForm = (event: React.FormEvent<HTMLFormElement>): any => {
@@ -35,36 +36,37 @@ export const RegisterStep2: React.FC = () => {
                      setDateOfBirth(event.target.value)
                    }} />
 
-            {/*<Input type="text" name="country" required htmlFor="Страна" value={country}*/}
-            {/*       onChange={(event: React.ChangeEvent<HTMLInputElement>) => {*/}
-            {/*         setCountry(event.target.value)*/}
-            {/*       }} />*/}
+            <Select
+              options={['Российская Федерация']}
+              style={'white'}
+              label="Страна"
+              name="country"
+              value={country}
+              onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+                setCountry(event.target.value)
+              }}
+            />
 
-            <select name="city" id="city-select">
-              <option value="">Страна</option>
-              <option value="petersburg">Россия</option>
-              <option value="samara">Бразилия</option>
-              <option value="perm">Чили</option>
-              <option value="novosibirsk">Гонконг</option>
-            </select>
-
-            {/*<Input type="text" name="region" required htmlFor="Регион" value={region}*/}
-            {/*       onChange={(event: React.ChangeEvent<HTMLInputElement>) => {*/}
-            {/*         setRegion(event.target.value)*/}
-            {/*       }} />*/}
-
-            <select name="city" id="city-select">
-              <option value="">Регион</option>
-              <option value="petersburg">Московская область</option>
-              <option value="samara">Самарская область</option>
-              <option value="perm">Тверская область</option>
-              <option value="novosibirsk">Астраханская область</option>
-            </select>
-
-            <Input type="text" name="city" required htmlFor="Город" value={city}
-                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setCity(event.target.value)
-                   }} />
+            <Select
+              options={['Московская область']}
+              style={'white'}
+              label="Регион"
+              name="region"
+              value={region}
+              onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+                setRegion(event.target.value)
+              }}
+            />
+            <Select
+              options={['Москва']}
+              style={'white'}
+              label="Город"
+              name="city"
+              value={city}
+              onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+                setCity(event.target.value)
+              }}
+            />
 
             <Input type="text" name="public-link" required htmlFor="Ссылка на соц. сети" value={publicLink}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {

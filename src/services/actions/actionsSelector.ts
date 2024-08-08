@@ -1,3 +1,3 @@
 import {RootState} from "../store";
 
-// export const getAccessToken = (store: RootState) => store.userSession.accessToken;
+export const getErrorLogin = (store: RootState) => store.loginSlice.error;

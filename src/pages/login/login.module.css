@@ -56,3 +56,8 @@
   color: var(--secondary-color-dark);
   text-align: center;
 }
+
+.error {
+  margin-top: 4px;
+  color: var(--service-color-error);
+}

@@ -30,7 +30,7 @@ export const Select = ({
   };
 
   return (
-    <div className={styles.сontainer}>
+    <div className={styles.container}>
       {label && (
         <label className={clsx(styles.label, 'text_type_secondary_main')} htmlFor={id}>
           {label}

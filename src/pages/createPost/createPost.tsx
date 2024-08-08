@@ -20,49 +20,52 @@ export const CreatePost: React.FC = () => {
     'Workout', 'Hip-hop', 'Graffiti', 'Djing', 'Tricking', 'Skateboarding', 'BMX'];
 
   return (
-    <div className={styles.page_container}>
+    <>
       <SubHeader title="Сегодня я хочу поделиться..." />
 
-      <div className={styles.input_container}>
-        <Input type="text" name="description" required htmlFor="Название" value={description}
-               placeholder="Введите название"
-               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                 setDescription(event.target.value)
-               }} />
+      <div className={styles.page_container}>
 
-        <p className={clsx(styles.input_subtitle, "text_type_main-small")}>0/30 символов</p>
-      </div>
+        <div className={styles.input_container}>
+          <Input type="text" name="description" required htmlFor="Название" maxlength={30} value={description}
+                 placeholder="Введите название"
+                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                   setDescription(event.target.value)
+                 }} />
 
-      <div>
-        <h2 className={clsx(styles.subtitle, "text_type_secondary_main")}>Выберите категорию</h2>
-
-        <div className={clsx(styles.category_container, 'text_type_main-default')}>
-          {categories.map(category => <div key={uuidv4()} className={styles.category}>{category}</div>)}
+          <p className={clsx(styles.input_subtitle, 'text_type_main-small')}>{`${description.length}/30 символов`}</p>
         </div>
-      </div>
+
+        <div>
+          <h2 className={clsx(styles.subtitle, 'text_type_secondary_main')}>Выберите категорию</h2>
+
+          <div className={clsx(styles.category_container, 'text_type_main-default')}>
+            {categories.map(category => <div key={uuidv4()} className={styles.category}>{category}</div>)}
+          </div>
+        </div>
 
         <form className={styles.loading_area} id="upload-container" encType="multipart/form-data" method="POST">
 
           <input id="file-input" type="file" accept="image/*,video/*" name="file" multiple
-                 // onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                  //функция получения значения загруженного файла
-                 // }}
+            // onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            //функция получения значения загруженного файла
+            // }}
           />
-          <label className={styles.label} htmlFor="file-input">
+          <label className={clsx(styles.label, 'text_type_secondary_main')} htmlFor="file-input">
             <img src={upload} alt="иконка загрузить файл" />
             Загрузить фото или видео
           </label>
-
-
-          <div className={styles.button_container}>
-            <Button className={styles.button} onClick={() => {
-              navigate(`/newsFeed/myPosts`)
-              // dispatch(newPost);
-            }}>
-              Создать публикацию
-            </Button>
-          </div>
         </form>
-    </div>
+
+
+        <div className={styles.button_container}>
+          <Button className={styles.button} onClick={() => {
+            navigate(`/newsFeed/myPosts`)
+            // dispatch(newPost);
+          }}>
+            Создать публикацию
+          </Button>
+        </div>
+      </div>
+    </>
   )
 }

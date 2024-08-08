@@ -1,21 +1,34 @@
-import React from "react";
+import React, { useState } from 'react'
 import styles from './buttonToggle.module.css';
 import clsx from 'clsx'
 
 export const ButtonToggle: React.FC = () => {
 
+  const [status, setStatus] = useState('');
+
   return (
     <div className={styles.toggle_container}>
-        <label className={styles.toggle}>
-          <input id="on" type="radio" name="radio" value="participant" checked
-                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                   // toggleButton(event.target)
-                   //Написать функцию для переключения состояния(значение должно отправляться вместе с формой registerStep1 как отдельное поле)
-                 }}/>
+        <label className={styles.toggle}
+               onClick={() => {
+                 setStatus('Участник')
+                 console.log(status);
+                 // toggleButton(event.target)
+                 //Поправить функцию, сейчас при нажатии в консоль выводится предыдущее значение и то, на которое нажали. И так при каждом нажатии
+               }}
+        >
+          <input id="on" type="radio" name="radio" value="participant" checked readOnly/>
           <span className={clsx(styles.title, "text_type_main-large")}>Участник</span>
         </label>
-        <label id="off" className={styles.toggle}>
-          <input type="radio" name="radio" value="expert" />
+
+
+        <label id="off" className={styles.toggle}
+               onClick={() => {
+                 setStatus('Эксперт')
+                 console.log(status);
+                 // toggleButton(event.target)
+               }}
+        >
+          <input type="radio" name="radio" value="expert" readOnly/>
           <span className={clsx(styles.title, "text_type_main-large")}>Эксперт</span>
         </label>
     </div>

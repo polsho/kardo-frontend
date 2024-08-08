@@ -23,6 +23,8 @@ export const RegisterStep1: React.FC = () => {
   const [city, setCity] = useState('')
   const [publicLink, setPublicLink] = useState('')
 
+  const [isPasswordValid, setIsPasswordValid] = useState(true);
+
 
   const continueForm = (event: React.FormEvent<HTMLFormElement>): any => {
     event.preventDefault();
@@ -59,22 +61,26 @@ export const RegisterStep1: React.FC = () => {
                      setEmail(event.target.value)
                    }} />
 
-            <Input type="password" name="password" required htmlFor="Пароль" value={password}
-                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setPassword(event.target.value)
-                   }} />
+            <div>
+              <Input type="password" name="password" isValid={isPasswordValid} required htmlFor="Пароль" value={password}
+                     onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                       setPassword(event.target.value)
+                     }} />
 
-            <Input type="password" name="repeat-password" required htmlFor="Повторите пароль" value={repeatPassword}
+              <p className={clsx(styles.error, 'text_type_main-small')}>Ошибка</p>
+            </div>
+
+            <Input type="password" name="repeat-password" isValid={isPasswordValid} required htmlFor="Повторите пароль" value={repeatPassword}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                      setRepeatPassword(event.target.value)
                    }} />
 
             {/*<Link to='/login'>*/}
-              <div className={styles.button_container}>
-                <Button form="register1" type="submit" onClick={() => continueForm}>
-                  Далее
-                </Button>
-              </div>
+            <div className={styles.button_container}>
+              <Button form="register1" type="submit" onClick={() => continueForm}>
+                Далее
+              </Button>
+            </div>
             {/*</Link>*/}
 
           </form>

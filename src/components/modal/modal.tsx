@@ -30,7 +30,7 @@ export const Modal: FC<TModalProps> = ({children, closeModal}) => {
         <div className={styles.modal}>
           <div className={styles.children_container}>{children}</div>
           <div className={styles.button_container}>
-            <button className={clsx(styles.button_close, "text_type_secondary_main")} form="login" type="submit" onClick={closeModal}>
+            <button className={clsx(styles.button_close, "text_type_secondary_main")} form="loginSlice" type="submit" onClick={closeModal}>
               Закрыть
             </button>
           </div>

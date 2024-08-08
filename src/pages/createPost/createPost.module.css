@@ -4,7 +4,6 @@
   align-items: center;
   gap: 32px;
   color: var(--text-color-light);
-  position: relative;
 }
 
 .input_container {
@@ -12,6 +11,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 4px;
+  margin-top: 20px;
 }
 
 .input_subtitle {
@@ -34,6 +34,11 @@
   border-radius: 4px;
 }
 
+.category:active {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
 .subtitle {
   padding: 12px 0;
 }
@@ -52,7 +57,12 @@
 
 .loading_area label:hover {
   cursor: pointer;
-  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+.loading_area label:active {
+  cursor: pointer;
+  color: var(--service-color-error);
 }
 
 .loading_area div {
@@ -85,7 +95,7 @@
 
 .button_container {
   position: fixed;
-  top: 100%;
+  bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
   max-width: 100%;
