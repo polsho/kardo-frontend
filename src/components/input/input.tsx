@@ -36,7 +36,6 @@ export const Input = ({onChange, type, name, htmlFor, value, isValid=true, place
         <span className={styles.iconEye} onClick={(evt) => toggleShowPassword(evt.target)}></span>
         : ''
       }
-      {/*<p className={clsx(styles.error, "text_type_main-small")}>Ошибка</p>*/}
     </div>
   );
 }

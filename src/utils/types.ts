@@ -62,6 +62,7 @@ export type ServerResponse<T> = {
 export type UserResponse = ServerResponse<{
   user: UserDto;
   error: string | null;
+  userId: string;
 }>
 
 export type UserResponseId = ServerResponse<{

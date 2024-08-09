@@ -9,6 +9,7 @@ import { SubHeader } from '../../components/subHeader/subHeader'
 import { Select } from '../../components/select/select'
 import { useDispatch } from '../../services/store'
 import { register } from '../../services/actions/authActions'
+import { fetchRegisterProfileResult } from '../../services/reducers/loginSlice'
 
 export const RegisterStep2: React.FC = () => {
 
@@ -26,7 +27,7 @@ export const RegisterStep2: React.FC = () => {
 
   const submitForm = (event: React.FormEvent<HTMLFormElement>): any => {
     event.preventDefault();
-    dipatch(register({ email: email || '',
+    dipatch(fetchRegisterProfileResult({ email: email || '',
       name: name || '',
       surname: surname || '',
       patronymic: patronymic || '',
