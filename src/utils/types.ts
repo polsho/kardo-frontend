@@ -35,9 +35,24 @@ export enum Directions {
   graffiti = 'graffiti'
 }
 
+export enum UserType {
+  "WATCHER",
+  "PARTICIPANT",
+  "EXPERT",
+  "ADMIN"
+}
+
 export type UserDto = {
   email: string;
   name: string;
+  surname: string;
+  patronymic: string;
+  type: string | UserType;
+  password: string;
+  birthday: string;
+  country: string;
+  region: string;
+  city: string;
 }
 
 export type ServerResponse<T> = {

@@ -28,7 +28,7 @@ export const RegisterStep1: React.FC = () => {
 
   const continueForm = (event: React.FormEvent<HTMLFormElement>): any => {
     event.preventDefault();
-    navigate('/register/step2')
+    navigate(`/register/step2?name=${firstName}&surname=${lastName}&patronymic=${patronymicName}&email=${email}&password=${password}`)
   }
 
   return (

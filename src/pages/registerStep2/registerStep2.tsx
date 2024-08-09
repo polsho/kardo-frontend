@@ -4,22 +4,38 @@ import clsx from 'clsx'
 import { Button } from '../../components/button/button'
 import { Input } from '../../components/input/input'
 import { ButtonToggle } from '../../components/buttonToggle/buttonToggle'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { SubHeader } from '../../components/subHeader/subHeader'
 import { Select } from '../../components/select/select'
+import { useDispatch } from '../../services/store'
+import { register } from '../../services/actions/authActions'
 
 export const RegisterStep2: React.FC = () => {
 
   const navigate = useNavigate();
+  const params = useParams()
   const [dateOfBirth, setDateOfBirth] = useState('');
   const [country, setCountry] = useState('');
   const [region, setRegion] = useState('');
   const [city, setCity] = useState('');
   const [publicLink, setPublicLink] = useState('');
 
+  const dipatch = useDispatch();
+
+  const {email, name, surname, patronymic, password} = params
 
   const submitForm = (event: React.FormEvent<HTMLFormElement>): any => {
     event.preventDefault();
+    dipatch(register({ email: email || '',
+      name: name || '',
+      surname: surname || '',
+      patronymic: patronymic || '',
+      type: 'PARTICIPANT',
+      password: password || '',
+      birthday: dateOfBirth,
+      country: country,
+      region: region,
+      city: city }));
     navigate('/register/done')
   }
 
