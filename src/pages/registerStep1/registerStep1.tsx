@@ -6,6 +6,7 @@ import { Input } from '../../components/input/input'
 import { ButtonToggle } from '../../components/buttonToggle/buttonToggle'
 import { useNavigate } from 'react-router-dom'
 import { SubHeader } from '../../components/subHeader/subHeader'
+import { validateEmail, validatePassword } from '../../utils/utils'
 
 export const RegisterStep1: React.FC = () => {
 
@@ -17,18 +18,66 @@ export const RegisterStep1: React.FC = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [repeatPassword, setRepeatPassword] = useState('')
-  const [dateOfBirth, setDateOfBirth] = useState('')
-  const [country, setCountry] = useState('')
-  const [region, setRegion] = useState('')
-  const [city, setCity] = useState('')
-  const [publicLink, setPublicLink] = useState('')
 
+  // const [dateOfBirth, setDateOfBirth] = useState('')
+  // const [country, setCountry] = useState('')
+  // const [region, setRegion] = useState('')
+  // const [city, setCity] = useState('')
+  // const [publicLink, setPublicLink] = useState('')
+
+  const [isEmailValid, setIsEmailValid] = useState(true);
   const [isPasswordValid, setIsPasswordValid] = useState(true);
+  const [isRepeatPasswordValid, setIsRepeatPasswordValid] = useState(true);
+  const [errorEmail, setErrorEmail] = useState ('');
+  const [errorPassword, setErrorPassword] = useState ('');
+  const [errorRepeatPassword, setErrorRepeatPassword] = useState ('');
 
 
   const continueForm = (event: React.FormEvent<HTMLFormElement>): any => {
     event.preventDefault();
     navigate(`/register/step2?name=${firstName}&surname=${lastName}&patronymic=${patronymicName}&email=${email}&password=${password}`)
+  }
+
+  const validationEmail = (): string | null => {
+    let errorEmail = validateEmail(email)
+    if (errorEmail !== null) {
+      setIsEmailValid(false)
+      setErrorEmail(errorEmail);
+      return errorEmail;
+    }
+
+    setIsEmailValid(true)
+    setErrorEmail("");
+    errorEmail = null
+    return null
+  }
+
+  const validationPassword = (): string | null => {
+    let errorPassword = validatePassword(password)
+    if (errorPassword !== null) {
+      console.log(password);
+      setIsPasswordValid(false);
+      setErrorPassword(errorPassword);
+      return errorPassword
+    }
+    setIsPasswordValid(true);
+    setErrorPassword("");
+    errorPassword = null
+    return null
+  }
+
+  const validationRepeatPassword = (): string | null => {
+    let errorRepeatPassword = "Повторный пароль введен не верно"
+    if (password !== repeatPassword) {
+      console.log(password);
+      console.log(repeatPassword);
+      setIsRepeatPasswordValid(false);
+      setErrorRepeatPassword(errorRepeatPassword);
+      return errorRepeatPassword
+    }
+    setIsRepeatPasswordValid(true);
+    setErrorRepeatPassword("");
+    return null
   }
 
   return (
@@ -56,32 +105,39 @@ export const RegisterStep1: React.FC = () => {
                      setPatronymicName(event.target.value)
                    }} />
 
-            <Input type="email" name="email" required htmlFor="Email" value={email}
+            <div>
+            <Input type="email" name="email" isValid={isEmailValid} required htmlFor="Email" value={email}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                      setEmail(event.target.value)
+                     validationEmail();
                    }} />
+            {errorEmail && <p className={clsx(styles.error, 'text_type_main-small')}>{errorEmail}</p>}
+            </div>
 
             <div>
               <Input type="password" name="password" isValid={isPasswordValid} required htmlFor="Пароль" value={password}
                      onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                        setPassword(event.target.value)
+                       validationPassword();
                      }} />
 
-              <p className={clsx(styles.error, 'text_type_main-small')}>Ошибка</p>
+              {errorPassword && <p className={clsx(styles.error, 'text_type_main-small')}>{errorPassword}</p>}
             </div>
 
-            <Input type="password" name="repeat-password" isValid={isPasswordValid} required htmlFor="Повторите пароль" value={repeatPassword}
+            <div>
+            <Input type="password" name="repeat-password" isValid={isRepeatPasswordValid} required htmlFor="Повторите пароль" value={repeatPassword}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                      setRepeatPassword(event.target.value)
+                     validationRepeatPassword();
                    }} />
+            {errorRepeatPassword && <p className={clsx(styles.error, 'text_type_main-small')}>{errorRepeatPassword}</p>}
+            </div>
 
-            {/*<Link to='/login'>*/}
             <div className={styles.button_container}>
               <Button form="register1" type="submit" onClick={() => continueForm}>
                 Далее
               </Button>
             </div>
-            {/*</Link>*/}
 
           </form>
 

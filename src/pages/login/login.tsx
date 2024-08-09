@@ -14,34 +14,40 @@ export const Login: React.FC = () => {
   const [password, setPassword] = useState('')
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isPasswordValid, setIsPasswordValid] = useState(true);
-  const [error, setError] = useState ('');
+  const [errorEmail, setErrorEmail] = useState ('');
+  const [errorPassword, setErrorPassword] = useState ('');
 
   const dispatch = useAppDispatch();
 
   function login(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-
-    let validationError = validation()
-    if (validationError !== null) {
-      setError(validationError)
-    } else {
-      dispatch(fetchLoginResult({email: email, password: password}));
-    }
+    dispatch(fetchLoginResult({email: email, password: password}));
   }
 
-  const validation = (): string | null => {
-    let error = validateEmail(email)
-    if (error !== null) {
+  const validationEmail = (): string | null => {
+    let errorEmail = validateEmail(email)
+    if (errorEmail !== null) {
       setIsEmailValid(false)
-      return error;
+      setErrorEmail(errorEmail);
+      return errorEmail;
     }
 
-    error = validatePassword(password)
-    if (error !== null) {
-      setIsPasswordValid(false)
-      return error
-    }
+    setIsEmailValid(true)
+    setErrorEmail("");
+    errorEmail = null
+    return null
+  }
 
+  const validationPassword = (): string | null => {
+  let errorPassword = validatePassword(password)
+  if (errorPassword !== null) {
+    setIsPasswordValid(false);
+    setErrorPassword(errorPassword);
+    return errorPassword
+  }
+    setIsPasswordValid(true);
+    setErrorPassword("");
+    errorPassword = null
     return null
   }
 
@@ -53,17 +59,22 @@ export const Login: React.FC = () => {
 
           <form className={styles.form} id="loginSlice" onSubmit={login}>
 
+            <div>
             <Input type="email" name="email" isValid={isEmailValid} required htmlFor="Имя пользователя" placeholder="Логин" value={email}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setEmail(event.target.value)
+                     setEmail(event.target.value);
+                     validationEmail();
                    }} />
+            {errorEmail && <p className={clsx(styles.error, 'text_type_main-small')}>{errorEmail}</p>}
+            </div>
 
             <div className={styles.passwordContainer}>
               <Input type="password" name="password" isValid={isPasswordValid} required htmlFor="Пароль" placeholder="Пароль" value={password}
                      onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                        setPassword(event.target.value)
+                       validationPassword();
                      }} />
-              {error && <p className={clsx(styles.error, 'text_type_main-small')}>{error}</p>}
+              {errorPassword && <p className={clsx(styles.error, 'text_type_main-small')}>{errorPassword}</p>}
             </div>
 
             <div className={styles.button_container}>

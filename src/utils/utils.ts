@@ -5,7 +5,7 @@ export const validateEmail = (email: string): string |null => {
 }
 
 export const validatePassword = (password: string): string|null => {
-  let regexp = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[a-z]).{6,}$/gm);
+  let regexp = new RegExp(/^(?=.*\d).{5,}$/g);
 
-  return regexp.test(password) ? null : "Неверный тип пароля"
+  return regexp.test(password) ? null : "Пароль должен содержать не менее 6 символов"
 }

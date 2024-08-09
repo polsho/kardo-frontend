@@ -1,27 +1,30 @@
 import { createAsyncThunk, createSlice, PayloadAction, SerializedError } from '@reduxjs/toolkit'
-import { getLoginRequest } from '../../utils/auth'
+import { getLoginRequest, postRegisterProfileRequest } from '../../utils/auth'
 import { TMessageErrorResponse, UserResponse, UserResponseId } from '../../utils/types'
 
 type TInitialState = {
   isLoading: boolean,
   error: SerializedError | null;
-  success: boolean;
+  status: number;
   userId: string | null;
-  message: string | null;
 }
 
 export const initialState: TInitialState = {
   isLoading: false,
   error: null,
-  success: false,
+  status: 0,
   userId: localStorage.getItem('userId'),
-  message: ''
 }
 
 export const fetchLoginResult = createAsyncThunk(
   `login/fetchUserIdResult`,
   getLoginRequest
 )
+
+export const fetchRegisterProfileResult = createAsyncThunk(
+  `register/fetchAccessTokenResult`,
+  postRegisterProfileRequest
+);
 
 
 const loginSlice = createSlice({
@@ -37,20 +40,37 @@ const loginSlice = createSlice({
     builder
       .addCase(fetchLoginResult.pending.type, (state: TInitialState) => {
         state.isLoading = true
+        console.log(1);
         state.error = null
       })
-      .addCase(fetchLoginResult.fulfilled.type, (state: TInitialState, action: PayloadAction<UserResponse>) => {
-        // state.userId = action.payload.userId
-        state.isLoading = false
-        // localStorage.setItem('userId', action.payload.userId)
-      })
+      .addCase(fetchLoginResult.fulfilled.type, handleLogin)
       .addCase(fetchLoginResult.rejected.type, (state: TInitialState, action: PayloadAction<UserResponse>) => {
-        state.error = action.payload.error ? Error(action.payload.error) : null
+        // state.error = action.payload.error ? Error(action.payload.error) : null
+        console.log(action.payload);
+        console.log(3);
         state.isLoading = false
+      })
+      .addCase(fetchRegisterProfileResult.pending.type, (state: TInitialState) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(fetchRegisterProfileResult.fulfilled.type, handleLogin)
+      .addCase(fetchRegisterProfileResult.rejected.type, (state:TInitialState, action: PayloadAction<TMessageErrorResponse>) => {
+        // state.error = action.payload.message ? Error(action.payload.message) : null;
+        state.isLoading = false;
       })
   }
 
 })
+
+function handleLogin(state: TInitialState, action: PayloadAction<UserResponseId>) {
+  // state.userId = action.payload.userId
+  state.isLoading = false
+  console.log(action.payload);
+  console.log(2);
+  // localStorage.setItem('userId', action.payload.userId)
+  //Комментами помечены поля, которые непонятно, в каком виде будут приходить с сервера и под каким названием
+}
 
 export const { userLogout } = loginSlice.actions
 

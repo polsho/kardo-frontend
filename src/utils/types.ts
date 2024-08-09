@@ -56,12 +56,13 @@ export type UserDto = {
 }
 
 export type ServerResponse<T> = {
-  success: boolean;
+  status: number;
 } & T;
 
 export type UserResponse = ServerResponse<{
   user: UserDto;
   error: string | null;
+  userId: string;
 }>
 
 export type UserResponseId = ServerResponse<{
