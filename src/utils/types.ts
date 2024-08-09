@@ -41,7 +41,7 @@ export type UserDto = {
 }
 
 export type ServerResponse<T> = {
-  success: boolean;
+  status: number;
 } & T;
 
 export type UserResponse = ServerResponse<{

@@ -5,17 +5,15 @@ import { TMessageErrorResponse, UserResponse, UserResponseId } from '../../utils
 type TInitialState = {
   isLoading: boolean,
   error: SerializedError | null;
-  success: boolean;
+  status: number;
   userId: string | null;
-  message: string | null;
 }
 
 export const initialState: TInitialState = {
   isLoading: false,
   error: null,
-  success: false,
+  status: 0,
   userId: localStorage.getItem('userId'),
-  message: ''
 }
 
 export const fetchLoginResult = createAsyncThunk(
