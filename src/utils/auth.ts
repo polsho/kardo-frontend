@@ -14,7 +14,7 @@ export const getLoginRequest = ({email, password}: TLoginRequest): Promise<any> 
     headers: {
       "Content-Type": 'application/json',
     },
-    // mode: 'no-cors'
+    mode: 'no-cors'
   })
 }
 

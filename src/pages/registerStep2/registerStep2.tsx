@@ -3,13 +3,11 @@ import styles from './registerStep2.module.css'
 import clsx from 'clsx'
 import { Button } from '../../components/button/button'
 import { Input } from '../../components/input/input'
-import { ButtonToggle } from '../../components/buttonToggle/buttonToggle'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { SubHeader } from '../../components/subHeader/subHeader'
 import { Select } from '../../components/select/select'
-import { useDispatch } from '../../services/store'
-import { register } from '../../services/actions/authActions'
 import { fetchRegisterProfileResult } from '../../services/reducers/loginSlice'
+import { useAppDispatch } from '../../utils/types'
 
 export const RegisterStep2: React.FC = () => {
 
@@ -21,7 +19,7 @@ export const RegisterStep2: React.FC = () => {
   const [city, setCity] = useState('');
   const [publicLink, setPublicLink] = useState('');
 
-  const dipatch = useDispatch();
+  const dipatch = useAppDispatch();
 
   const {email, name, surname, patronymic, password} = params
 
