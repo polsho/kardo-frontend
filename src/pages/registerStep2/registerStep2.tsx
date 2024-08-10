@@ -3,12 +3,11 @@ import styles from './registerStep2.module.css'
 import clsx from 'clsx'
 import { Button } from '../../components/button/button'
 import { Input } from '../../components/input/input'
-import { ButtonToggle } from '../../components/buttonToggle/buttonToggle'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { SubHeader } from '../../components/subHeader/subHeader'
 import { Select } from '../../components/select/select'
-import { useDispatch } from '../../services/store'
 import { fetchRegisterProfileResult } from '../../services/reducers/loginSlice'
+import { useAppDispatch } from '../../utils/types'
 
 export const RegisterStep2: React.FC = () => {
 
@@ -20,13 +19,13 @@ export const RegisterStep2: React.FC = () => {
   const [city, setCity] = useState('');
   const [publicLink, setPublicLink] = useState('');
 
-  const dipatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const {email, name, surname, patronymic, password} = params
 
   const submitForm = (event: React.FormEvent<HTMLFormElement>): any => {
     event.preventDefault();
-    dipatch(fetchRegisterProfileResult({ email: email || '',
+    dispatch(fetchRegisterProfileResult({ email: email || '',
       name: name || '',
       surname: surname || '',
       patronymic: patronymic || '',
@@ -89,13 +88,11 @@ export const RegisterStep2: React.FC = () => {
                      setPublicLink(event.target.value)
                    }} />
 
-            {/*<Link to='/login'>*/}
             <div className={styles.button_container}>
               <Button form="register" type="submit" onClick={() => submitForm}>
                 Зарегистироваться
               </Button>
             </div>
-            {/*</Link>*/}
 
           </form>
 

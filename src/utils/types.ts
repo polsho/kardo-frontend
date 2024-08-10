@@ -74,6 +74,20 @@ export type TMessageErrorResponse = ServerResponse<{
   error: string | null | undefined;
 }>
 
+export type wsConnect = {
+  wsUrl: string;
+};
+
+export type TNews = [
+  id: number,
+  name: string,
+  link: string,
+  streamDateTime: string,
+  publishedDate: string
+]
+
+export type TNewsFeed = {}
+
 type DispatchFunc = () => AppDispatch;
 export const useAppDispatch: DispatchFunc = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

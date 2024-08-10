@@ -21,34 +21,34 @@ export const Login: React.FC = () => {
 
   function login(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    dispatch(fetchLoginResult({email: email, password: password}));
+
+    dispatch(fetchLoginResult({ email: email, password: password }))
   }
 
-  const validationEmail = (): string | null => {
+  const validationEmail = (): any => {
     let errorEmail = validateEmail(email)
     if (errorEmail !== null) {
       setIsEmailValid(false)
       setErrorEmail(errorEmail);
       return errorEmail;
+    } else {
+      setIsEmailValid(true)
+      setErrorEmail("");
+      return null
     }
-
-    setIsEmailValid(true)
-    setErrorEmail("");
-    errorEmail = null
-    return null
   }
 
-  const validationPassword = (): string | null => {
+  const validationPassword = (): any => {
   let errorPassword = validatePassword(password)
   if (errorPassword !== null) {
     setIsPasswordValid(false);
     setErrorPassword(errorPassword);
     return errorPassword
-  }
+  } else {
     setIsPasswordValid(true);
     setErrorPassword("");
-    errorPassword = null
-    return null
+      return null
+    }
   }
 
   return (

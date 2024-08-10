@@ -5,14 +5,14 @@ import { TMessageErrorResponse, UserResponse, UserResponseId } from '../../utils
 type TInitialState = {
   isLoading: boolean,
   error: SerializedError | null;
-  status: number;
+  status: string;
   userId: string | null;
 }
 
 export const initialState: TInitialState = {
   isLoading: false,
   error: null,
-  status: 0,
+  status: '',
   userId: localStorage.getItem('userId'),
 }
 
