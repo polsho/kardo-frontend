@@ -8,7 +8,6 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { SubHeader } from '../../components/subHeader/subHeader'
 import { Select } from '../../components/select/select'
 import { useDispatch } from '../../services/store'
-import { register } from '../../services/actions/authActions'
 import { fetchRegisterProfileResult } from '../../services/reducers/loginSlice'
 
 export const RegisterStep2: React.FC = () => {
