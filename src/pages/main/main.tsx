@@ -119,13 +119,13 @@ export const Main: React.FC = () => {
           </p>
         </div>
       </div>
-      {/*<div className={styles.video}>*/}
-      {/*  <iframe*/}
-      {/*    title="Youtube player"*/}
-      {/*    frameBorder="0"*/}
-      {/*    sandbox="allow-same-origin allow-forms allow-popups allow-scripts allow-presentation"*/}
-      {/*    src={`https://youtube.com/embed/${youtubeID}?autoplay=0`}></iframe>*/}
-      {/*</div> */}
+      <div className={styles.video}>
+        <iframe
+          title="Youtube player"
+          frameBorder="0"
+          sandbox="allow-same-origin allow-forms allow-popups allow-scripts allow-presentation"
+          src={`https://youtube.com/embed/${youtubeID}?autoplay=0`}></iframe>
+      </div>
     </>
   )
 }
