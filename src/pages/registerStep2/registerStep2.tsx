@@ -19,13 +19,13 @@ export const RegisterStep2: React.FC = () => {
   const [city, setCity] = useState('');
   const [publicLink, setPublicLink] = useState('');
 
-  const dipatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   const {email, name, surname, patronymic, password} = params
 
   const submitForm = (event: React.FormEvent<HTMLFormElement>): any => {
     event.preventDefault();
-    dipatch(fetchRegisterProfileResult({ email: email || '',
+    dispatch(fetchRegisterProfileResult({ email: email || '',
       name: name || '',
       surname: surname || '',
       patronymic: patronymic || '',
@@ -88,13 +88,11 @@ export const RegisterStep2: React.FC = () => {
                      setPublicLink(event.target.value)
                    }} />
 
-            {/*<Link to='/login'>*/}
             <div className={styles.button_container}>
               <Button form="register" type="submit" onClick={() => submitForm}>
                 Зарегистироваться
               </Button>
             </div>
-            {/*</Link>*/}
 
           </form>
 
