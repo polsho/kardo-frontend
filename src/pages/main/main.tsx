@@ -4,11 +4,12 @@ import { Button } from '../../components/button/button'
 import kardoImage from '../../assets/images/kardo-main-page.png'
 import slider1 from '../../assets/images/image-for-slider-1.png'
 import slider2 from '../../assets/images/image-for-slider-2.png'
+import cover from '../../assets/images/yt-cover.jpg'
 import clsx from 'clsx'
 import { Link, useNavigate } from 'react-router-dom'
 import { Ticker } from '../../components/ticker/ticker'
 import { SwipedCarousel } from '../../components/swipedCarousel/swipedCarousel'
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 
 type statInfo = {
   number: string
@@ -34,7 +35,11 @@ export const Main: React.FC = () => {
 
   return (
     <>
-      <img className='element_beyond_padding' src={kardoImage} alt="надпись free running на фоне прыгающего мужчины" />
+      <img
+        className="element_beyond_padding"
+        src={kardoImage}
+        alt="надпись free running на фоне прыгающего мужчины"
+      />
       <div className={styles.mainSection}>
         <div className={styles.header}>
           <h1 className={clsx(styles.title, 'text_type_heading-main')}>кардо [ 7 ]</h1>
@@ -63,13 +68,13 @@ export const Main: React.FC = () => {
           </li>
         </ul>
       </div>
-      <div className='element_beyond_padding'>
-      <Ticker text="улица начинается здесь" />
+      <div className="element_beyond_padding">
+        <Ticker text="улица начинается здесь" />
       </div>
       <div className={clsx(styles.slider, 'element_beyond_padding')}>
         <SwipedCarousel>
           {sliderImages.map(image => {
-            return <img src={image} alt="" className={styles.sliderImage} key={uuidv4()} ></img>
+            return <img src={image} alt="" className={styles.sliderImage} key={uuidv4()}></img>
           })}
         </SwipedCarousel>
       </div>
@@ -119,13 +124,16 @@ export const Main: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className={styles.video}>
-        <iframe
-          title="Youtube player"
-          frameBorder="0"
-          sandbox="allow-same-origin allow-forms allow-popups allow-scripts allow-presentation"
-          src={`https://youtube.com/embed/${youtubeID}?autoplay=0`}></iframe>
-      </div>
+      <video
+        className={styles.video}
+        id="videoID"
+        controls={true}
+        preload="true"
+        loop={false}
+        muted={false}
+        src={`https://youtube.com/embed/${youtubeID}?autoplay=0`}
+        poster={cover}
+      />
     </>
   )
 }
