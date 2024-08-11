@@ -21,22 +21,22 @@ export const RegisterStep2: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
-  const {email, name, surname, patronymic, password} = params
-
   const submitForm = (event: React.FormEvent<HTMLFormElement>): any => {
     event.preventDefault();
-    dispatch(fetchRegisterProfileResult({user: {email: email || '',
-      name: name || '',
-      surname: surname || '',
-      patronymic: patronymic || '',
+    dispatch(fetchRegisterProfileResult({email: params.email || '',
+      name: params.name || '',
+      surname: params.surname || '',
+      patronymic: params.patronymic || '',
       type: 'PARTICIPANT',
-      password: password || '',
+      password: params.password || '',
       birthday: dateOfBirth,
-      country: country,
-      region: region,
-      city: city} }));
+      country: {id: 0,name: country},
+      region: {id: 0, name: region, country: {id: 0,name: country}},
+      city: city} ));
     navigate('/register/done')
   }
+
+  
 
   return (
     <>
