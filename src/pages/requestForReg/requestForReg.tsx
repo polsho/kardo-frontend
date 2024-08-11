@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import styles from './requestForReg.module.css'
 import { SubHeader } from '../../components/subHeader/subHeader'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -48,15 +48,19 @@ export const RequestForReg: FC = () => {
     setCityStage(event.target.value)
   }
 
+  useEffect(() => {
+    setAlert(directions.length > 2)
+  }, [directions])
+
   function handleChecked(event: React.ChangeEvent<HTMLInputElement>) {
     console.log(directions)
     if (event.target.checked) {
       if (directions.length < 2) {
         setDirections([...directions, event.target.name])
+        setAlert(false)
       } else {
         event.target.checked = false
         setAlert(true)
-        // navigate('/alert')
       }
     } else {
       setDirections(directions.filter(d => d !== event.target.name))
@@ -93,7 +97,8 @@ export const RequestForReg: FC = () => {
         </div>
         <div className={clsx(styles.directionChoice, { [styles.hidden]: isHidden })}>
           <h3 className={clsx(styles.directionChoiceTitle, 'text_type_secondary_main')}>Направления</h3>
-          <form className={clsx(styles.checkboxes, { [styles.alert]: alert })} id="direction">
+          <span className={clsx(styles.error, "text_type_main-small")}>{alert ? 'Можно выбрать не более 2 номинаций для участия' : ''}</span>
+          <form className={clsx(styles.checkboxes)} id="direction">
             {Object.values(Directions).map(d => {
               return (
                 <>
@@ -101,10 +106,7 @@ export const RequestForReg: FC = () => {
                     option={d.toString()}
                     key={uuidv4()}
                     onChange={handleChecked}
-                    checked={directions.indexOf(d.toString()) !== -1}></DirectionCheck>
-                  {/* {alert && (
-                    <div className={styles.alert}>{'Можно выбрать не более 2 номинаций для участия'}</div>
-                  )} */}
+                    checked={directions.indexOf(d.toString()) !== -1} />
                 </>
               )
             })}

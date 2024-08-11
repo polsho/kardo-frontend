@@ -72,12 +72,6 @@ function App() {
         <Route path="/contest" element={<Layout header={true} footer={true}><Contest /></Layout>}/>
         <Route path="/more" element={<Layout header={true} footer={true}><More /></Layout>}/>
 
-        <Route path="/alert" element={
-          <Modal closeModal={() => {navigate(-1)}}>
-            <PopUp title={''} text={'Можно выбрать не более 2 номинаций для участия'} />
-          </Modal>}
-        />
-
         <Route path="/register/done" element={
           <Modal closeModal={() => {navigate(-2)}}>
             <PopUp title={'Регистрация прошла успешно!'} text={'Вам на указанную почту направлено письмо с данными для входа'} />

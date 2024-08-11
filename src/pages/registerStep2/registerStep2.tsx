@@ -25,7 +25,7 @@ export const RegisterStep2: React.FC = () => {
 
   const submitForm = (event: React.FormEvent<HTMLFormElement>): any => {
     event.preventDefault();
-    dispatch(fetchRegisterProfileResult({ email: email || '',
+    dispatch(fetchRegisterProfileResult({user: {email: email || '',
       name: name || '',
       surname: surname || '',
       patronymic: patronymic || '',
@@ -34,7 +34,7 @@ export const RegisterStep2: React.FC = () => {
       birthday: dateOfBirth,
       country: country,
       region: region,
-      city: city }));
+      city: city} }));
     navigate('/register/done')
   }
 

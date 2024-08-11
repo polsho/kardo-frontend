@@ -30,6 +30,13 @@
   display: block;
 }
 
+.error {
+  display: block;
+  color: var(--accent-color);
+  text-transform: none;
+  margin-bottom: 20px;
+}
+
 .directionChoice {
   display: block;
   margin-bottom: 54px;
@@ -38,10 +45,6 @@
 
 .hidden {
   display: none;
-}
-
-.directionChoiceTitle {
-  margin-bottom: 20px;
 }
 
 .checkboxes {

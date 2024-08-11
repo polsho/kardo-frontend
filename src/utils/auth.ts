@@ -1,5 +1,5 @@
 import {request} from "./api";
-import { UserResponse, UserType } from './types'
+import { UserDto, UserResponse, UserType } from './types'
 
 type TLoginRequest = {
   email: string;
@@ -19,24 +19,28 @@ export const getLoginRequest = ({email, password}: TLoginRequest): Promise<any> 
 }
 
 export type TProfileRequest = {
-  name: string;
-  surname: string;
-  patronymic: string;
-  type: string | UserType;
-  email: string;
-  password: string;
-  birthday: string;
-  country: string;
-  region: string;
-  city: string;
+  user: UserDto
+  // name: string;
+  // surname: string;
+  // patronymic: string;
+  // type: string | UserType;
+  // email: string;
+  // password: string;
+  // birthday: string;
+  // country: string;
+  // region: string;
+  // city: string;
 }
 
-export const postRegisterProfileRequest = ({name, surname, patronymic, type, email, password, birthday, country, region, city}: TProfileRequest): Promise<any> => {
+export const postRegisterProfileRequest = ({user}: TProfileRequest): Promise<any> => {
   return request<UserResponse>(`/signup`, {
     method: "POST",
-    body: JSON.stringify({name, surname, patronymic, type, email, password, birthday, country, region, city}),
+    body: JSON.stringify(user),
     headers: {
       "Content-Type": 'application/json',
     },
   })
 }
+
+
+// name, surname, patronymic, type, email, password, birthday, country, region, city
