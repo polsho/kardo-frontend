@@ -4,6 +4,7 @@ import { Button } from '../../components/button/button'
 import kardoImage from '../../assets/images/kardo-main-page.png'
 import slider1 from '../../assets/images/image-for-slider-1.png'
 import slider2 from '../../assets/images/image-for-slider-2.png'
+import slider3 from '../../assets/images/kardo-main.webp'
 import cover from '../../assets/images/yt-cover.jpg'
 import clsx from 'clsx'
 import { Link, useNavigate } from 'react-router-dom'
@@ -20,7 +21,7 @@ export const Main: React.FC = () => {
   const navigate = useNavigate()
   const [youtubeID] = useState('55QWhJykef8')
 
-  const sliderImages: string[] = [slider1, slider2, slider1]
+  const sliderImages: string[] = [slider1, slider2, slider3]
 
   const stats: statInfo[] = [
     { number: '250 тыс', name: 'Зрителей онлайн' },
