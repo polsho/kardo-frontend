@@ -27,7 +27,7 @@ import { More } from '../pages/more/more'
 import { ForgotPassword } from '../pages/forgotPassword/forgotPassword'
 import { RegisterStep2 } from '../pages/registerStep2/registerStep2'
 import { Login } from '../pages/login/login'
-import { EventById } from '../components/eventById/eventById'
+import { EventById } from '../pages/eventById/eventById'
 
 function App() {
   const location = useLocation()

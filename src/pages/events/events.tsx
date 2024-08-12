@@ -1,14 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styles from './events.module.css'
 import { SubHeader } from '../../components/subHeader/subHeader'
 import { Select } from '../../components/select/select'
 import { EventCard, TEvent } from '../../components/eventCard/eventCard'
-import { Directions } from '../../utils/types'
-import { v4 as uuidv4 } from 'uuid'
-import { createContext } from 'react'
 
-const events: TEvent[] = [
+export const events: TEvent[] = [
   {
+    id: '001',
     name: 'Главное событие дня: Церемония открытия Международной Конкурс-Премии "Кардо"',
     type: 'CULTURE',
     directions: 'ALL',
@@ -19,6 +17,7 @@ const events: TEvent[] = [
     time: '19:00 - 22:00'
   },
   {
+    id: '002',
     name: 'Выставка автомобилей',
     type: 'LEISURE',
     directions: 'ALL',
@@ -29,6 +28,7 @@ const events: TEvent[] = [
     time: '10:00 - 22:00'
   },
   {
+    id: '003',
     name: 'Выставка современной живописи и графики "Улицы сегодня"',
     type: 'LEISURE',
     directions: 'ALL',
@@ -46,6 +46,7 @@ const events: TEvent[] = [
     time: '10:00 - 22:00'
   },
   {
+    id: '004',
     name: 'Экскурсии по территории Конкурс-Премии "Кардо"',
     type: 'LEISURE',
     directions: 'ALL',
@@ -57,12 +58,6 @@ const events: TEvent[] = [
     time: '13:00 - 15:00'
   }
 ]
-
-
-export const eventsWithId = events.map(event => {
-  return { ...event, id: uuidv4() }
-})
-export const eventsId = createContext(eventsWithId)
 
 export const Events: React.FC = () => {
   return (
@@ -84,10 +79,10 @@ export const Events: React.FC = () => {
             style={'rectangle'}></Select>
         </form>
         <ul className={styles.eventCardsList}>
-          {eventsWithId.map(event => {
+          {events.map(event => {
             return (
               <li key={event.id}>
-                <EventCard eventId={event.id} eventData={event} />
+                <EventCard eventId={event.id} eventData={event} isDetailed={false} />
               </li>
             )
           })}
