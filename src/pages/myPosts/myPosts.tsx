@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./myPosts.module.css";
+import React from 'react'
+import styles from './myPosts.module.css'
 import linkPhoto from '../../assets/images/image-post.png'
 import linkVideo from '../../assets/images/video-post.png'
 import clsx from 'clsx'
@@ -18,9 +18,7 @@ export type TPosts = {
 
 export const MyPosts: React.FC = () => {
 
-  const navigate = useNavigate();
-
-  // const iconProfile: string = iconProfile; Добавить переменную, когда апи будут готовы
+  const navigate = useNavigate()
 
   const allPosts = [
     {
@@ -90,21 +88,21 @@ export const MyPosts: React.FC = () => {
 
   ]
 
-  const filteredPosts: TPosts[] = [];
+  const filteredPosts: TPosts[] = []
 
-  function filterCategory () {
+  function filterCategory() {
 
     allPosts.filter((item) => {
       if (!filteredPosts.some((element) => element.category === item.category)) {
-        filteredPosts.push(item);
-        return filteredPosts;
+        filteredPosts.push(item)
+        return filteredPosts
       }
-    });
+    })
   }
 
-  filterCategory ();
+  filterCategory()
 
-  function filterPosts () {
+  function filterPosts() {
 
   }
 
@@ -117,12 +115,12 @@ export const MyPosts: React.FC = () => {
                                         key={post.id}>{post.category}</div>)}
       </div>
 
-        <div className={styles.posts}>
-          {
-            allPosts.map(post => <Post url={post.url} name={post.name} date={post.date} category={post.category}
-                                       text={post.text} key={post.id} />)
-          }
-        </div>
+      <div className={styles.posts}>
+        {
+          allPosts.map(post => <Post url={post.url} name={post.name} date={post.date} category={post.category}
+                                     text={post.text} key={post.id} />)
+        }
+      </div>
 
       <div className={styles.button_container}>
         <Button className={styles.button} onClick={() => {

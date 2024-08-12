@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from "./createPost.module.css";
+import styles from './createPost.module.css'
 import { SubHeader } from '../../components/subHeader/subHeader'
 import { Button } from '../../components/button/button'
 import { useNavigate } from 'react-router-dom'
@@ -10,14 +10,12 @@ import upload from '../../assets/icons/upload.svg'
 
 export const CreatePost: React.FC = () => {
 
-  const [description, setDescription] = useState('');
+  const [description, setDescription] = useState('')
 
-  // const [file, setFile] = useState();
-
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const categories = ['Kickscootering', 'Breaking', 'Parkour', 'Freerunning',
-    'Workout', 'Hip-hop', 'Graffiti', 'Djing', 'Tricking', 'Skateboarding', 'BMX'];
+    'Workout', 'Hip-hop', 'Graffiti', 'Djing', 'Tricking', 'Skateboarding', 'BMX']
 
   return (
     <>
@@ -45,11 +43,7 @@ export const CreatePost: React.FC = () => {
 
         <form className={styles.loading_area} id="upload-container" encType="multipart/form-data" method="POST">
 
-          <input id="file-input" type="file" accept="image/*,video/*" name="file" multiple
-            // onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-            //функция получения значения загруженного файла
-            // }}
-          />
+          <input id="file-input" type="file" accept="image/*,video/*" name="file" multiple />
           <label className={clsx(styles.label, 'text_type_secondary_main')} htmlFor="file-input">
             <img src={upload} alt="иконка загрузить файл" />
             Загрузить фото или видео
@@ -60,7 +54,6 @@ export const CreatePost: React.FC = () => {
         <div className={styles.button_container}>
           <Button className={styles.button} onClick={() => {
             navigate(`/newsFeed/myPosts`)
-            // dispatch(newPost);
           }}>
             Создать публикацию
           </Button>

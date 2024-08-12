@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice, PayloadAction, SerializedError } from '@reduxjs/toolkit'
 import { getLoginRequest, postRegisterProfileRequest } from '../../utils/auth'
-import { TMessageErrorResponse, UserResponse, UserResponseId } from '../../utils/types'
+import { TMessageErrorResponse, UserDto, UserResponse, UserResponseId } from '../../utils/types'
 
 type TInitialState = {
   isLoading: boolean,
   error: SerializedError | null;
   status: string;
+  user: UserDto | null;
   userId: string | null;
 }
 
@@ -13,6 +14,7 @@ export const initialState: TInitialState = {
   isLoading: false,
   error: null,
   status: '',
+  user: null,
   userId: localStorage.getItem('userId'),
 }
 
@@ -46,9 +48,11 @@ const loginSlice = createSlice({
       .addCase(fetchLoginResult.fulfilled.type, handleLogin)
       .addCase(fetchLoginResult.rejected.type, (state: TInitialState, action: PayloadAction<UserResponse>) => {
         // state.error = action.payload.error ? Error(action.payload.error) : null
+        state.user = action.payload.user;
         console.log(action.payload);
         console.log(3);
-        state.isLoading = false
+        state.isLoading = false;
+        state.user = action.payload.user;
       })
       .addCase(fetchRegisterProfileResult.pending.type, (state: TInitialState) => {
         state.isLoading = true;
@@ -69,7 +73,6 @@ function handleLogin(state: TInitialState, action: PayloadAction<UserResponseId>
   console.log(action.payload);
   console.log(2);
   // localStorage.setItem('userId', action.payload.userId)
-  //Комментами помечены поля, которые непонятно, в каком виде будут приходить с сервера и под каким названием
 }
 
 export const { userLogout } = loginSlice.actions

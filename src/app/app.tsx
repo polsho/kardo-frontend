@@ -1,9 +1,7 @@
 import React from 'react'
 import styles from './app.module.css'
-import { Routes, Route, useLocation, useNavigate, useParams } from 'react-router-dom'
-//   import { useDispatch } from '../../services/store';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 
-import { useEffect } from 'react'
 import { Screensaver } from '../pages/screensaver/screensaver'
 import { Main } from '../pages/main/main'
 import { RegisterStep1 } from '../pages/registerStep1/registerStep1'
@@ -41,6 +39,8 @@ function App() {
       <Routes location={background || location}>
         <Route path="/" element={<Layout><Main /></Layout>} />
 
+        <Route path="/screenSaver" element={<Screensaver />} />
+
         <Route path="/profile">
           <Route index element={<Layout header={false}><Profile /></Layout>} />
           <Route path="profileChanges" element={<Layout header={false}><ProfileChanges /></Layout>} />
@@ -55,8 +55,6 @@ function App() {
           <Route path="/events/tasks/:id" element={<Layout><Tasks /></Layout>} />
         </Route>
 
-        {/*<Route path="/welcomePage" element={<WelcomeScreen />} />*/}
-        <Route path="/screenSaver" element={<Screensaver />} />
         <Route path="/login" element={<Layout header={false} footer={false}><Login /></Layout>} />
         <Route path="/register/step1" element={<Layout header={false} footer={false}><RegisterStep1 /></Layout>} />
         <Route path="/register/step2" element={<Layout header={false} footer={false}><RegisterStep2 /></Layout>} />
@@ -74,19 +72,13 @@ function App() {
         <Route path="/contest" element={<Layout header={true} footer={true}><Contest /></Layout>}/>
         <Route path="/more" element={<Layout header={true} footer={true}><More /></Layout>}/>
 
-        <Route path="/alert" element={
-          <Modal closeModal={() => {navigate(-1)}}>
-            <PopUp title={''} text={'Можно выбрать не более 2 номинаций для участия'} />
-          </Modal>}
-        />
-
         <Route path="/register/done" element={
           <Modal closeModal={() => {navigate(-2)}}>
             <PopUp title={'Регистрация прошла успешно!'} text={'Вам на указанную почту направлено письмо с данными для входа'} />
           </Modal>}
         />
 
-        <Route path="*" element={<NotFound/>}/>
+        <Route path="*" element={<Layout header={true} footer={true}><NotFound /></Layout>}/>
       </Routes>
     </div>
   )

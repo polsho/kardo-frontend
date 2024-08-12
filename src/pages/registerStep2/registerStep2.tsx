@@ -3,40 +3,40 @@ import styles from './registerStep2.module.css'
 import clsx from 'clsx'
 import { Button } from '../../components/button/button'
 import { Input } from '../../components/input/input'
-import {useNavigate, useParams } from 'react-router-dom'
 import { SubHeader } from '../../components/subHeader/subHeader'
 import { Select } from '../../components/select/select'
-import { fetchRegisterProfileResult } from '../../services/reducers/loginSlice'
-import { useAppDispatch } from '../../utils/types'
+import { useNavigate } from 'react-router-dom'
 
 export const RegisterStep2: React.FC = () => {
 
-  const navigate = useNavigate();
-  const params = useParams()
   const [dateOfBirth, setDateOfBirth] = useState('');
   const [country, setCountry] = useState('');
   const [region, setRegion] = useState('');
   const [city, setCity] = useState('');
   const [publicLink, setPublicLink] = useState('');
 
-  const dispatch = useAppDispatch();
-
-  const {email, name, surname, patronymic, password} = params
+  const navigate = useNavigate();
 
   const submitForm = (event: React.FormEvent<HTMLFormElement>): any => {
     event.preventDefault();
-    dispatch(fetchRegisterProfileResult({ email: email || '',
-      name: name || '',
-      surname: surname || '',
-      patronymic: patronymic || '',
-      type: 'PARTICIPANT',
-      password: password || '',
-      birthday: dateOfBirth,
-      country: country,
-      region: region,
-      city: city }));
-    navigate('/register/done')
+    navigate('/')
+
+    //бэкенд не работает
+    // dispatch(fetchRegisterProfileResult({ email: email || '',
+    //   name: name || '',
+    //   surname: surname || '',
+    //   patronymic: patronymic || '',
+    //   type: 'PARTICIPANT',
+    //   password: password || '',
+    //   birthday: dateOfBirth,
+    //   country: country,
+    //   region: region,
+    //   city: city }));
+    // navigate('/register/done')
+
   }
+
+  
 
   return (
     <>
@@ -46,7 +46,7 @@ export const RegisterStep2: React.FC = () => {
 
           <form className={styles.form} id="register2" onSubmit={submitForm}>
 
-            <Input type="date" name="date-of-birth" required htmlFor="Дата рождения" value={dateOfBirth}
+            <Input type="date" name="date-of-birth" htmlFor="Дата рождения" value={dateOfBirth}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                      setDateOfBirth(event.target.value)
                    }} />
@@ -83,7 +83,7 @@ export const RegisterStep2: React.FC = () => {
               }}
             />
 
-            <Input type="text" name="public-link" required htmlFor="Ссылка на соц. сети" value={publicLink}
+            <Input type="text" name="public-link" htmlFor="Ссылка на соц. сети" value={publicLink}
                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                      setPublicLink(event.target.value)
                    }} />
