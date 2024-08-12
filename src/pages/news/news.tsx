@@ -5,12 +5,13 @@ import { SubHeader } from '../../components/subHeader/subHeader'
 import { TabBar } from '../../components/tabBar/tabBar'
 
 export const News: React.FC = () => {
-
+  const tabBarButtons: string[] = ['Лента', 'Трансляции', 'Мои посты']
+  const paths: string[] = ['/newsFeed', '/newsFeed/broadcasts', '/newsFeed/myPosts']
 
   return (
     <>
       <SubHeader title="Лента" />
-      <TabBar />
+      <TabBar buttons={tabBarButtons} paths={paths}/>
 
       <div className={styles.container}>
         <Outlet />

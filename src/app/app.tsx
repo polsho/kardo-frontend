@@ -27,6 +27,9 @@ import { More } from '../pages/more/more'
 import { ForgotPassword } from '../pages/forgotPassword/forgotPassword'
 import { RegisterStep2 } from '../pages/registerStep2/registerStep2'
 import { Login } from '../pages/login/login'
+import { ContestFeed } from '../pages/contestFeed/contestFeed'
+import { Kids } from '../pages/kids/kids'
+import { VideoContest } from '../pages/videoContest/videoContest'
 
 function App() {
   const location = useLocation()
@@ -67,7 +70,12 @@ function App() {
         <Route path="/createPost" element={<Layout header={false} footer={false}><CreatePost /></Layout>} />
         <Route path="/newsFeed/comments" element={<Layout header={false}><Comments /></Layout>} />
 
-        <Route path="/contest" element={<Layout header={true} footer={true}><Contest /></Layout>}/>
+        <Route path="/contest" element={<Layout><Contest /></Layout>}>
+          <Route index element={<ContestFeed />} />
+          <Route path="/contest/videoContest" element={<VideoContest />} />
+          <Route path="/contest/kids" element={<Kids />} />
+        </Route>
+
         <Route path="/more" element={<Layout header={true} footer={true}><More /></Layout>}/>
 
         <Route path="/alert" element={
