@@ -52,7 +52,6 @@ export const RequestForReg: FC = () => {
   }, [directions])
 
   function handleChecked(event: React.ChangeEvent<HTMLInputElement>) {
-    console.log(directions)
     if (event.target.checked) {
       if (directions.length < 2) {
         setDirections([...directions, event.target.name])
@@ -68,7 +67,6 @@ export const RequestForReg: FC = () => {
 
   function handleNextButton() {
     setIsHidden(!isHidden)
-    console.log(isHidden)
   }
 
   const currentStage = selectionData.stages.find(stage => {

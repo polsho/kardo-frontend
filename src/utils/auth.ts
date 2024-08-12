@@ -40,6 +40,3 @@ export const postRegisterProfileRequest = (user: UserDto): Promise<any> => {
     },
   })
 }
-
-
-// name, surname, patronymic, type, email, password, birthday, country, region, city

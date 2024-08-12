@@ -9,3 +9,7 @@ export const validatePassword = (password: string): string|null => {
 
   return regexp.test(password) ? null : "Пароль должен содержать не менее 6 символов"
 }
+
+export const formatDateToDayMonth = (date: string) => {
+  return new Date(date).toLocaleString('ru', {day: 'numeric', month:'long'});
+}

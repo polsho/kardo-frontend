@@ -32,8 +32,7 @@ export const Selections: FC = () => {
   useEffect(() => {
     if (selectionData.startDate && selectionData.endDate) {
       const today = new Date()
-      console.log()
-      // setRegOpened(today >= new Date(toDate(selectionData.startDate)) && today <= new Date(toDate(selectionData.endDate)))
+      setRegOpened(today >= new Date(toDate(selectionData.startDate)) && today <= new Date(toDate(selectionData.endDate)))
     }
   })
   return (
