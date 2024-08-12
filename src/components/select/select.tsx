@@ -1,7 +1,6 @@
 import React, { SelectHTMLAttributes } from 'react'
 import styles from './select.module.css'
 import clsx from 'clsx'
-import { v4 as uuidv4 } from 'uuid'
 
 type TSelectStyle = 'white' | 'white-red' | 'black'
 

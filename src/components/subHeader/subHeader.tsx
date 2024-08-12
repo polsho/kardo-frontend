@@ -13,6 +13,7 @@ export const SubHeader = ({ title }: TSubHeaderProps): JSX.Element => {
   function handleClick() {
     navigate(-1)
   }
+
   return (
     <div className={styles.container}>
       <div onClick={handleClick}>

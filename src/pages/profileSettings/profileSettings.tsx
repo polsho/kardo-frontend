@@ -13,7 +13,7 @@ export const ProfileSettings: React.FC = () => {
 
   return (
     <>
-      <SubHeader title='Профиль'/>
+      <SubHeader title="Профиль" />
       <div className={styles.container}>
         <SubMenu links={navLinks} />
       </div>

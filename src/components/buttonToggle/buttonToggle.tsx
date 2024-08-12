@@ -11,9 +11,6 @@ export const ButtonToggle: React.FC = () => {
         <label className={styles.toggle}
                onClick={() => {
                  setStatus('Участник')
-                 console.log(status);
-                 // toggleButton(event.target)
-                 //Поправить функцию, сейчас при нажатии в консоль выводится предыдущее значение и то, на которое нажали. И так при каждом нажатии
                }}
         >
           <input id="on" type="radio" name="radio" value="participant" checked readOnly/>
@@ -24,8 +21,6 @@ export const ButtonToggle: React.FC = () => {
         <label id="off" className={styles.toggle}
                onClick={() => {
                  setStatus('Эксперт')
-                 console.log(status);
-                 // toggleButton(event.target)
                }}
         >
           <input type="radio" name="radio" value="expert" readOnly/>

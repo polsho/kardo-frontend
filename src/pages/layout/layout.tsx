@@ -1,7 +1,5 @@
-import React, { FC, PropsWithChildren, ReactNode } from 'react'
-import PropTypes from 'prop-types'
+import React, { FC, ReactNode } from 'react'
 import styles from './layout.module.css'
-import { Button } from '../../components/button/button'
 import { Header } from '../../components/header/header'
 import { Footer } from '../../components/footer/footer'
 import clsx from 'clsx'
@@ -20,7 +18,7 @@ export const Layout: FC<TLayoutProps> = ({ children, header = true, footer = tru
           <Header />
         </div>
       )}
-      <main className={clsx(styles.container, {[styles.noHeader]: !header})}>{children}</main>
+      <main className={clsx(styles.container, { [styles.noHeader]: !header })}>{children}</main>
       {footer && (
         <div className={styles.footer}>
           <Footer />

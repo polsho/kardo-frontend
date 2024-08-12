@@ -1,7 +1,7 @@
 import styles from './stageCard.module.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import clsx from 'clsx'
-import { TStageStatus, TStage } from '../../utils/types'
+import { TStage } from '../../utils/types'
 
 type TStageCardProps = {
   stageData: TStage
@@ -10,7 +10,6 @@ type TStageCardProps = {
 export const StageCard = ({ stageData }: TStageCardProps): JSX.Element => {
 
   const {status, name, startDate, endDate, tasksId} = stageData
-  const navigate = useNavigate()
 
   return (
     <div className={styles.container}>

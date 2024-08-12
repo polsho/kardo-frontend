@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from "./forgotPassword.module.css";
+import styles from './forgotPassword.module.css'
 import { Input } from '../../components/input/input'
 import { SubHeader } from '../../components/subHeader/subHeader'
 import { Button } from '../../components/button/button'
@@ -9,11 +9,11 @@ export const ForgotPassword: React.FC = () => {
 
   const [email, setEmail] = useState('')
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <>
-      <SubHeader title="Привет,&nbsp;Гость!"/>
+      <SubHeader title="Привет,&nbsp;Гость!" />
 
       <form id="forgotPassword">
 
