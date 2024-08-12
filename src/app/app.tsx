@@ -29,6 +29,7 @@ import { More } from '../pages/more/more'
 import { ForgotPassword } from '../pages/forgotPassword/forgotPassword'
 import { RegisterStep2 } from '../pages/registerStep2/registerStep2'
 import { Login } from '../pages/login/login'
+import { EventById } from '../components/eventById/eventById'
 
 function App() {
   const location = useLocation()
@@ -48,6 +49,7 @@ function App() {
 
         <Route path="/events">
           <Route index element={<Layout header={true} footer={true}><Events /></Layout>} />
+          <Route path="/events/:id" element={<Layout><Modal closeModal={() => {navigate(-1)}}><EventById/></Modal></Layout>} />
           <Route path="/events/requestForReg/:type" element={<Layout><RequestForReg /></Layout>} />
           <Route path="/events/selections/:type" element={<Layout><Selections /></Layout>} />
           <Route path="/events/tasks/:id" element={<Layout><Tasks /></Layout>} />

@@ -1,43 +1,24 @@
-import styles from './eventCard.module.css'
-import { Link } from 'react-router-dom'
+import styles from './eventById.module.css'
+import { Link, useParams } from 'react-router-dom'
 import clsx from 'clsx'
 import { Directions } from '../../utils/types'
 import { formatDateToDayMonth } from '../../utils/utils'
+import { eventsId, eventsWithId } from '../../pages/events/events'
+import { Preloader } from '../preloader/preloader'
+import { useContext } from 'react'
 
-export enum EventType {
-  'ALL',
-  'VIDEO',
-  'GRANT',
-  'DIALOG',
-  'LEISURE',
-  'CULTURE',
-  'STREET_CULTURE_SPORT',
-  'ENTERTAINMENT',
-  'COMPETITION',
-  'EXCURSION'
-}
 
-type Direction = {
-  id: number
-  direction: string | Directions
-}
+export const EventById = (): JSX.Element => {
 
-export type TEvent = {
-  name: string
-  type: string | EventType
-  directions: string | Direction[]
-  date: string
-  description: string
-  location: string
-  time: string
-}
+  const param = useParams();
+  const context = useContext(eventsId)
 
-type TEventCardProps = {
-  eventData: Omit<TEvent, 'type' | 'description'>
-  eventId: string
-}
+  const eventId = param.id;
+  const eventData = eventsWithId.find((e => {e.id === eventId}))
 
-export const EventCard = ({ eventData, eventId }: TEventCardProps): JSX.Element => {
+  if (!eventData) {
+    return <Preloader/>
+  }
   const { name, directions, date, location, time } = eventData
 
   return (

@@ -3,7 +3,7 @@ import styles from './select.module.css'
 import clsx from 'clsx'
 import { v4 as uuidv4 } from 'uuid'
 
-type TSelectStyle = 'white' | 'white-red' | 'black'
+type TSelectStyle = 'white' | 'white-red' | 'black' | 'rectangle'
 
 type TSelectProps = {
   options: string[]
@@ -27,6 +27,7 @@ export const Select = ({
     [styles.whiteSelect]: style === 'white',
     [styles.whiteRedSelect]: style === 'white-red',
     [styles.blackSelect]: style === 'black',
+    [styles.rectangle]: style === 'rectangle',
   };
 
   return (
