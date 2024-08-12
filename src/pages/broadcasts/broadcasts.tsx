@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from "./broadcasts.module.css";
 import linkVideo from '../../assets/images/video-post.png'
 import clsx from 'clsx'
 import { Post } from '../../components/post/post'
-import { useAppDispatch, useAppSelector } from '../../utils/types'
-import { urlApi } from '../../utils/api'
-import { wsConnectBroadcasts, wsDisconnectBroadcasts } from '../../services/actions/actionsBroadcasts'
-import { broadcastsSelector } from '../../services/actions/actionsSelector'
 
 export type TPosts = {
   url?: string,
@@ -19,24 +15,23 @@ export type TPosts = {
 
 export const Broadcasts: React.FC = () => {
 
-  const dispatch = useAppDispatch();
-  const endpoint = `/streams?from=0&size=10`;
-  const wsUrlNewsFeed = `${urlApi}${endpoint}`;
-  // const AllBroadcasts = useAppSelector(broadcastsSelector);
+  //Бэкенд не работает
+  // const dispatch = useAppDispatch();
+  // const endpoint = `/streams?from=0&size=10`;
+  // const wsUrlNewsFeed = `${urlApi}${endpoint}`;
+  //
+  //
+  // useEffect(() => {
+  //   dispatch(
+  //     wsConnectBroadcasts({
+  //       wsUrl: wsUrlNewsFeed
+  //     })
+  //   );
+  //   return () => {
+  //     dispatch(wsDisconnectBroadcasts());
+  //   };
+  // }, [dispatch]);
 
-
-  useEffect(() => {
-    dispatch(
-      wsConnectBroadcasts({
-        wsUrl: wsUrlNewsFeed
-      })
-    );
-    return () => {
-      dispatch(wsDisconnectBroadcasts());
-    };
-  }, [dispatch]);
-
-    // const iconProfile: string = iconProfile; Добавить переменную, когда апи будут готовы
 
     const AllBroadcasts = [
       {

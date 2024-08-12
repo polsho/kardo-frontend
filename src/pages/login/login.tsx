@@ -1,52 +1,52 @@
 import React, { useState } from 'react'
 import styles from './login.module.css'
 import clsx from 'clsx'
-import { Link} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Button } from '../../components/button/button'
 import { Input } from '../../components/input/input'
 import { SubHeader } from '../../components/subHeader/subHeader'
-import { fetchLoginResult } from '../../services/reducers/loginSlice'
-import { useAppDispatch} from '../../utils/types'
 import { validateEmail, validatePassword } from '../../utils/utils'
 
 export const Login: React.FC = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [isEmailValid, setIsEmailValid] = useState(true);
-  const [isPasswordValid, setIsPasswordValid] = useState(true);
-  const [errorEmail, setErrorEmail] = useState ('');
-  const [errorPassword, setErrorPassword] = useState ('');
+  const [isEmailValid, setIsEmailValid] = useState(true)
+  const [isPasswordValid, setIsPasswordValid] = useState(true)
+  const [errorEmail, setErrorEmail] = useState('')
+  const [errorPassword, setErrorPassword] = useState('')
 
-  const dispatch = useAppDispatch();
+
+  const navigate = useNavigate()
 
   function login(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-
-    dispatch(fetchLoginResult({ email: email, password: password }))
+    navigate('/')
+    //бэкенд не работает
+    // dispatch(fetchLoginResult({ email: email, password: password }))
   }
 
   const validationEmail = (): any => {
     let errorEmail = validateEmail(email)
     if (errorEmail !== null) {
       setIsEmailValid(false)
-      setErrorEmail(errorEmail);
-      return errorEmail;
+      setErrorEmail(errorEmail)
+      return errorEmail
     } else {
       setIsEmailValid(true)
-      setErrorEmail("");
+      setErrorEmail('')
       return null
     }
   }
 
   const validationPassword = (): any => {
-  let errorPassword = validatePassword(password)
-  if (errorPassword !== null) {
-    setIsPasswordValid(false);
-    setErrorPassword(errorPassword);
-    return errorPassword
-  } else {
-    setIsPasswordValid(true);
-    setErrorPassword("");
+    let errorPassword = validatePassword(password)
+    if (errorPassword !== null) {
+      setIsPasswordValid(false)
+      setErrorPassword(errorPassword)
+      return errorPassword
+    } else {
+      setIsPasswordValid(true)
+      setErrorPassword('')
       return null
     }
   }
@@ -60,19 +60,21 @@ export const Login: React.FC = () => {
           <form className={styles.form} id="loginSlice" onSubmit={login}>
 
             <div>
-            <Input type="email" name="email" isValid={isEmailValid} required htmlFor="Имя пользователя" placeholder="Логин" value={email}
-                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                     setEmail(event.target.value);
-                     validationEmail();
-                   }} />
-            {errorEmail && <p className={clsx(styles.error, 'text_type_main-small')}>{errorEmail}</p>}
+              <Input type="email" name="email" isValid={isEmailValid} htmlFor="Имя пользователя" placeholder="Логин"
+                     value={email}
+                     onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                       setEmail(event.target.value)
+                       validationEmail()
+                     }} />
+              {errorEmail && <p className={clsx(styles.error, 'text_type_main-small')}>{errorEmail}</p>}
             </div>
 
             <div className={styles.passwordContainer}>
-              <Input type="password" name="password" isValid={isPasswordValid} required htmlFor="Пароль" placeholder="Пароль" value={password}
+              <Input type="password" name="password" isValid={isPasswordValid} htmlFor="Пароль" placeholder="Пароль"
+                     value={password}
                      onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                        setPassword(event.target.value)
-                       validationPassword();
+                       validationPassword()
                      }} />
               {errorPassword && <p className={clsx(styles.error, 'text_type_main-small')}>{errorPassword}</p>}
             </div>

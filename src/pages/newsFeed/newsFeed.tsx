@@ -16,8 +16,6 @@ export type TPosts = {
 
 export const NewsFeed: React.FC = () => {
 
-  // const iconProfile: string = iconProfile; Добавить переменную, когда апи будут готовы
-
   const Allposts = [
     {
       url: linkPhoto,
@@ -86,21 +84,21 @@ export const NewsFeed: React.FC = () => {
 
   ]
 
-  const filteredPosts: TPosts[] = [];
+  const filteredPosts: TPosts[] = []
 
-  function filterCategory () {
+  function filterCategory() {
 
     Allposts.filter((item) => {
       if (!filteredPosts.some((element) => element.category === item.category)) {
-        filteredPosts.push(item);
-        return filteredPosts;
+        filteredPosts.push(item)
+        return filteredPosts
       }
-    });
+    })
   }
 
-  filterCategory ();
+  filterCategory()
 
-  function filterPosts () {
+  function filterPosts() {
 
   }
 
@@ -109,14 +107,15 @@ export const NewsFeed: React.FC = () => {
       <div className={clsx(styles.category_container, 'text_type_main-default')}>
         <div className={styles.category}>Все</div>
 
-        {filteredPosts.map(post => <div className={styles.category} onClick={filterPosts} key={post.id}>{post.category}</div>)}
+        {filteredPosts.map(post => <div className={styles.category} onClick={filterPosts}
+                                        key={post.id}>{post.category}</div>)}
       </div>
 
       <div className={styles.container}>
         <div className={styles.posts}>
           {
             Allposts.map(post => <Post url={post.url} name={post.name} date={post.date} category={post.category}
-                                    text={post.text} key={post.id}/>)
+                                       text={post.text} key={post.id} />)
           }
         </div>
       </div>

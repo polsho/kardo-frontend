@@ -8,7 +8,7 @@ import clsx from 'clsx'
 import { Link, useNavigate } from 'react-router-dom'
 import { Ticker } from '../../components/ticker/ticker'
 import { SwipedCarousel } from '../../components/swipedCarousel/swipedCarousel'
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 
 type statInfo = {
   number: string
@@ -34,7 +34,7 @@ export const Main: React.FC = () => {
 
   return (
     <>
-      <img className='element_beyond_padding' src={kardoImage} alt="надпись free running на фоне прыгающего мужчины" />
+      <img className="element_beyond_padding" src={kardoImage} alt="надпись free running на фоне прыгающего мужчины" />
       <div className={styles.mainSection}>
         <div className={styles.header}>
           <h1 className={clsx(styles.title, 'text_type_heading-main')}>кардо [ 7 ]</h1>
@@ -63,13 +63,13 @@ export const Main: React.FC = () => {
           </li>
         </ul>
       </div>
-      <div className='element_beyond_padding'>
-      <Ticker text="улица начинается здесь" />
+      <div className="element_beyond_padding">
+        <Ticker text="улица начинается здесь" />
       </div>
       <div className={clsx(styles.slider, 'element_beyond_padding')}>
         <SwipedCarousel>
           {sliderImages.map(image => {
-            return <img src={image} alt="" className={styles.sliderImage} key={uuidv4()} ></img>
+            return <img src={image} alt="" className={styles.sliderImage} key={uuidv4()}></img>
           })}
         </SwipedCarousel>
       </div>
@@ -77,9 +77,9 @@ export const Main: React.FC = () => {
         <div>
           <h2 className={clsx(styles.title, styles.AboutUsSectionTitle, 'text_type_heading-small')}>о нас</h2>
           <p className="text_type_main-default">
-            «КАРДО» — так в Римской империи называлась улица, ориентированная с севера на юг. Именно она была
+            «КАРДО» — так в Римской империи называлась улица, ориентированная с севера на юг. Именно она была
             центром социальной и экономической жизни города. Сегодня же это слово не только не теряет
-            актуальности, но и обретает новую силу. Потому что «КАРДО» — это первая международная премия за
+            актуальности, но и обретает новую силу. Потому что «КАРДО» — это первая международная премия за
             развитие уличной культуры и спорта, которая с каждым годом берет новые высоты и вдохновляет на это
             людей!
           </p>
@@ -96,7 +96,7 @@ export const Main: React.FC = () => {
         </div>
         <div className="text_type_main-default">
           <p>
-            «КАРДО» — проект, который входит в состав президентской платформы{' '}
+            «КАРДО» — проект, который входит в состав президентской платформы{' '}
             <span className={styles.link}>
               <Link to="https://rsv.ru/" target="_blank">
                 «Россия — страна возможностей».
@@ -106,16 +106,16 @@ export const Main: React.FC = () => {
             социальных лифтов для деятелей улиц.
           </p>
           <p>
-            Международная конкурс-премия «КАРДО»  является первой и единственной в мире премией за вклад в
+            Международная конкурс-премия «КАРДО» является первой и единственной в мире премией за вклад в
             развитие уличной культуры и спорта, в рамках которой лучшие представители уличной культуры и
             спорта из разных стран проходят конкурсные испытания в четырех форматах: премия, видео,
-            соревнования, общественные проекты по 11 направлениям: BMX, KICKSCOOTERING, HIP-HOP, PARKOUR,
-            FREERUNNING, TRICKING, BREAKING, WORKOUT, GRAFFITI, SKATEBOARDING, DJING. Премия «КАРДО» открывает
+            соревнования, общественные проекты по 11 направлениям: BMX, KICKSCOOTERING, HIP-HOP, PARKOUR,
+            FREERUNNING, TRICKING, BREAKING, WORKOUT, GRAFFITI, SKATEBOARDING, DJING. Премия «КАРДО» открывает
           </p>
           <p>
             новые границы настолько важной для всех нас культуры, давно и надолго интегрированной в нашу ДНК.
             Мы здесь, чтобы становиться лучше и мотивировать друг друга на победу. Чтобы наши голоса зазвучали
-            как никогда громко! Мы здесь, чтобы премия «КАРДО» вошла в историю!
+            как никогда громко! Мы здесь, чтобы премия «КАРДО» вошла в историю!
           </p>
         </div>
       </div>

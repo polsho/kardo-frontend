@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from "./comment.module.css";
+import styles from './comment.module.css'
 import clsx from 'clsx'
 import bin from '../../assets/icons/delete.svg'
 import iconProfile from '../../assets/images/photo-profile.png'
@@ -8,21 +8,14 @@ import like from '../../assets/icons/like.svg'
 import dislike from '../../assets/icons/dislike.svg'
 import { TComment } from '../../pages/comments/comments'
 
-export const Comment: React.FC<TComment> = ({text, name, date}: TComment) => {
+export const Comment: React.FC<TComment> = ({ text, name, date }: TComment) => {
 
-  const [isActiveDeleteButton, setIsActiveDeleteButton] = useState(false);
-  // const dispatch = useDispatch();
-
-
-  function deleteComment () {
-    // dispatch(deleteComment);
-  }
+  const [isActiveDeleteButton, setIsActiveDeleteButton] = useState(false)
 
   return (
     <>
       <div className={styles.comment}>
-        <button className={clsx(styles.delete_button, isActiveDeleteButton && styles.active)}
-                onClick={() => deleteComment()}>
+        <button className={clsx(styles.delete_button, isActiveDeleteButton && styles.active)}>
           <img src={bin} alt="иконка корзина" />
           <span className={clsx(styles.button_text, 'text_type_main-large')}>Удалить комментарий</span>
         </button>

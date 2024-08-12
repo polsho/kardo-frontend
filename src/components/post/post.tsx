@@ -8,7 +8,6 @@ import comments from '../../assets/icons/comments.svg'
 import settings from '../../assets/icons/nav-bar.svg'
 import bin from '../../assets/icons/delete.svg'
 import { Link } from 'react-router-dom'
-// import { useDispatch } from 'react-redux'
 
 export type TPost = {
   url?: string,
@@ -21,18 +20,11 @@ export type TPost = {
 export const Post: React.FC<TPost> = ({url, text, name, date, category}: TPost) => {
 
   const [isActiveDeleteButton, setIsActiveDeleteButton] = useState(false);
-  // const dispatch = useDispatch();
-
-
-  function deletePost () {
-    // dispatch(deletePost);
-  }
 
   return (
     <>
       <div className={styles.post}>
-        <button className={clsx(styles.delete_button, isActiveDeleteButton && styles.active)}
-                onClick={() => deletePost()}>
+        <button className={clsx(styles.delete_button, isActiveDeleteButton && styles.active)}>
           <img src={bin} alt="иконка корзина" />
           <span className='text_type_main-large'>Удалить публикацию</span>
         </button>

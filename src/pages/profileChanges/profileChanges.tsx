@@ -14,10 +14,6 @@ export const ProfileChanges: React.FC = () => {
 
   const [urlPhoto, setUrlPhoto] = useState(ProfilePhoto)
 
-  function changePhoto() {
-    // добавить загрузку фото
-  }
-
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [patronymicName, setPatronymicName] = useState('')
@@ -43,7 +39,7 @@ export const ProfileChanges: React.FC = () => {
     <>
       <SubHeader title="Профиль" />
       <div className={styles.container}>
-        <div className={styles.photo} onClick={changePhoto}>
+        <div className={styles.photo}>
           <img className={styles.photoImage} src={urlPhoto} alt="фото пользователя" />
           <div className={clsx(styles.photoText, 'text_type_secondary_large')}>Ваше фото</div>
         </div>
