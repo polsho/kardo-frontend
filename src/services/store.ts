@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import loginReducer from "./reducers/loginSlice";
-import { socketMiddleware } from './middleware/socket-middleware'
+// import { socketMiddleware } from './middleware/socket-middleware'
 import { urlApi } from '../utils/api'
 import wsSliceBroadcasts, {wsCloseBroadcasts, wsErrorBroadcasts, wsOpenBroadcasts, wsMessageBroadcasts} from "./reducers/wsBroadcastsSlice";
 import { wsConnectingBroadcasts, wsConnectBroadcasts, wsDisconnectBroadcasts } from './actions/actionsBroadcasts'
@@ -16,19 +16,19 @@ const wsActionBroadcasts = {
   wsError: wsErrorBroadcasts,
 };
 
-const broadcastsMiddleware  = socketMiddleware(wsActionBroadcasts);
+// const broadcastsMiddleware  = socketMiddleware(wsActionBroadcasts);
 
 export const store = configureStore({
   reducer: {
     loginSlice: loginReducer,
     wsBroadcasts: wsSliceBroadcasts,
   },
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware({
-      thunk: {
-        extraArgument: urlApi,
-      },
-    }).concat(broadcastsMiddleware),
+  // middleware: getDefaultMiddleware =>
+  //   getDefaultMiddleware({
+  //     thunk: {
+  //       extraArgument: urlApi,
+  //     },
+  //   }).concat(broadcastsMiddleware),
 })
 
 export type RootState = ReturnType<typeof store.getState>;

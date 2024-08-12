@@ -69,7 +69,6 @@ function handleLogin(state: TInitialState, action: PayloadAction<UserResponseId>
   console.log(action.payload);
   console.log(2);
   // localStorage.setItem('userId', action.payload.userId)
-  //Комментами помечены поля, которые непонятно, в каком виде будут приходить с сервера и под каким названием
 }
 
 export const { userLogout } = loginSlice.actions
