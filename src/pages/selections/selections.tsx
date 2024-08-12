@@ -32,8 +32,7 @@ export const Selections: FC = () => {
   useEffect(() => {
     if (selectionData.startDate && selectionData.endDate) {
       const today = new Date()
-      console.log()
-      // setRegOpened(today >= new Date(toDate(selectionData.startDate)) && today <= new Date(toDate(selectionData.endDate)))
+      setRegOpened(today >= new Date(toDate(selectionData.startDate)) && today <= new Date(toDate(selectionData.endDate)))
     }
   })
   return (
@@ -83,10 +82,10 @@ export const Selections: FC = () => {
           <ul className={styles.competitionStages}>
             {selectionData.stages.map((stage, index) => {
               return (
-                <li className={styles.competitionStage}>
+                <li className={styles.competitionStage} key={uuidv4()}>
                   <div className={styles.stageIndex}>{index + 1}</div>
                   <div className={styles.competitionStageCard}>
-                    <StageCard stageData={stage} key={uuidv4()} />
+                    <StageCard stageData={stage}/>
                   </div>
                 </li>
               )
