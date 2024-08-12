@@ -14,7 +14,7 @@ export const Textarea = ({
   label
 }: TextareaHTMLAttributes<HTMLTextAreaElement> & TTextAreaProps): JSX.Element => {
   return (
-    <div className={styles.сontainer}>
+    <div>
       {label && (
         <label className={clsx(styles.label, 'text_type_secondary_main')} htmlFor={id}>
           {label}

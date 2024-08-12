@@ -1,6 +1,5 @@
 import React, { TouchEventHandler, TouchEvent, useEffect, useState } from 'react'
 import styles from './swipedCarousel.module.css'
-import clsx from 'clsx'
 
 type TSwipedCarouselProps = {
   children: JSX.Element[]

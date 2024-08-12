@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from "./comments.module.css";
+import styles from './comments.module.css'
 import { SubHeader } from '../../components/subHeader/subHeader'
 import send from '../../assets/icons/icon-send.svg'
 import { Comment } from '../../components/comment/comment'
@@ -52,15 +52,16 @@ export const Comments: React.FC = () => {
       date: '01.08.2024',
       id: 6
     }
-    ]
+  ]
 
   return (
     <div className={styles.page_container}>
-      <SubHeader title={'Комментарии'}/>
+      <SubHeader title={'Комментарии'} />
 
       <div className={styles.comments}>
         {
-          allComments.map(comment => <Comment name={comment.name} date={comment.date} text={comment.text} key={comment.id} />)
+          allComments.map(comment => <Comment name={comment.name} date={comment.date} text={comment.text}
+                                              key={comment.id} />)
         }
       </div>
 

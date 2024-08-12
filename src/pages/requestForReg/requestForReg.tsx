@@ -11,7 +11,6 @@ import { Select } from '../../components/select/select'
 import { DirectionCheck } from '../../components/directionCheck/directionCheck'
 import { Directions } from '../../utils/types'
 import { Input } from '../../components/input/input'
-import { PopUp } from '../../components/popUp/popUp'
 
 export const RequestForReg: FC = () => {
   const params = useParams()

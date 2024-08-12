@@ -25,8 +25,8 @@ export const Selections: FC = () => {
     return <Preloader />
   }
 
-  function toDate (data:string): Date {
-    return new Date(`${data.slice(-4)}-${data.slice(3,5)}-${data.slice(0,2)}`)
+  function toDate(data: string): Date {
+    return new Date(`${data.slice(-4)}-${data.slice(3, 5)}-${data.slice(0, 2)}`)
   }
 
   useEffect(() => {
@@ -63,17 +63,17 @@ export const Selections: FC = () => {
       )}
       {(selectionType === 'final') && (
         <div className={styles.container}>
-        <p className={clsx(styles.regStatus, 'text_type_secondary_main')}>
-          {`Регистрация открыта!`}
-        </p>
-        
-        <Button
-          onClick={() => {
-            navigate(`/events/requestForReg/${selectionType}`)
-          }}>
-          Подать Заявку
-        </Button>
-      </div>
+          <p className={clsx(styles.regStatus, 'text_type_secondary_main')}>
+            {`Регистрация открыта!`}
+          </p>
+
+          <Button
+            onClick={() => {
+              navigate(`/events/requestForReg/${selectionType}`)
+            }}>
+            Подать Заявку
+          </Button>
+        </div>
       )}
       {(selectionType === 'online' || selectionType === 'video') && (
         <div className={styles.competition}>

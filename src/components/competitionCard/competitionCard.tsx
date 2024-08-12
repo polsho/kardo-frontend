@@ -1,23 +1,13 @@
 import styles from './competitionCard.module.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import clsx from 'clsx'
 import { TCompetition } from '../../utils/types'
 
 type TCompetitionCardProps = {
   competitionData: Omit<TCompetition, "stages">
-  // name: string
-  // url: string
-  // startDate?: string
-  // endDate?: string
-  // level?: number
 }
 
 export const CompetitionCard = ({
-  // name,
-  // url,
-  // startDate,
-  // endDate,
-  // level
   competitionData
 }: TCompetitionCardProps): JSX.Element => {
   const navigate = useNavigate()
