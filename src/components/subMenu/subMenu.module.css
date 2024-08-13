@@ -1,13 +1,13 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px 12px;
-    background-color: var(--background-color-cards);
-    border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 12px;
+  background-color: var(--background-color-cards);
+  border-radius: 4px;
 }
 
 .link {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }

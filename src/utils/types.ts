@@ -43,32 +43,29 @@ export enum UserType {
 }
 
 export type UserDto = {
-  email: string;
+  id: number;
   name: string;
   surname: string;
   patronymic: string;
   type: string | UserType;
+  email: string;
   password: string;
   birthday: string;
-  country: string;
-  region: string;
+  country: {id: number, name: string};
+  region: {id: number, name: string, country: {id: number, name: string}};
   city: string;
+  gender?: string;
 }
 
+
 export type ServerResponse<T> = {
-  status: number;
+  success: boolean;
 } & T;
 
 export type UserResponse = ServerResponse<{
   user: UserDto;
   error: string | null;
-  userId: string;
 }>
-
-export type UserResponseId = ServerResponse<{
-  user: UserDto;
-  userId: string;
-}>;
 
 export type TMessageErrorResponse = ServerResponse<{
   error: string | null | undefined;

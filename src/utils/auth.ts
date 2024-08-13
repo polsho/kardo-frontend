@@ -1,22 +1,41 @@
-import {request} from "./api";
-import { UserResponse, UserType } from './types'
+import checkResponse, {request, urlApi} from "./api";
+import { UserDto, UserType } from './types'
 
-type TLoginRequest = {
+export type TLoginRequest = {
   email: string;
   password: string;
 }
 
 
-export const getLoginRequest = ({email, password}: TLoginRequest): Promise<any> => {
-  let query: string = "email="+email+"&password="+password
-  return request<UserResponse>(`/login?`+query, {
-    method: "GET",
+export const getLoginRequest = (data: TLoginRequest): Promise<any> => {
+  return request<UserDto>('/login', {
+    method: "POST",
     headers: {
-      "Content-Type": 'application/json',
+      'Content-Type': 'application/json;charset=utf-8'
     },
-    mode: 'no-cors'
+    body: JSON.stringify(data),
   })
 }
+
+export const getUserApi = (userId: string) => {
+  return request<UserDto>(`/users/${userId}`, {
+    method: "GET",
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+  })
+}
+
+export const updateUserApi = (data: UserDto): Promise<any> => {
+  return request<UserDto>(`/users/${data.id}`, {
+    method: "PATCH",
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: JSON.stringify(data),
+  })
+}
+
 
 export type TProfileRequest = {
   name: string;
@@ -31,10 +50,10 @@ export type TProfileRequest = {
   city: string;
 }
 
-export const postRegisterProfileRequest = ({name, surname, patronymic, type, email, password, birthday, country, region, city}: TProfileRequest): Promise<any> => {
-  return request<UserResponse>(`/signup`, {
+export const postRegisterProfileRequest = (user: Omit<UserDto, 'id'>): Promise<any> => {
+  return request<UserDto>(`/signup`, {
     method: "POST",
-    body: JSON.stringify({name, surname, patronymic, type, email, password, birthday, country, region, city}),
+    body: JSON.stringify(user),
     headers: {
       "Content-Type": 'application/json',
     },

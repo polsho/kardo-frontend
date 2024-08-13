@@ -33,7 +33,10 @@ export const RegisterStep2: React.FC = () => {
     //   region: region,
     //   city: city }));
     // navigate('/register/done')
+
   }
+
+  
 
   return (
     <>
