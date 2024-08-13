@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './app.module.css'
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 
@@ -27,58 +27,238 @@ import { More } from '../pages/more/more'
 import { ForgotPassword } from '../pages/forgotPassword/forgotPassword'
 import { RegisterStep2 } from '../pages/registerStep2/registerStep2'
 import { Login } from '../pages/login/login'
+import { ProtectedRoute } from '../components/protectedRoute/protectedRoute'
+import { useDispatch } from '../services/store'
+import { checkUserAuth } from '../services/actions/actionsSelector'
 import { EventById } from '../pages/eventById/eventById'
 
 function App() {
-  const location = useLocation()
-  const background = location.state?.background
+
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(checkUserAuth())
+  }, [])
 
   return (
     <div className={styles.app}>
-      <Routes location={background || location}>
-        <Route path="/" element={<Layout><Main /></Layout>} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Main />
+            </Layout>
+          }
+        />
 
         <Route path="/screenSaver" element={<Screensaver />} />
 
         <Route path="/profile">
-          <Route index element={<Layout header={false}><Profile /></Layout>} />
-          <Route path="profileChanges" element={<Layout header={false}><ProfileChanges /></Layout>} />
-          <Route path="settings" element={<Layout header={false}><ProfileSettings /></Layout>} />
+          <Route
+            index
+            element={
+              <ProtectedRoute
+                component={
+                  <Layout header={false}>
+                    <Profile />
+                  </Layout>
+                }
+              />
+            }
+          />
+          <Route
+            path="profileChanges"
+            element={
+              <ProtectedRoute
+                component={
+                  <Layout header={false}>
+                    <ProfileChanges />
+                  </Layout>
+                }
+              />
+            }
+          />
+          <Route
+            path="settings"
+            element={
+              <ProtectedRoute
+                component={
+                  <Layout header={false}>
+                    <ProfileSettings />
+                  </Layout>
+                }
+              />
+            }
+          />
         </Route>
 
         <Route path="/events">
-          <Route index element={<Layout header={true} footer={true}><Events /></Layout>} />
-          <Route path="/events/:id" element={<Layout><Modal closeModal={() => {navigate(-1)}}><EventById/></Modal></Layout>} />
-          <Route path="/events/requestForReg/:type" element={<Layout><RequestForReg /></Layout>} />
-          <Route path="/events/selections/:type" element={<Layout><Selections /></Layout>} />
-          <Route path="/events/tasks/:id" element={<Layout><Tasks /></Layout>} />
+          <Route
+            index
+            element={
+              <Layout header={true} footer={true}>
+                <Events />
+              </Layout>
+            }
+          />
+          <Route 
+            path="/events/:id" 
+            element={
+              <Layout>
+                <Modal closeModal={() => {navigate(-1)}}><EventById/></Modal>
+              </Layout>
+            } 
+            />
+          <Route
+            path="/events/requestForReg/:type"
+            element={
+              <Layout>
+                <RequestForReg />
+              </Layout>
+            }
+          />
+          <Route
+            path="/events/selections/:type"
+            element={
+              <Layout>
+                <Selections />
+              </Layout>
+            }
+          />
+          <Route
+            path="/events/tasks/:id"
+            element={
+              <Layout>
+                <Tasks />
+              </Layout>
+            }
+          />
         </Route>
 
-        <Route path="/login" element={<Layout header={false} footer={false}><Login /></Layout>} />
-        <Route path="/register/step1" element={<Layout header={false} footer={false}><RegisterStep1 /></Layout>} />
-        <Route path="/register/step2" element={<Layout header={false} footer={false}><RegisterStep2 /></Layout>} />
-        <Route path="/forgotPassword" element={<Layout header={false} footer={false}><ForgotPassword /></Layout>} />
-
-        <Route path="/newsFeed" element={<Layout><News /></Layout>}>
-          <Route index element={<NewsFeed />} />
-          <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
-          <Route path="/newsFeed/myPosts" element={<MyPosts />} />
-        </Route>
-
-        <Route path="/createPost" element={<Layout header={false} footer={false}><CreatePost /></Layout>} />
-        <Route path="/newsFeed/comments" element={<Layout header={false}><Comments /></Layout>} />
-
-        <Route path="/contest" element={<Layout header={true} footer={true}><Contest /></Layout>}/>
-        <Route path="/more" element={<Layout header={true} footer={true}><More /></Layout>}/>
-
-        <Route path="/register/done" element={
-          <Modal closeModal={() => {navigate(-2)}}>
-            <PopUp title={'Регистрация прошла успешно!'} text={'Вам на указанную почту направлено письмо с данными для входа'} />
-          </Modal>}
+        <Route
+          path="/login"
+          element={
+            <ProtectedRoute
+              onlyUnAuth
+              component={
+                <Layout header={false} footer={false}>
+                  <Login />
+                </Layout>
+              }
+            />
+          }
+        />
+        <Route
+          path="/register/step1"
+          element={
+            <ProtectedRoute
+              onlyUnAuth
+              component={
+                <Layout header={false} footer={false}>
+                  <RegisterStep1 />
+                </Layout>
+              }
+            />
+          }
+        />
+        <Route
+          path="/register/step2"
+          element={
+            <ProtectedRoute
+              onlyUnAuth
+              component={
+                <Layout header={false} footer={false}>
+                  <RegisterStep2 />
+                </Layout>
+              }
+            />
+          }
+        />
+        <Route
+          path="/forgotPassword"
+          element={
+            <ProtectedRoute
+              onlyUnAuth
+              component={
+                <Layout header={false} footer={false}>
+                  <ForgotPassword />
+                </Layout>
+              }
+            />
+          }
         />
 
-        <Route path="*" element={<Layout header={true} footer={true}><NotFound /></Layout>}/>
+        <Route
+          path="/newsFeed"
+          element={
+            <Layout>
+              <News />
+            </Layout>
+          }>
+          <Route index element={<NewsFeed />} />
+          <Route path="/newsFeed/broadcasts" element={<Broadcasts />} />
+          <Route path="/newsFeed/myPosts" element={<ProtectedRoute component={<MyPosts />} />} />
+        </Route>
+
+        <Route
+          path="/createPost"
+          element={
+            <Layout header={false} footer={false}>
+              <CreatePost />
+            </Layout>
+          }
+        />
+        <Route
+          path="/newsFeed/comments"
+          element={
+            <Layout header={false}>
+              <Comments />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/contest"
+          element={
+            <Layout header={true} footer={true}>
+              <Contest />
+            </Layout>
+          }
+        />
+        <Route
+          path="/more"
+          element={
+            <Layout header={true} footer={true}>
+              <More />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/register/done"
+          element={
+            <Modal
+              closeModal={() => {
+                navigate(-2)
+              }}>
+              <PopUp
+                title={'Регистрация прошла успешно!'}
+                text={'Вам на указанную почту направлено письмо с данными для входа'}
+              />
+            </Modal>
+          }
+        />
+
+        <Route
+          path="*"
+          element={
+            <Layout header={true} footer={true}>
+              <NotFound />
+            </Layout>
+          }
+        />
       </Routes>
     </div>
   )

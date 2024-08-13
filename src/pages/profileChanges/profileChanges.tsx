@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './profileChanges.module.css'
 import { useNavigate } from 'react-router-dom'
 import { SubHeader } from '../../components/subHeader/subHeader'
@@ -8,9 +8,15 @@ import { Input } from '../../components/input/input'
 import { Button } from '../../components/button/button'
 import { Select } from '../../components/select/select'
 import { Textarea } from '../../components/textarea/textarea'
+import { useDispatch, useSelector } from '../../services/store'
+import { selectUser } from '../../services/actions/actionsSelector'
+import { UserDto } from '../../utils/types'
+import { fetchUpdateUserResult } from '../../services/reducers/loginSlice'
 
 export const ProfileChanges: React.FC = () => {
-  const navigate = useNavigate()
+
+  const user = useSelector(selectUser)
+  const dispatch = useDispatch()
 
   const [urlPhoto, setUrlPhoto] = useState(ProfilePhoto)
 
@@ -35,6 +41,14 @@ export const ProfileChanges: React.FC = () => {
     setVisible(!visible)
   }
 
+  function updateUser(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    if(user) {
+      console.log(user)
+      // dispatch(fetchUpdateUserResult(user))
+    }
+  }
+
   return (
     <>
       <SubHeader title="Профиль" />
@@ -44,13 +58,14 @@ export const ProfileChanges: React.FC = () => {
           <div className={clsx(styles.photoText, 'text_type_secondary_large')}>Ваше фото</div>
         </div>
         <div className={styles.formWrapper}>
-          <form className={clsx(styles.form, { [styles.move]: visible })} id="changes">
+          <form className={clsx(styles.form, { [styles.move]: visible })} id="changes" onSubmit={updateUser}>
             <Input
               type="text"
               name="first-name"
               required
               htmlFor="Имя"
               value={firstName}
+              placeholder={user?.name}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 setFirstName(event.target.value)
               }}

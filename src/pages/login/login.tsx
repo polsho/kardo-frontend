@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './login.module.css'
 import clsx from 'clsx'
 import { Link, useNavigate } from 'react-router-dom'
@@ -6,6 +6,8 @@ import { Button } from '../../components/button/button'
 import { Input } from '../../components/input/input'
 import { SubHeader } from '../../components/subHeader/subHeader'
 import { validateEmail, validatePassword } from '../../utils/utils'
+import { fetchLoginResult } from '../../services/reducers/loginSlice'
+import { useDispatch } from '../../services/store'
 
 export const Login: React.FC = () => {
   const [email, setEmail] = useState('')
@@ -15,14 +17,11 @@ export const Login: React.FC = () => {
   const [errorEmail, setErrorEmail] = useState('')
   const [errorPassword, setErrorPassword] = useState('')
 
-
-  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   function login(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    navigate('/')
-    //бэкенд не работает
-    // dispatch(fetchLoginResult({ email: email, password: password }))
+    dispatch(fetchLoginResult({ email: email, password: password }))
   }
 
   const validationEmail = (): any => {
