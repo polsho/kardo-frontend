@@ -119,7 +119,7 @@ export const Profile: React.FC = () => {
     { name: 'Мой профиль', url: '/profile/profileChanges' },
     { name: 'Мои посты', url: '/newsFeed/myPosts' },
     { name: 'Настройки', url: '/profile/settings' },
-    { name: 'Выйти', url: '/login' }
+    { name: 'Выйти', url: '/logout' }
   ]
 
   return (
