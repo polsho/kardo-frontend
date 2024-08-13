@@ -1,5 +1,5 @@
 import styles from './stageCard.module.css'
-import { Link} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import clsx from 'clsx'
 import { TStage } from '../../utils/types'
 
