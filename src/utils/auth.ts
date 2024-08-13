@@ -59,6 +59,3 @@ export const postRegisterProfileRequest = (user: Omit<UserDto, 'id'>): Promise<a
     },
   })
 }
-
-
-// name, surname, patronymic, type, email, password, birthday, country, region, city

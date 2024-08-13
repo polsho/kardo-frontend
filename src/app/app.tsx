@@ -30,6 +30,7 @@ import { Login } from '../pages/login/login'
 import { ProtectedRoute } from '../components/protectedRoute/protectedRoute'
 import { useDispatch } from '../services/store'
 import { checkUserAuth } from '../services/actions/actionsSelector'
+import { EventById } from '../pages/eventById/eventById'
 
 function App() {
 
@@ -102,6 +103,14 @@ function App() {
               </Layout>
             }
           />
+          <Route 
+            path="/events/:id" 
+            element={
+              <Layout>
+                <Modal closeModal={() => {navigate(-1)}}><EventById/></Modal>
+              </Layout>
+            } 
+            />
           <Route
             path="/events/requestForReg/:type"
             element={

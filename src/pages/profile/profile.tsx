@@ -73,7 +73,7 @@ export const selectionsData: TCompetition[] = [
     type: 'regional',
     name: 'Региональные отборы',
     startDate: '27.04.2024',
-    endDate: '10.08.2024',
+    endDate: '15.08.2024',
     stages: [
       {
         name: 'Владимирская область, Владимир',
@@ -86,14 +86,18 @@ export const selectionsData: TCompetition[] = [
       {
         name: 'Липецкая область, Липецк',
         startDate: '29.06.24'
-      }
+      },
+      {
+        name: 'Челябинская область, Челябинск',
+        startDate: '15.08.24'
+      },
     ]
   },
   {
     type: 'national',
     name: 'Национальные отборы',
     startDate: '01.01.2024',
-    endDate: '27.07.2024',
+    endDate: '15.07.2024',
     stages: [
       {
         name: 'Франция, Бордо',
@@ -102,7 +106,11 @@ export const selectionsData: TCompetition[] = [
       {
         name: 'Таджикистан, Душанбе',
         startDate: '14.07.24'
-      }
+      },
+      {
+        name: 'Аргентина, Буэнос-Айрес',
+        startDate: '27.07.24'
+      },
     ]
   },
   {

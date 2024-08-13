@@ -140,7 +140,6 @@ export const ProfileChanges: React.FC = () => {
                 setPhone(event.target.value)
               }}
             />
-            {/* При нажатии на кнопку должна быть проверка заполняемости полей */}
             <Button type="button" onClick={handleNext}>
               {visible ? 'Назад' : 'Далее'}
             </Button>
