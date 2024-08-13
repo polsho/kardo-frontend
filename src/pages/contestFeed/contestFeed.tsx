@@ -12,77 +12,77 @@ export const ContestFeed: React.FC = () => {
     {
       startDate: '07.02.2024',
       endDate: '17.04.2024',
-      tasksId: '001',
+      tasksId: '10',
       description: `Сбор заявок с предложениями кандидатов конкурса «Премия». Международный мониторинг различных деятелей уличной культуры и спорта. Отбор ТОП-50 Претендентов конкурса «Премия»`
     },
     {
       startDate: '07.05.2024',
       endDate: '08.06.2024',
-      tasksId: '002',
+      tasksId: '11',
       description: 'Публикация лонг-листов Претендентов конкурса «Премия»'
     },
     {
       startDate: '14.06.2024',
       endDate: '16.06.2024',
-      tasksId: '003',
+      tasksId: '12',
       description: 'Народное онлайн-голосование. Отбор ТОП-12 Номинантов конкурса «Премия»'
     },
     {
       startDate: '07.02.2024',
       endDate: '17.04.2024',
-      tasksId: '001',
+      tasksId: '13',
       description: 'Публикация результатов народного онлайн-голосования конкурса «Премия»'
     },
     {
       startDate: '18.05.2024',
       endDate: '07.07.2024',
-      tasksId: '001',
+      tasksId: '14',
       description: 'Работа независимых Экспертов. Отбор ТОП-3 Лауреатов конкурса «Премия»'
     },
     {
       startDate: '14.07.2024',
       endDate: '21.08.2024',
-      tasksId: '001',
+      tasksId: '15',
       description: 'Публикация шорт-листов конкурса «Премия»'
     },
     {
       startDate: '14.07.2024',
       endDate: '21.08.2024',
-      tasksId: '001',
+      tasksId: '16',
       description: 'Гранд-финал, церемония открытия, церемония награждения Победителей конкурса «Премия»'
     }
   ]
   const requirementsData = [
     {
       startDate: '01',
-      tasksId: '001',
+      tasksId: '1q',
       description: `Соответствие конкретному направлению уличной культуры и спорта`
     },
     {
       startDate: '02',
-      tasksId: '002',
+      tasksId: '2q',
       description: 'Прозрачность и освещаемость деятельности'
     },
     {
       startDate: '03',
-      tasksId: '003',
+      tasksId: '3q',
       description: 'Популярность внутри направления, аудитория от 500 человек'
     }
   ]
   const criteriaData = [
     {
       number: '01',
-      tasksId: '001',
+      tasksId: '7q',
       description: `Масштаб деятельности`
     },
     {
       number: '02',
-      tasksId: '002',
+      tasksId: '8q',
       description: 'Разнообразие и всесторонняя направленность деятельности'
     },
     {
       number: '03',
-      tasksId: '003',
+      tasksId: '9q',
       description: 'Реальный вклад в индустрию, инновационные подходы'
     }
   ]

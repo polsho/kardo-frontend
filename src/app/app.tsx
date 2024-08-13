@@ -31,6 +31,9 @@ import { ProtectedRoute } from '../components/protectedRoute/protectedRoute'
 import { useDispatch } from '../services/store'
 import { checkUserAuth } from '../services/actions/actionsSelector'
 import { EventById } from '../pages/eventById/eventById'
+import { ContestFeed } from '../pages/contestFeed/contestFeed'
+import { VideoContest } from '../pages/videoContest/videoContest'
+import { Kids } from '../pages/kids/kids'
 
 function App() {
 
@@ -221,22 +224,14 @@ function App() {
         <Route path="/createPost" element={<Layout header={false} footer={false}><CreatePost /></Layout>} />
         <Route path="/newsFeed/comments" element={<Layout header={false}><Comments /></Layout>} />
 
+        <Route path="/more" element={<Layout header={true} footer={true}><More /></Layout>}/>
+
         <Route path="/contest" element={<Layout><Contest /></Layout>}>
           <Route index element={<ContestFeed />} />
           <Route path="/contest/videoContest" element={<VideoContest />} />
           <Route path="/contest/kids" element={<Kids />} />
         </Route>
 
-        <Route path="/more" element={<Layout header={true} footer={true}><More /></Layout>}/>
-
-        <Route
-          path="/contest"
-          element={
-            <Layout header={true} footer={true}>
-              <Contest />
-            </Layout>
-          }
-        />
         <Route
           path="/more"
           element={
