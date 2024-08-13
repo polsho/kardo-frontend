@@ -25,7 +25,16 @@ git clone https://github.com/polsho/kardo-frontend.git
 - Шмелева Полина
 
 ## Стэк технологий:
-- HTML,CSS, JavaScript, React, Redux, 
+- HTML5
+- CSS3
+- JavaScript
+- TypeScript
+- React
+- React-router
+- Redux
+- Redux-Toolkit
+- Redux-thunk
+- Webpack
 
 ## Список используемых фреймворков и библиотек:
 * [uuidv4](https://www.npmjs.com/package/uuidv4)
