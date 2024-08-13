@@ -1,0 +1,17 @@
+.container_stage {
+  background-color: var(--text-color-light);
+  color: var(--text-color-dark);
+  padding: 12px;
+  border: 1px solid var(--secondary-color-light);
+  border-radius: 4px;
+}
+
+.title_stage {
+  color: var(--accent-color);
+  margin-bottom: 8px;
+}
+
+.title_container {
+  display: flex;
+  flex-direction: row;
+}

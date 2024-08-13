@@ -4,10 +4,88 @@ import { Ticker } from '../../components/ticker/ticker'
 import clsx from 'clsx'
 import linkVideo from '../../assets/images/video-post.png'
 import { Button } from '../../components/button/button'
-import { StageCard } from '../../components/stageCard/stageCard'
-import { v4 as uuidv4 } from 'uuid'
+import { StageCardFeed } from '../../components/stageCardFeed/stageCardFeed'
 
 export const ContestFeed: React.FC = () => {
+
+  const stageData = [
+    {
+      startDate: '07.02.2024',
+      endDate: '17.04.2024',
+      tasksId: '001',
+      description: `Сбор заявок с предложениями кандидатов конкурса «Премия». Международный мониторинг различных деятелей уличной культуры и спорта. Отбор ТОП-50 Претендентов конкурса «Премия»`
+    },
+    {
+      startDate: '07.05.2024',
+      endDate: '08.06.2024',
+      tasksId: '002',
+      description: 'Публикация лонг-листов Претендентов конкурса «Премия»'
+    },
+    {
+      startDate: '14.06.2024',
+      endDate: '16.06.2024',
+      tasksId: '003',
+      description: 'Народное онлайн-голосование. Отбор ТОП-12 Номинантов конкурса «Премия»'
+    },
+    {
+      startDate: '07.02.2024',
+      endDate: '17.04.2024',
+      tasksId: '001',
+      description: 'Публикация результатов народного онлайн-голосования конкурса «Премия»'
+    },
+    {
+      startDate: '18.05.2024',
+      endDate: '07.07.2024',
+      tasksId: '001',
+      description: 'Работа независимых Экспертов. Отбор ТОП-3 Лауреатов конкурса «Премия»'
+    },
+    {
+      startDate: '14.07.2024',
+      endDate: '21.08.2024',
+      tasksId: '001',
+      description: 'Публикация шорт-листов конкурса «Премия»'
+    },
+    {
+      startDate: '14.07.2024',
+      endDate: '21.08.2024',
+      tasksId: '001',
+      description: 'Гранд-финал, церемония открытия, церемония награждения Победителей конкурса «Премия»'
+    }
+  ]
+  const requirementsData = [
+    {
+      startDate: '01',
+      tasksId: '001',
+      description: `Соответствие конкретному направлению уличной культуры и спорта`
+    },
+    {
+      startDate: '02',
+      tasksId: '002',
+      description: 'Прозрачность и освещаемость деятельности'
+    },
+    {
+      startDate: '03',
+      tasksId: '003',
+      description: 'Популярность внутри направления, аудитория от 500 человек'
+    }
+  ]
+  const criteriaData = [
+    {
+      number: '01',
+      tasksId: '001',
+      description: `Масштаб деятельности`
+    },
+    {
+      number: '02',
+      tasksId: '002',
+      description: 'Разнообразие и всесторонняя направленность деятельности'
+    },
+    {
+      number: '03',
+      tasksId: '003',
+      description: 'Реальный вклад в индустрию, инновационные подходы'
+    }
+  ]
 
   return (
     <div className={styles.page_container}>
@@ -33,17 +111,31 @@ export const ContestFeed: React.FC = () => {
         конкурса «Премия» в 10 направлениях:
       </p>
 
-      <p className={clsx(styles.text_accent, "text_type_heading-small")}>Этапы премии</p>
+      <p className={clsx(styles.title_cards, "text_type_heading-small")}>Этапы премии</p>
 
-      {/*<div className={clsx(styles.container_stage, 'text_type_main-default')}>*/}
-      {/*  <h3 className={clsx(styles.title_stage, 'text_type_secondary_small')}>07.02.2024 - 17.03.2024</h3>*/}
+      <div>
+        {
+          stageData.map(stage => <StageCardFeed startDate={stage.startDate} endDate={stage.endDate}
+                                                description={stage.description} key={stage.tasksId} />)
+        }
+      </div>
 
-      {/*  <p>Сбор заявок с предложениями кандидатов конкурса «Премия». Международный мониторинг различных деятелей*/}
-      {/*    уличной культуры и спорта. Отбор ТОП-50 Претендентов конкурса «Премия»*/}
-      {/*  </p>*/}
-      {/*</div>*/}
-      <div className={styles.competitionStageCard}>
-        <StageCard stageData={stage} key={uuidv4()} />
+      <p className={clsx(styles.title_cards, "text_type_heading-small")}>Требования к кандидатам</p>
+
+      <div>
+        {
+          requirementsData.map(stage => <StageCardFeed number={stage.startDate}
+                                                description={stage.description} key={stage.tasksId} />)
+        }
+      </div>
+
+      <p className={clsx(styles.title_cards, "text_type_heading-small")}>Критерии оценки конкурса</p>
+
+      <div>
+        {
+          criteriaData.map(stage => <StageCardFeed number={stage.number}
+                                                description={stage.description} key={stage.tasksId} />)
+        }
       </div>
 
       <p className={clsx(styles.text, 'text_type_secondary_main')}>

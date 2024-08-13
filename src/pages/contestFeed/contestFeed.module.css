@@ -5,22 +5,20 @@
   padding-bottom: 46px;
 }
 
-.container_stage {
-  background-color: var(--text-color-light);
-  color: var(--text-color-dark);
-  padding: 12px;
-}
-
-.title_stage {
-  color: var(--accent-color);
-  margin-bottom: 8px;
-}
-
 .title {
   color: var(--accent-color);
   line-height: 1.2;
   text-transform: uppercase;
   padding-top: 32px;
+}
+
+.title_cards {
+  color: var(--accent-color);
+  background-color: var(--background-color-light);
+  border: 1px solid var(--secondary-color-light);
+  border-radius: 4px;
+  padding: 12px;
+  text-align: start;
 }
 
 .text {
