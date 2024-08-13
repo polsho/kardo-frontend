@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto 60px;
+  margin: auto;
+}
+
+.regStatus {
+  color: var(--accent-color);
+  margin-bottom: 18px;
+  align-self: flex-start;
+}
+
+.stages {
+  margin-block-end: 73px;
+  color: var(--text-color-light);
+}
+
+.stagesList {
+  padding-left: 20px;
+}
+
+.competition {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.level {
+  width: 176px;
+  position: absolute;
+  right: -24px;
+  padding: 13px 18px;
+  background-color: var(--accent-color);
+  color: var(--text-color-light);
+  border-radius: 4px;
+}
+
+.competitionStages {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 60px;
+  padding-top: 76px;
+  padding-bottom: 30px;
+  list-style-type: none;
+}
+
+.competitionStage {
+    position: relative;
+}
+
+.stageIndex {
+  -webkit-text-stroke: 1px var(--text-color-light);
+  -webkit-text-fill-color:transparent;
+  font-family: 'Grtsk Tera';
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 96px;
+  position: absolute;
+  left: -72px;
+  top: -39px;
+}
+
+.competitionStageCard {
+    position: relative;
+    z-index: 100;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--text-color-light);
+}
+
+.descriptionTitle {
+    color: var(--accent-color);
+}

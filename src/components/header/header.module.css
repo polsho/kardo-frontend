@@ -1,0 +1,20 @@
+.header {
+  width: 100vw;
+  max-width: 1440px;
+  height: 60px;
+  padding: 0 var(--page-sides-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color-dark);
+}
+
+.logo {
+  width: 98px;
+}
+
+.icon {
+  padding: 2px;
+  width: 24px;
+  height: 24px;
+}

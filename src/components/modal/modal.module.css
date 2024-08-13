@@ -1,0 +1,57 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 273px;
+  min-height: 153px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--background-color-light);
+  border-radius: 4px;
+  z-index: 2;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.modalActive {
+  transform: scale(1);
+}
+
+.children_container {
+  text-align: center;
+}
+
+.button_container {
+  display: flex;
+  justify-content: center;
+}
+
+.button_close {
+  width: 187px;
+  height: 43px;
+  border-style: none;
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  color: var(--text-color-light);
+  cursor: pointer;
+  transition: .5s;
+}
+
+.button_close:hover {
+  background-color: var(--button-color-hovered);
+}
+
+.button_close:active {
+  background-color: var(--button-color-pressed);
+}
+
+.button_close:before {
+  transition: all .2s;
+  animation: shadow .6s infinite linear;
+  color: var(--text-color-light);
+}

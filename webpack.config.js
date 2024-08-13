@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+
 module.exports = {
   entry: path.resolve(__dirname, "./src/index.tsx"),
   output: {
@@ -35,15 +36,26 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, {
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
+              modules: true,
+              importLoaders: 1,
+              esModule: false,
             }
           },
           'postcss-loader'
         ]
       },
+      {
+        test: /\.svg$/,
+        type: 'asset/resource',
+        generator: {
+        filename: path.join('icons', '[name].[contenthash][ext]'),
+          },
+        },
       {
         test: /\.(png|jpg|gif|webp)$/,
         type: "asset/resource",
@@ -58,7 +70,18 @@ module.exports = {
           filename: "static/fonts/[hash][ext][query]",
         },
       },
-
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]',
+              outputPath: 'media/'
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [

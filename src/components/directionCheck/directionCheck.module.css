@@ -1,0 +1,41 @@
+.container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input {
+  appearance: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--text-color-light);
+  border-radius: 4px;
+  transition: 500ms;
+}
+
+.input::after {
+  content: '';
+  display: none;
+  width: 24px;
+  height: 24px;
+  background-image: url('../../assets/icons/check.png');
+  background-repeat: no-repeat;
+}
+
+.input:checked::after {
+    display: block;
+}
+
+.label {
+  width: 100%;
+  padding: 13px 12px;
+  background-color: var(--background-color-cards);
+  border-radius: 4px;
+}

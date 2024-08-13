@@ -1,0 +1,63 @@
+.container_page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.passwordContainer {
+  position: relative;
+}
+
+.topLineInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.text{
+  color: var(--secondary-color-dark);
+}
+
+.text_container {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 28px;
+}
+
+.button_container {
+  margin-top: 34px;
+  margin-bottom: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.link, a:-webkit-any-link{
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text-color-light);
+}
+
+.container_bottom{
+  margin-bottom: 34px;
+  margin-top: 32px;
+}
+
+.info {
+  color: var(--secondary-color-dark);
+  text-align: center;
+}
+
+.error {
+  margin-top: 4px;
+  color: var(--service-color-error);
+}

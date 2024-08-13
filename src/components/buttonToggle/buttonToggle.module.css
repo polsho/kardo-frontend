@@ -1,0 +1,36 @@
+.toggle_container {
+  margin: 38px auto 42px;
+  width: 335px;
+  padding: 4px;
+  display: flex;
+  background-color: var(--secondary-color-light);
+  box-sizing: border-box;
+}
+
+.toggle_container .toggle {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  text-align: center;
+}
+
+.toggle_container .toggle input {
+  display: none;
+}
+
+.toggle_container .toggle .title {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 6px 0;
+  color: var(--text-color-dark);
+  transition: all 0.1s;
+}
+
+.toggle_container .toggle input:checked + .title {
+  background-color: var(--background-color-light);
+  font-weight: 600;
+  color: var(--accent-color);
+}

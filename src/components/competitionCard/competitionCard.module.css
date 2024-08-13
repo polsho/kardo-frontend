@@ -1,0 +1,32 @@
+.container {
+    flex-basis: 158px;
+    min-height: 158px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    background-color: var(--background-color-light);
+}
+
+.title {
+    color: var(--accent-color);
+    padding: 12px 8px;
+    min-height: 33.6px;
+}
+
+.dates {
+    padding: 0 8px 57px;
+    color: var(--secondary-color-dark);
+}
+
+.dates > * {
+    display: block;
+}
+
+.level {
+    padding: 12px 20px 27px 8px;
+    margin-top: auto;
+    background-color: var(--accent-color);
+    color: var(--text-color-light);
+}

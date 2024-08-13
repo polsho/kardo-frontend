@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.title {
+  max-width: 255px;
+  text-align: center;
+  margin: 0 auto;
+  color: var(--text-color-light);
+}

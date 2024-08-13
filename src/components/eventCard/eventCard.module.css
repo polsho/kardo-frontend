@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: start;
+  background-color: var(--background-color-light);
+  border: 1px solid var(--secondary-color-dark);
+  border-radius: 4px;
+  padding: 12px;
+  color: var(--text-color-dark);
+  text-align: start;
+}
+
+.detailed {
+  gap: 12px;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 19px;
+}
+
+.date {
+  color: var(--text-color-dark);
+}
+
+.name {
+  color: var(--accent-color);
+  text-transform: uppercase;
+  padding-bottom: 4px;
+}
+
+.button {
+  width: 311px;
+  height: 43px;
+  border-style: none;
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  color: var(--text-color-light);
+  cursor: pointer;
+  transition: .5s;
+}

@@ -1,0 +1,36 @@
+.wrapper {
+  --gap: 32px;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  background-color: var(--secondary-color-light);
+}
+
+.content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: var(--gap);
+  color: var(--text-color-dark);
+  line-height: 1.2;
+  text-transform: uppercase;
+  animation: scroll 10s linear infinite;
+  padding: 12px 0;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .content {
+      animation-play-state: paused !important;
+    }
+  }

@@ -1,5 +1,93 @@
 @import url(./assets/fonts/fonts.css);
 
 :root {
-  --background-color: #000;
+  --text-color-light: #fff;
+  --text-color-dark: #090200;
+  --background-color-dark: #212121;
+  --background-color-light: #fff;
+  --background-color-cards: #333;
+  --accent-color: #ff4310;
+  --secondary-color-light: #bfbfbf;
+  --secondary-color-dark: #808080;
+  --blur: #212121;
+  --button-color-main: #ff4310;
+  --button-color-hovered: #cf360c;
+  --button-color-pressed: #b22c08;
+  --button-color-disabled: #bfbfbf;
+  --service-color-error: #f20f01;
+  --service-color-success: #0fdb5a;
+
+  --font-family-heading: 'Grtsk Tera', Arial, sans-serif;
+  --font-family-main-text: 'Rubik', Arial, sans-serif;
+
+  --page-sides-padding: 20px;
+}
+
+:global .text_type_main-default {
+  font-family: var(--font-family-main-text);
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+:global .text_type_main-small {
+  font-family: var(--font-family-main-text);
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+:global .text_type_main-large {
+  font-family: var(--font-family-main-text);
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+:global .text_type_main-default-bold {
+  font-family: var(--font-family-main-text);
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+:global .text_type_secondary_small {
+  font-family: var(--font-family-main-text);
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+:global .text_type_secondary_main {
+  font-family: var(--font-family-main-text);
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+:global .text_type_secondary_large {
+  font-family: var(--font-family-main-text);
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+:global .text_type_heading-main {
+  font-family: var(--font-family-heading);
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+:global .text_type_heading-small {
+  font-family: var(--font-family-heading);
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+:global .element_beyond_padding {
+  position: relative;
+  width: calc(100% + (2 * var(--page-sides-padding)));
+  right: var(--page-sides-padding);
 }
